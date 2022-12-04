@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcl:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcl="http://xamarin.com/schemas/2020/toolkit"
+           Size="300,180"
+             x:Class="HabitTracking.Popups.NameCategoryPopup">
+    <Frame CornerRadius="10" BackgroundColor="White" Padding="5">
+        <StackLayout>
+            <Label Text="Category Name" TextColor="DeepPink" FontSize="Medium"></Label>
+            <Frame BorderColor="DeepPink" CornerRadius="10">
+                <Entry x:Name="entCategoryName" Text="New Catgory" FontSize="Medium" TextColor="Black" BackgroundColor="Transparent"></Entry>
+            </Frame>
+            <Button x:Name="btnCreateNameCategory" Clicked="btnCreateNameCategory_Clicked" Text="OK" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent" FontAttributes="Bold" TextColor="DeepPink" FontSize="20"></Button>
+        </StackLayout>
+    </Frame>
+</xcl:Popup>

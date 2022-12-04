@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HabitTracking.HabitPages.SelectCategoryPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10, 0, 10, 0">
+            <Label Text="Select a category for your habit"
+                   FontSize="Large" FontAttributes="Bold" TextColor="DeepPink"
+                   Padding="0,15,0,15"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Grid> 
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <CollectionView x:Name="CVCategorySelect"
+                            SelectionMode="Single"
+                            SelectionChanged="CVCategorySelect_SelectionChanged">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2"
+                                     VerticalItemSpacing="10"
+                                     HorizontalItemSpacing="10"></GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="10" BorderColor="Pink" Padding="5">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding categoryName}" FontSize="Body" VerticalOptions="CenterAndExpand"></Label>
+                                    <Frame BackgroundColor="{Binding categoryColor}" CornerRadius="5" HorizontalOptions="EndAndExpand">
+                                        <Image Source="{Binding categoryImage}" WidthRequest="20" HeightRequest="20"></Image>
+                                    </Frame>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnCalcel" Text="Cancel" Clicked="btnCalcel_Clicked" HorizontalOptions="FillAndExpand" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Transparent"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
