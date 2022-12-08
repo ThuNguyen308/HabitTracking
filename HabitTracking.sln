@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracking.Android", "Ha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracking.iOS", "HabitTracking\HabitTracking.iOS\HabitTracking.iOS.csproj", "{3C7FD78F-42CE-42F9-BFB7-11CA507AE516}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HabitTracking", "HabitTracking\HabitTracking\HabitTracking.csproj", "{FE4A57A2-70F2-415D-BEFF-1EA445599EE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTracking", "HabitTracking\HabitTracking\HabitTracking.csproj", "{FE4A57A2-70F2-415D-BEFF-1EA445599EE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
