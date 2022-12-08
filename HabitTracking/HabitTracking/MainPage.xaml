@@ -6,8 +6,10 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Button x:Name="AddCategory" Clicked="AddCategory_Clicked"></Button>
-            <Button x:Name="AddN" Clicked="AddN_Clicked"></Button>
+            <Button x:Name="AddCategory" Text="Category" Clicked="AddCategory_Clicked"></Button>
+            <Button x:Name="AddN" Text="Add Habit" Clicked="AddN_Clicked"></Button>
+            <Button x:Name="AddB" Text="Statistic" Clicked="AddB_Clicked"></Button>
+            <Button x:Name="AddE" Text="Edit Habit" Clicked="AddE_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 

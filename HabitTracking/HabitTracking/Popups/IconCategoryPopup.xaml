@@ -28,6 +28,6 @@
             </CollectionView>
         </Grid>
         <BoxView HeightRequest="1" Color="Black" />
-        <Button Text="Close" FontAttributes="Bold" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"></Button>
+        <Button x:Name="btnClose" Text="Close" Clicked="btnClose_Clicked" FontAttributes="Bold" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"></Button>
     </StackLayout>
 </xct:Popup>

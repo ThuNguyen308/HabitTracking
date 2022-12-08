@@ -36,8 +36,14 @@ namespace HabitTracking.Popups
 
         private void CVCategoryColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            Classes.Color colorSelected = e.CurrentSelection[0] as Classes.Color;
+            var result = colorSelected.colorCode.ToString();
+            Dismiss(result);
         }
 
+        private void btnClose_Clicked(object sender, EventArgs e)
+        {
+            Dismiss(null);
+        }
     }
 }

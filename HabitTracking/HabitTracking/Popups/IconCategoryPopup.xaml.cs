@@ -34,6 +34,14 @@ namespace HabitTracking.Popups
         private void CVCategoryIcon_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+            Classes.Icon imageSelected = e.CurrentSelection[0] as Classes.Icon;
+            string result = imageSelected.iconImage as String;
+            Dismiss(result);
+        }
+
+        private void btnClose_Clicked(object sender, EventArgs e)
+        {
+            Dismiss(null);
         }
     }
 }

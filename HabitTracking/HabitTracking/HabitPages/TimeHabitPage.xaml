@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="HabitTracking.HabitPages.TimeHabitPage">
     <ContentPage.Content>
         <StackLayout>
@@ -9,14 +10,14 @@
                    Padding="0,15,0,15" 
                 HorizontalOptions="CenterAndExpand" />
             <StackLayout Orientation="Horizontal" Padding="15,0,15,0">
-                <Image Source="StartTime.png" WidthRequest="20" HeightRequest="20" Aspect="AspectFit" VerticalOptions="CenterAndExpand"></Image>
+                <Image Source="StartTime.png" xct:IconTintColorEffect.TintColor="DeepPink" WidthRequest="20" HeightRequest="20" Aspect="AspectFit" VerticalOptions="CenterAndExpand"></Image>
                 <Label Text="Start date" VerticalOptions="CenterAndExpand" FontSize="Medium" FontAttributes="Bold"></Label>
-                <DatePicker Format="d" HorizontalOptions="EndAndExpand"></DatePicker>
+                <DatePicker x:Name="startDatePkr" Format="d" HorizontalOptions="EndAndExpand"></DatePicker>
             </StackLayout>
             <StackLayout Orientation="Horizontal" Padding="15,0,15,0">
-                <Image Source="EndTime.png" WidthRequest="20" HeightRequest="20" Aspect="AspectFit" VerticalOptions="CenterAndExpand"></Image>
+                <Image Source="EndTime.png" xct:IconTintColorEffect.TintColor="DeepPink" WidthRequest="20" HeightRequest="20" Aspect="AspectFit" VerticalOptions="CenterAndExpand"></Image>
                 <Label Text="End date" VerticalOptions="CenterAndExpand" FontSize="Medium" FontAttributes="Bold"></Label>
-                <DatePicker Format="d" HorizontalOptions="EndAndExpand"></DatePicker>
+                <DatePicker x:Name="endDatePkr" Format="d" HorizontalOptions="EndAndExpand"></DatePicker>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
                 <Button x:Name="btnBack" Text="Back" Clicked="btnBack_Clicked" HorizontalOptions="Start" WidthRequest="200" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Transparent"></Button>

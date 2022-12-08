@@ -15,6 +15,9 @@ namespace HabitTracking.HabitPages
         public TimeHabitPage()
         {
             InitializeComponent();
+            startDatePkr.MinimumDate = DateTime.Now.Date;
+            endDatePkr.MinimumDate = DateTime.Now.Date;
+            endDatePkr.Date = endDatePkr.Date.AddDays(7).Date;
         }
 
         private void btnSaveHabit_Clicked(object sender, EventArgs e)

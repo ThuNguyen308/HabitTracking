@@ -10,16 +10,19 @@ using Xamarin.Forms.Xaml;
 namespace HabitTracking.Popups
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NameCategoryPopup : Popup
+    public partial class NamePopup : Popup
     {
-        public NameCategoryPopup()
+        public NamePopup(string name)
         {
             InitializeComponent();
+            nameLbl.Text = name;
+            nameEnt.Text = "New " + name;
         }
 
-        private void btnCreateNameCategory_Clicked(object sender, EventArgs e)
+        private void btnCreate_Clicked(object sender, EventArgs e)
         {
-            Dismiss(null);
+            var result = nameEnt.Text;
+            Dismiss(result);
         }
     }
 }

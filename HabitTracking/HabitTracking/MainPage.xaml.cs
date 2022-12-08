@@ -26,5 +26,15 @@ namespace HabitTracking
         {
             Navigation.PushAsync(new HabitPages.SelectCategoryPage());
         }
+
+        private void AddB_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Pages.StatisticsPage());
+        }
+
+        private void AddE_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Pages.HabitPage());
+        }
     }
 }

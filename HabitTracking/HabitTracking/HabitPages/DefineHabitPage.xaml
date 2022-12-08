@@ -9,11 +9,11 @@
                    Padding="0,15,0,15" 
                 HorizontalOptions="CenterAndExpand" />
             <StackLayout>
-                <Label Text="Habit Name" HorizontalOptions="Start" FontSize="Medium" FontAttributes="Bold"></Label>
+                <Label Text="Habit Name" TextColor="DeepPink" HorizontalOptions="Start" FontSize="Medium" FontAttributes="Bold"></Label>
                 <Entry Placeholder="e.g., Meditate in the morning"></Entry>
             </StackLayout>
             <StackLayout>
-                <Label Text="Description" HorizontalOptions="Start" FontSize="Medium" FontAttributes="Bold"></Label>
+                <Label Text="Description" TextColor="DeepPink" HorizontalOptions="Start" FontSize="Medium" FontAttributes="Bold"></Label>
                 <Entry Placeholder="Description (optional)"></Entry>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
