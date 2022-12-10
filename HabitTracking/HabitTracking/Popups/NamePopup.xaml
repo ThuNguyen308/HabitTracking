@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="HabitTracking.Popups.NamePopup"
+           Size="300,150">
+        <StackLayout Padding="5">
+            <Label x:Name="nameLbl" TextColor="DeepPink" FontSize="Large" FontAttributes="Bold"></Label>
+            <Frame CornerRadius="10" BorderColor="DeepPink">
+                <Entry x:Name="nameEnt"></Entry>
+            </Frame>
+            <Button x:Name="btnCreate" Text="OK" 
+                    BackgroundColor="Transparent"  FontAttributes="Bold" TextColor="DeepPink"
+                    Clicked="btnCreate_Clicked"></Button>
+        </StackLayout>
+</xct:Popup>
