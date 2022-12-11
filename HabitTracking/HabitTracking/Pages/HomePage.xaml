@@ -1,133 +1,126 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HabitTracking.Pages.HomePage">
-    <ContentPage.ToolbarItems>
+             x:Class="HabitTracking.Pages.HomePage"
+             Title="Home"
+             IconImageSource="categoryIcon">
 
-        <ToolbarItem Text="TODAY" IconImageSource="search"  />
-        <ToolbarItem Text="TODAY" IconImageSource="calender32"  />
-    </ContentPage.ToolbarItems>
-
-    <Grid VerticalOptions="FillAndExpand">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-
+    <StackLayout>
         <!---->
-        <StackLayout Grid.Row="0" Orientation="Horizontal" Spacing="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="20,40">
-            <!--<ImageButton Source="menu.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="Start" VerticalOptions="Center" />-->
-            <Label Text="TODAY" FontSize="16" VerticalOptions="Center" TextColor="black"/>
+        <StackLayout  Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Spacing="5">
+            <SearchBar BackgroundColor="Pink"  Placeholder="Search habit"></SearchBar>
+            <Button    
+                BackgroundColor="Pink" HeightRequest="50" WidthRequest="50" CornerRadius="25"  ImageSource="scoreIcon" HorizontalOptions="End" VerticalOptions="End"/>
         </StackLayout>
+        
+        
+        
+        <Label Text="TODAY" FontSize="16" VerticalOptions="Center" TextColor="black"  Margin="10,10"/>
 
-        <!--date-->
-        <Frame Grid.Row="1" HasShadow="True" CornerRadius="10" Margin="20,-40,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start">
-            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                    <!--<Image Source="humidity.png" HeightRequest="25" HorizontalOptions="Center"/>-->
-                    <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                        <Label Text="T.7" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                        <Frame BackgroundColor="Pink" Padding="12,5">
-                            <Label Text="3" TextColor="#7D7D7D" FontSize="16" HorizontalOptions="Center"  />
-                        </Frame>
-                    </StackLayout>
-                </StackLayout>
-                <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                    <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                        <Label Text="CN" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                        <Frame BackgroundColor="Pink" Padding="12,5">
-                            <Label Text="4" TextColor="#7D7D7D" FontSize="16" HorizontalOptions="Center"  />
-                        </Frame>
-                    </StackLayout>
-                </StackLayout>
-                <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                    <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                        <Label Text="T2" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                        <Frame BackgroundColor="Pink" Padding="12,5">
-                            <Label Text="5" TextColor="#7D7D7D" FontSize="16" HorizontalOptions="Center"  />
-                        </Frame>
-                    </StackLayout>
-                </StackLayout>
-                <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                    <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                        <Label Text="T3" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                        <Frame BackgroundColor="Pink" Padding="12,5">
-                            <Label Text="6" TextColor="#7D7D7D" FontSize="16" HorizontalOptions="Center"  />
-                        </Frame>
-                    </StackLayout>
-                </StackLayout>
-            </Grid>
-        </Frame>
-
-        <!--habit tasks-->
-        <SwipeView Grid.Row="2" WidthRequest="200">
-            <SwipeView.RightItems>
-                <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
-                    <SwipeItem Text="Delete"
-                                           IconImageSource="setting.png"
-                                            BackgroundColor="OrangeRed"/>
-                    <SwipeItem Text="Edit"
-                                           IconImageSource="edit16.png"
-                                            BackgroundColor="LightGreen"/>
-                </SwipeItems>
-            </SwipeView.RightItems>
-
-            <StackLayout>
-                <Frame Grid.Row="2" BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
-                    <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Source="logout.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="Center" VerticalOptions="Center"/>
-                        <Label  Grid.Column="1"  Text="Coding" TextColor="Black" FontSize="15" FontAttributes="Bold"  VerticalOptions="Center"/>
-                        <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                            <CheckBox></CheckBox>
+            <!--date-->
+        <Frame HasShadow="True" CornerRadius="10" Margin="20,0,20,10" Padding="0" HeightRequest="120" VerticalOptions="Start">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <!--<Image Source="humidity.png" HeightRequest="25" HorizontalOptions="Center"/>-->
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label Text="T.7" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Frame BackgroundColor="Pink" Padding="12,5">
+                                <Label Text="3" TextColor="#7D7D7D" FontSize="16" HorizontalOptions="Center"  />
+                            </Frame>
                         </StackLayout>
-                    </Grid>
-                </Frame>
-            </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label Text="CN" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Frame BackgroundColor="Pink" Padding="12,5">
+                                <Label Text="4" TextColor="#7D7D7D" FontSize="16" HorizontalOptions="Center"  />
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label Text="T2" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Frame BackgroundColor="Pink" Padding="12,5">
+                                <Label Text="5" TextColor="#7D7D7D" FontSize="16" HorizontalOptions="Center"  />
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label Text="T3" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Frame BackgroundColor="Pink" Padding="12,5">
+                                <Label Text="6" TextColor="#7D7D7D" FontSize="16" HorizontalOptions="Center"  />
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </Frame>
 
-        </SwipeView>
+            <!--habit tasks-->
+            <RefreshView x:Name="RVHabits" >
+                <CollectionView x:Name="listHabits" SelectionMode="Single">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout
+                            Orientation="Vertical" Span="1"
+                            VerticalItemSpacing="5"
+                            HorizontalItemSpacing="5">
+                        </GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <SwipeView Grid.Row="1" HeightRequest="70" WidthRequest="10">
+                                <SwipeView.RightItems>
+                                    <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
+                                        <SwipeItem Text="Delete"
+                                           IconImageSource="scoreIcon"
+                                            BackgroundColor="#800040"/>
+                                        <SwipeItem Text="Edit"
+                                           IconImageSource="scoreIcon"
+                                            BackgroundColor="Green"/>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+
+                                <StackLayout>
+                                    <Frame  BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                                        <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            
+                                            <Image Grid.Column="0" Source="scoreIcon"  HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            <Label  Grid.Column="1"  Text="{Binding habitName}" TextColor="Black" FontSize="18" FontAttributes="Bold"  VerticalOptions="Center"/>
+                                            <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                                                <CheckBox></CheckBox>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </SwipeView>
+                            
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+            
 
 
 
-        <!--<ListView Grid.Row="2"  SeparatorVisibility="None"
-                   Margin="20,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <ListView.ItemTemplate>
-                <DataTemplate >
-                    <ViewCell>
-                        <Frame BackgroundColor="black" BorderColor="#black" Padding="5" Margin="0,0,0,5" HasShadow="False">
-                            <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.Column="1" Source="menu" WidthRequest="38" HeightRequest="38" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                <Label Text="Code" TextColor="#757575" FontSize="12" VerticalOptions="Center" Margin="20,0"/>
-                                <CheckBox Margin="20,0" HorizontalOptions="End" VerticalOptions="Center"/>
-                            </Grid>
-                        </Frame>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
-        <!--add task-->
-        <StackLayout Grid.Row="4" BackgroundColor="Transparent" Orientation="Horizontal" Margin="50" HorizontalOptions="End" VerticalOptions="End">
-            <Button  Grid.ColumnSpan="2" BackgroundColor="Pink" HeightRequest="54" WidthRequest="54" CornerRadius="27"  TranslationX="40" TranslationY="250" ImageSource="plus" HorizontalOptions="Center" VerticalOptions="End"/>
-        </StackLayout>
-    </Grid>
+            <AbsoluteLayout>
+                <Button    AbsoluteLayout.LayoutBounds="0.97,0"   AbsoluteLayout.LayoutFlags="PositionProportional" Margin="5,5"
+                BackgroundColor="Pink" HeightRequest="54" WidthRequest="54" CornerRadius="27"  ImageSource="scoreIcon" HorizontalOptions="Center" VerticalOptions="End"/>
+            </AbsoluteLayout>
+       
+
+       
+    </StackLayout>
+   
 </ContentPage>

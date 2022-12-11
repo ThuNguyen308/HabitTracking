@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using HabitTracking.Pages;
-
 namespace HabitTracking
 {
-    public partial class TabbedPage : Xamarin.Forms.Shell { 
-        public TabbedPage()
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class TabbedPage1 : TabbedPage
+    {
+        public TabbedPage1()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
         }
-
-       
     }
 }

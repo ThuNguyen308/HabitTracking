@@ -5,7 +5,7 @@
     <ContentPage.Content>
             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="25" VerticalOptions="CenterAndExpand" Padding="30,0">
                 <!--logo-->
-                <Image Grid.Row="0" Source="categoryIcon" HeightRequest="150" WidthRequest="150" Aspect="AspectFit"/>
+                <Image Grid.Row="0" Source="User" HeightRequest="150" WidthRequest="150" Aspect="AspectFit"/>
                 <!-- Main title-->
                 <Label Grid.Row="1" FontAttributes="Bold" TextColor="Silver" FontSize="30" 
                        HorizontalTextAlignment="Center" Text="Let's plant new habits and transform your life"/>
