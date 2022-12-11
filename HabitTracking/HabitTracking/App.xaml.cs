@@ -10,7 +10,8 @@ namespace HabitTracking
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            //MainPage = new NavigationPage(new MainPage());
+            MainPage = new TabbedPage();
         }
 
         protected override void OnStart()

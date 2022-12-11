@@ -3,10 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HabitTracking.Pages.SignInPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="25" VerticalOptions="CenterAndExpand" Padding="30,0">
+                <!--logo-->
+                <Image Grid.Row="0" Source="categoryIcon" HeightRequest="150" WidthRequest="150" Aspect="AspectFit"/>
+                <!-- Main title-->
+                <Label Grid.Row="1" FontAttributes="Bold" TextColor="Silver" FontSize="30" 
+                       HorizontalTextAlignment="Center" Text="Let's plant new habits and transform your life"/>
+
+                <!-- Fields-->
+                <Label Grid.Row="2" Text="Email" TextColor="#a6a5a0" FontSize="15" FontAttributes="Bold"/>
+                <Entry Grid.Row="3" Placeholder="yourname@domain.com" HeightRequest="40" BackgroundColor="#fdfbf6" />
+                <Label Grid.Row="4" Text="Password" TextColor="#a6a5a0" FontSize="15" FontAttributes="Bold" />
+                <Entry Grid.Row="5" IsPassword="True" Placeholder="******" HeightRequest="40" BackgroundColor="#fdfbf6"/>
+
+                <!-- Forget password label-->
+                <Label Grid.Row="6" Text="Forgot your password?" FontAttributes="Bold" FontSize="15" HorizontalOptions="End" />
+                <Button Grid.Row="7" Clicked="loginBtn_Clicked" BackgroundColor="DeepPink" Text="Log in" TextColor="White" CornerRadius="20" FontSize="15" FontAttributes="Bold" HorizontalOptions="FillAndExpand"/>
+
+                <Label Grid.Row="8" FontAttributes="Bold" HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Don't have an account? "/>
+                            <Span Text="Register" TextColor="DeepPink"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
     </ContentPage.Content>
 </ContentPage>
