@@ -24,7 +24,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Don't have an account? "/>
-                            <Span Text="Register" TextColor="DeepPink"/>
+                            <Span Text="Register" TextColor="DeepPink" />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
