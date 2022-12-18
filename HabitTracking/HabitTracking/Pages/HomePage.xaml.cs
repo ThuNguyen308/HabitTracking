@@ -24,5 +24,10 @@ namespace HabitTracking.Pages
             listHabits.ItemsSource = Habit.InitHabits();
 
         }
+
+        private void btnAddHabit_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HabitPages.SelectCategoryPage());
+        }
     }
 }
