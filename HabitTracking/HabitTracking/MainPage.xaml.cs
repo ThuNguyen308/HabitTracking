@@ -36,5 +36,6 @@ namespace HabitTracking
         {
             Navigation.PushAsync(new Pages.HabitPage());
         }
+        
     }
 }

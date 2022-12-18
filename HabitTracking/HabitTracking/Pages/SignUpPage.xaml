@@ -3,10 +3,51 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HabitTracking.Pages.SignUpPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+              RowSpacing="20" ColumnDefinitions="*,*" ColumnSpacing="20" VerticalOptions="CenterAndExpand" Padding="30,0">
+
+                <!-- Title-->
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Create an account"/>
+                <!-- Rounded Profile imagen-->
+                <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderColor="White" 
+                   VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="150" HeightRequest="150" CornerRadius="75" HasShadow="False" Padding="0" IsClippedToBounds="True">
+                    <Image Source="User.png" Aspect="AspectFill" BackgroundColor="Pink"/>
+                </Frame>
+                <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Pink" HeightRequest="54" WidthRequest="54" CornerRadius="27"  TranslationX="65" ImageSource="camera" HorizontalOptions="Center" VerticalOptions="End"/>
+
+
+                <!-- Basic information-->
+                <!-- First name-->
+                <Label Grid.Row="2" Grid.Column="0" Text="First name" TextColor="#787878" FontSize="15" FontAttributes="Bold"/>
+                <Entry Grid.Row="3" Grid.Column="0"  HeightRequest="40" BackgroundColor="#fdfbf6"/>
+
+                <!-- Last name-->
+                <Label Grid.Row="2" Grid.Column="1" Text="Last name" TextColor="#787878" FontSize="15" FontAttributes="Bold"/>
+                <Entry Grid.Row="3" Grid.Column="1"  HeightRequest="40" BackgroundColor="#fdfbf6"/>
+                <!-- Email-->
+                <Label Grid.Row="4" Grid.Column="0" Text="Email" TextColor="#787878" FontSize="15" FontAttributes="Bold"/>
+                <Entry Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  HeightRequest="40" Placeholder="yourname@domain.com" BackgroundColor="#fdfbf6"/>
+                <!-- Password-->
+                <Label Grid.Row="6" Grid.Column="0" Text="Password" TextColor="#787878" FontSize="15" FontAttributes="Bold" />
+                <Entry Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" IsPassword="True"  HeightRequest="40" Placeholder="******" BackgroundColor="#fdfbf6"/>
+                <Label Grid.Row="8" Text="Confirm Password" TextColor="#787878" FontSize="15" FontAttributes="Bold"/>
+                <Entry Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" IsPassword="True" HeightRequest="40" Placeholder="******" BackgroundColor="#fdfbf6"/>
+
+
+                <!-- Register button-->
+                <Button Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="DeepPink" Text="Register" TextColor="White" CornerRadius="20" FontSize="15" FontAttributes="Bold" HorizontalOptions="FillAndExpand"/>
+
+                <Label Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2" FontAttributes="Bold" HorizontalTextAlignment="Center" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Already have an account? "/>
+                            <Span Text="Log in" TextColor="DeepPink"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label  Grid.Row="14" Text=""></Label>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
