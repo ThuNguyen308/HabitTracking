@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<xcl:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xcl="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
              Size="300,400"
              x:Class="HabitTracking.Popups.ColorCategoryPopup">
     <StackLayout Padding="10">
@@ -22,13 +22,13 @@
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame CornerRadius="25" 
-                               HeightRequest="50"
-                               WidthRequest="50"
-                                BackgroundColor="{Binding colorCode}"
-                               Padding="0"
-                               IsClippedToBounds="False">
-                        </Frame>
+                        <!--<Frame.BackgroundColor>
+                                <OnPlatform x:TypeArguments="Color">
+                                    <On Platform="Android" Value="{Binding colorCode}"></On>
+                                    <On Platform="iOS" Value="{Binding colorCode}"></On>
+                                </OnPlatform>
+                            </Frame.BackgroundColor>-->
+                            <BoxView BackgroundColor="{Binding colorCode}" CornerRadius="25" WidthRequest="50" HeightRequest="50"></BoxView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
@@ -36,4 +36,4 @@
         <BoxView HeightRequest="1" Color="Black" />
         <Button x:Name="btnClose" Text="Close" Clicked="btnClose_Clicked" FontAttributes="Bold" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"></Button>
     </StackLayout>
-</xcl:Popup>
+</xct:Popup>

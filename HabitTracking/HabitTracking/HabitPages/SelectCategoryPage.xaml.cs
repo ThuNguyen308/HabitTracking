@@ -16,13 +16,6 @@ namespace HabitTracking.HabitPages
         public SelectCategoryPage()
         {
             InitializeComponent();
-            lstCategory.Add(new Classes.Category { categoryId = 1, categoryName = "Art", categoryImage = "paintbrush.png", categoryColor = "Pink" });
-            lstCategory.Add(new Classes.Category { categoryId = 2, categoryName = "Excercise", categoryImage = "stretching.png", categoryColor = "Blue" });
-            lstCategory.Add(new Classes.Category { categoryId = 3, categoryName = "Eat clean", categoryImage = "restaurant.png", categoryColor = "Yellow" });
-            lstCategory.Add(new Classes.Category { categoryId = 4, categoryName = "Love", categoryImage = "paintbrush.png", categoryColor = "Green" });
-            lstCategory.Add(new Classes.Category { categoryId = 5, categoryName = "Friend", categoryImage = "paintbrush.png", categoryColor = "Pink" });
-            lstCategory.Add(new Classes.Category { categoryId = 5, categoryName = "Friend", categoryImage = "paintbrush.png", categoryColor = "Pink" });
-            lstCategory.Add(new Classes.Category { categoryId = 5, categoryName = "Friend", categoryImage = "paintbrush.png", categoryColor = "Pink" });
             CVCategorySelect.ItemsSource = lstCategory;
         }
 
