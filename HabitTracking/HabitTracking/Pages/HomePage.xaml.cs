@@ -29,5 +29,16 @@ namespace HabitTracking.Pages
         {
             Navigation.PushAsync(new HabitPages.SelectCategoryPage());
         }
+        private void btnCalendaar_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Pages.CalendarPage());
+
+        }
+
+        private void listHabits_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Habit habitSelected = e.CurrentSelection[0] as Habit;
+            Navigation.PushAsync(new Pages.HabitPage());
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace HabitTracking.Pages
         {
             InitializeComponent();
         }
+
+        private void BtnSignin_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SignInPage());
+        }
     }
 }

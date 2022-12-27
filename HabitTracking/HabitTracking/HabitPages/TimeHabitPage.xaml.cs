@@ -22,7 +22,7 @@ namespace HabitTracking.HabitPages
 
         private void btnSaveHabit_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainPage());
+            Navigation.PushAsync(new TabbedPage1());
         }
 
         private void btnBack_Clicked(object sender, EventArgs e)

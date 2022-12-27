@@ -39,7 +39,7 @@ namespace HabitTracking.Pages
         {
             HttpClient http = new HttpClient();
             var kq = await http.GetStringAsync
-                ("http://172.17.17.228/webapiqltq/api/Category/GetCategoryList?userId=" + 1);
+                ("http://10.45.95.61/webapiqltq/api/Category/GetCategoryList?userId=" + 1);
         
             var categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);
             foreach (Category c in categoryList)
@@ -111,7 +111,7 @@ namespace HabitTracking.Pages
             string jsonlh = JsonConvert.SerializeObject(newCategory);
             StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
             HttpResponseMessage kq;
-            kq = await http.PostAsync("http://172.17.17.228/webapiqltq/api/Category/CreateCategory", httcontent);
+            kq = await http.PostAsync("http://10.45.95.61/webapiqltq/api/Category/CreateCategory", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
             if(int.Parse(kqtv.ToString()) > 0)
                 DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");

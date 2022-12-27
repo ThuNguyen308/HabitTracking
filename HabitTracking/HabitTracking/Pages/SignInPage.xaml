@@ -1,14 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HabitTracking.Pages.SignInPage">
+             x:Class="HabitTracking.Pages.SignInPage"
+             NavigationPage.HasNavigationBar="False"
+             >
     <ContentPage.Content>
             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="25" VerticalOptions="CenterAndExpand" Padding="30,0">
                 <!--logo-->
-                <Image Grid.Row="0" Source="User" HeightRequest="150" WidthRequest="150" Aspect="AspectFit"/>
-                <!-- Main title-->
-                <Label Grid.Row="1" FontAttributes="Bold" TextColor="Silver" FontSize="30" 
-                       HorizontalTextAlignment="Center" Text="Let's plant new habits and transform your life"/>
+            <StackLayout Grid.Row="0">
+                <Image Source="Logo.png" HeightRequest="120" WidthRequest="120" Aspect="AspectFit"></Image>
+                <Label Text="Habit Tracking" TextColor="DeepPink" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+            </StackLayout>
+            <!-- Main title-->
+                <Label Grid.Row="1" Text=""/>
 
                 <!-- Fields-->
                 <Label Grid.Row="2" Text="Email" TextColor="#a6a5a0" FontSize="15" FontAttributes="Bold"/>
@@ -24,7 +28,11 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Don't have an account? "/>
-                            <Span Text="Register" TextColor="DeepPink" />
+                        <Span Text="Register" TextColor="DeepPink">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Tap_Signup"></TapGestureRecognizer>
+                            </Span.GestureRecognizers>
+                        </Span>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
