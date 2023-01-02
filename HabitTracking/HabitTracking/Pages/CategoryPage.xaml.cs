@@ -20,7 +20,8 @@ namespace HabitTracking.Pages
     public partial class CategoryPage : ContentPage
     {
         bool isCreate = true;
-        public Category newCategory = new Category { categoryName = "New Category", iconId = 1, colorId = 1, userId=1};
+        Category newCategory = new Category { categoryName = "New Category", iconId = 1, colorId = 1, userId=1};
+        Category _categorySelected;
         public CategoryPage()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace HabitTracking.Pages
         {
             HttpClient http = new HttpClient();
             var kq = await http.GetStringAsync
-                ("http://10.45.95.61/webapiqltq/api/Category/GetCategoryList?userId=" + 1);
+                ("http://webapiqltq.somee.com/api/Category/GetCategoryList?userId=" + 1);
         
             var categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);
             foreach (Category c in categoryList)
@@ -67,16 +68,17 @@ namespace HabitTracking.Pages
             overlay.IsVisible = true;
             popupEditCategory.IsVisible = true;
 
-            Category categorySelected = e.CurrentSelection[0] as Category;
-            eNameCategoryLbl.Text = categorySelected.categoryName;
-            SetColor(categorySelected);
-            eiconImg.Source = categorySelected.iconImage;
+            _categorySelected = e.CurrentSelection[0] as Category;
+            eNameCategoryLbl.Text = _categorySelected.categoryName;
+            SetColor(_categorySelected);
+            eiconImg.Source = _categorySelected.iconImage;
         }
 
         private void cmdOpenCreateCategory_Clicked(object sender, EventArgs e)
         {
             overlay.IsVisible = true;
             popupAddCategory.IsVisible = true;
+            _categorySelected = null;
         }
         
 
@@ -87,23 +89,88 @@ namespace HabitTracking.Pages
         }
         private async void Tap_OpenNameCategory(object sender, EventArgs e)
         {
-            var result = await Navigation.ShowPopupAsync(new NamePopup("Category"));
-            newCategory.categoryName = result.ToString();
+            if (_categorySelected is null)
+            {
+                var result = await Navigation.ShowPopupAsync(new NamePopup("Category"));
+                newCategory.categoryName = result.ToString();
+            }
+            else
+            {
+                var result = await Navigation.ShowPopupAsync(new NamePopup(_categorySelected.categoryName));
+                _categorySelected.categoryName = result.ToString();
+
+                HttpClient http = new HttpClient();
+                string jsonlh = JsonConvert.SerializeObject(_categorySelected);
+                StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
+                HttpResponseMessage kq;
+                kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
+                var kqtv = await kq.Content.ReadAsStringAsync();
+                if (int.Parse(kqtv.ToString()) > 0)
+                    await DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
+                else
+                    await DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
+                InitCategory();
+            }
+
         }
         private async void Tap_OpenIconCategory(object sender, EventArgs e)
         {
+            
             var result = await Navigation.ShowPopupAsync(new IconCategoryPopup());
             Icon icon = result as Icon;
-            iconImg.Source = icon.iconImage;
-            newCategory.iconId = icon.iconId;
+            if (_categorySelected is null)
+            {
+                newCategory.iconId = icon.iconId;
+                iconImg.Source = icon.iconImage;
+            }
+            else
+            {
+                _categorySelected.iconId = icon.iconId;
+                eiconImg.Source = icon.iconImage;
+
+                HttpClient http = new HttpClient();
+                string jsonlh = JsonConvert.SerializeObject(_categorySelected);
+                StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
+                HttpResponseMessage kq;
+                kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
+                var kqtv = await kq.Content.ReadAsStringAsync();
+                if (int.Parse(kqtv.ToString()) > 0)
+                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
+                else
+                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
+                InitCategory();
+            }
         }
         private async void Tap_OpenColorCategory(object sender, EventArgs e)
         {
             var result = await Navigation.ShowPopupAsync(new ColorCategoryPopup());
             Classes.Color color = result as Classes.Color;
-            newCategory.colorId = color.colorId;
-            newCategory.colorCode = color.colorCode;
-            SetColor(newCategory);
+            
+            
+            if (_categorySelected is null)
+            {
+                newCategory.colorId = color.colorId;
+                newCategory.colorCode = color.colorCode;
+                SetColor(newCategory);
+            }
+            else
+            {
+                _categorySelected.colorId = color.colorId;
+                _categorySelected.colorCode = color.colorCode;
+                SetColor(_categorySelected);
+
+                HttpClient http = new HttpClient();
+                string jsonlh = JsonConvert.SerializeObject(_categorySelected);
+                StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
+                HttpResponseMessage kq;
+                kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
+                var kqtv = await kq.Content.ReadAsStringAsync();
+                if (int.Parse(kqtv.ToString()) > 0)
+                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
+                else
+                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
+                InitCategory();
+            }
         }
         private async void Tap_CreateCategory(object sender, EventArgs e)
         {
@@ -111,12 +178,12 @@ namespace HabitTracking.Pages
             string jsonlh = JsonConvert.SerializeObject(newCategory);
             StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
             HttpResponseMessage kq;
-            kq = await http.PostAsync("http://10.45.95.61/webapiqltq/api/Category/CreateCategory", httcontent);
+            kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/CreateCategory", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
             if(int.Parse(kqtv.ToString()) > 0)
-                DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
+                DisplayAlert("Thông báo", "Thêm dữ liệu thành công", "ok");
             else
-                DisplayAlert("Thông báo", "Cập nhật dữ liệu tb", "ok");
+                DisplayAlert("Thông báo", "Thêm dữ liệu tb", "ok");
             InitCategory();
             overlay.IsVisible = false;
             popupAddCategory.IsVisible = false;
@@ -124,7 +191,23 @@ namespace HabitTracking.Pages
 
         private async void Tap_DeteteCategory(object sender, EventArgs e)
         {
-            _= DisplayAlert(null, "Delete category", "Yes", "No");
+            var delete = await DisplayAlert(null, "Delete category " + _categorySelected.categoryName + " ?", "Yes", "No");
+            if(delete)
+            {
+                HttpClient http = new HttpClient();
+                string jsonlh = JsonConvert.SerializeObject(_categorySelected);
+                StringContent httpcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
+                HttpResponseMessage kq;
+                kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/DeleteCategory", httpcontent);
+                var kqtv = await kq.Content.ReadAsStringAsync();
+                if (int.Parse(kqtv.ToString()) > 0)
+                {
+                    await DisplayAlert("Thông báo", "Xóa dữ liệu thành công", "ok");
+                    InitCategory();
+                }
+                else
+                    await DisplayAlert("Thông báo", "Xóa dữ liệu Lỗi", "ok");
+            }
         }
     }
 }

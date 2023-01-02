@@ -5,9 +5,9 @@
              x:Class="HabitTracking.Popups.NamePopup"
            Size="300,180">
         <StackLayout Padding="5">
-            <Label x:Name="nameLbl" TextColor="DeepPink" FontSize="Large" FontAttributes="Bold"></Label>
+            <Label Text="Category Name" TextColor="DeepPink" FontSize="Large" FontAttributes="Bold"></Label>
             <Frame CornerRadius="10" BorderColor="DeepPink">
-                <Entry x:Name="nameEnt"></Entry>
+                <Entry x:Name="nameEnt" Placeholder="New category"></Entry>
             </Frame>
             <Button x:Name="btnCreate" Text="OK" 
                     BackgroundColor="Transparent"  FontAttributes="Bold" TextColor="DeepPink"

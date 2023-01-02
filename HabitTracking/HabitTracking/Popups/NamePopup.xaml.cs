@@ -15,8 +15,7 @@ namespace HabitTracking.Popups
         public NamePopup(string name)
         {
             InitializeComponent();
-            nameLbl.Text = name;
-            nameEnt.Text = "New " + name;
+            nameEnt.Text = name;
         }
 
         private void btnCreate_Clicked(object sender, EventArgs e)
