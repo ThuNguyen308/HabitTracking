@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HabitTracking.Pages.SettingPage"
              Title="Setting"
-             IconImageSource="categoryIcon">
+             IconImageSource="settings">
     
 
 
@@ -114,7 +114,11 @@
                     </Grid>
                 </Frame>
                 <!--Log out-->
-                <Frame  BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                <Frame  BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False" >
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLogOutTapped" />
+                    </Frame.GestureRecognizers>
+                    
                     <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
