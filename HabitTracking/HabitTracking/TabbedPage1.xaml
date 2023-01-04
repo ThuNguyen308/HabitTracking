@@ -20,5 +20,5 @@
     <local:HomePage></local:HomePage>
     <local:StatisticsPage></local:StatisticsPage>
     <local:CategoryPage></local:CategoryPage>
-    <local:CalendarPage></local:CalendarPage>
+    <local:SettingPage></local:SettingPage>
 </TabbedPage>

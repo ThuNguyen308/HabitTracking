@@ -115,6 +115,9 @@
                 </Frame>
                 <!--Log out-->
                 <Frame  BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Logout_tapped"/>
+                    </Frame.GestureRecognizers>
                     <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -125,7 +128,8 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Image Grid.Row="0" Grid.Column="0" Source="logout.png"  HorizontalOptions="Center" VerticalOptions="Center"/>
-                        <Label Grid.Row="0" Grid.Column="1"  Text="Log out" TextColor="Black" FontSize="18" FontAttributes="Bold"  VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="1"  Text="Log out" TextColor="Black" FontSize="18" FontAttributes="Bold"  VerticalOptions="Center">
+                        </Label>
 
                     </Grid>
                 </Frame>

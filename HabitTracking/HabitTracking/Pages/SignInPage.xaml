@@ -24,10 +24,11 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Don't have an account? "/>
-                            <Span Text="Register" TextColor="DeepPink" />
-                        </FormattedString>
+                        <Span Text="Register" TextColor="DeepPink" />
+                    </FormattedString>
                     </Label.FormattedText>
                 </Label>
+                        <Button Text="Register" TextColor="DeepPink" />
             </Grid>
     </ContentPage.Content>
 </ContentPage>

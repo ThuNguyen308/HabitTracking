@@ -9,7 +9,7 @@
         <!---->
         <StackLayout  Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Spacing="5">
             <SearchBar BackgroundColor="Pink"  Placeholder="Search habit"></SearchBar>
-            <Button    
+            <Button    Clicked="btn_calendar_Clicked"
                 BackgroundColor="Pink" HeightRequest="50" WidthRequest="50" CornerRadius="25"  ImageSource="scoreIcon" HorizontalOptions="End" VerticalOptions="End"/>
         </StackLayout>
         
@@ -116,6 +116,7 @@
 
             <AbsoluteLayout>
                 <Button    AbsoluteLayout.LayoutBounds="0.97,0"   AbsoluteLayout.LayoutFlags="PositionProportional" Margin="5,5"
+                           Clicked="btn_addhabit_clicked"
                 BackgroundColor="Pink" HeightRequest="54" WidthRequest="54" CornerRadius="27"  ImageSource="scoreIcon" HorizontalOptions="Center" VerticalOptions="End"/>
             </AbsoluteLayout>
        
