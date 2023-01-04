@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using HabitTracking.Classes;
+using System.Collections.Generic;
 
 namespace HabitTracking
 {
@@ -9,11 +13,16 @@ namespace HabitTracking
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new Pages.SignInPage());
-            //MainPage = new TabbedPage1();
-        }
 
+            InitApp();
+            
+        }
+        public async void InitApp()
+        {
+            User user = new User { userName = "Thu", password = "123" };
+            
+        }
         protected override void OnStart()
         {
         }

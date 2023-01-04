@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="HabitTracking.Pages.HomePage"
              Title="Home"
-             IconImageSource="categoryIcon">
+             IconImageSource="Home">
 
     <StackLayout>
         <!---->
         <StackLayout  Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Spacing="5">
             <SearchBar BackgroundColor="Pink"  Placeholder="Search habit"></SearchBar>
-            <Button    Clicked="btn_calendar_Clicked"
-                BackgroundColor="Pink" HeightRequest="50" WidthRequest="50" CornerRadius="25"  ImageSource="scoreIcon" HorizontalOptions="End" VerticalOptions="End"/>
+            <Button    Clicked="btnCalendaar_Clicked"
+                BackgroundColor="Pink" HeightRequest="50" WidthRequest="50" CornerRadius="25"  ImageSource="calendar" HorizontalOptions="End" VerticalOptions="End"/>
         </StackLayout>
         
         
@@ -64,7 +65,7 @@
 
             <!--habit tasks-->
             <RefreshView x:Name="RVHabits" >
-                <CollectionView x:Name="listHabits" SelectionMode="Single">
+                <CollectionView x:Name="listHabits" SelectionMode="Single" SelectionChanged="listHabits_SelectionChanged">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout
                             Orientation="Vertical" Span="1"
@@ -88,20 +89,35 @@
                                 </SwipeView.RightItems>
 
                                 <StackLayout>
-                                    <Frame  BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
-                                        <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                                    <Frame BackgroundColor="White" BorderColor="#F0F0F0" HasShadow="False" >
+                                        <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*"/>
                                                 <ColumnDefinition Width="3*"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
-                                            
-                                            <Image Grid.Column="0" Source="scoreIcon"  HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                            <Label  Grid.Column="1"  Text="{Binding habitName}" TextColor="Black" FontSize="18" FontAttributes="Bold"  VerticalOptions="Center"/>
-                                            <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                                                <CheckBox></CheckBox>
-                                            </StackLayout>
-                                        </Grid>
+
+                                        <AbsoluteLayout Grid.Column="0"  HorizontalOptions="CenterAndExpand">
+                                            <BoxView BackgroundColor="{Binding colorCode}"
+                                                CornerRadius="5"
+                                                WidthRequest="50" HeightRequest="50"
+                                                AbsoluteLayout.LayoutBounds="0.5,0.5"
+                                                AbsoluteLayout.LayoutFlags="PositionProportional"
+                                                Opacity="0.1">
+                                            </BoxView>
+                                            <Image Source="{Binding iconImage}"
+                                                   xct:IconTintColorEffect.TintColor="{Binding colorCode}"
+                                                   WidthRequest="30" HeightRequest="30" Aspect="AspectFit"
+                                                   AbsoluteLayout.LayoutBounds="0.5,0.5"
+                                                   AbsoluteLayout.LayoutFlags="PositionProportional">
+
+                                            </Image>
+                                        </AbsoluteLayout>
+                                        <Label Grid.Column="1"  Text="{Binding habitName}" TextColor="Black" FontSize="18" FontAttributes="Bold"  VerticalOptions="Center"/>
+                                        <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
+                                            <CheckBox></CheckBox>
+                                        </StackLayout>
+                                    </Grid>
                                     </Frame>
                                 </StackLayout>
                             </SwipeView>
@@ -115,9 +131,8 @@
 
 
             <AbsoluteLayout>
-                <Button    AbsoluteLayout.LayoutBounds="0.97,0"   AbsoluteLayout.LayoutFlags="PositionProportional" Margin="5,5"
-                           Clicked="btn_addhabit_clicked"
-                BackgroundColor="Pink" HeightRequest="54" WidthRequest="54" CornerRadius="27"  ImageSource="scoreIcon" HorizontalOptions="Center" VerticalOptions="End"/>
+                <Button ImageSource="plus" FontSize="30" x:Name="btnAddHabit" Clicked="btnAddHabit_Clicked"  AbsoluteLayout.LayoutBounds="0.97,0"   AbsoluteLayout.LayoutFlags="PositionProportional" Margin="5,5"
+                BackgroundColor="Pink" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="54" WidthRequest="54" CornerRadius="27" />
             </AbsoluteLayout>
        
 

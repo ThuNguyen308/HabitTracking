@@ -16,8 +16,7 @@ namespace HabitTracking.Pages
         {
             InitializeComponent();
         }
-       
-        private void Logout_tapped(object sender, EventArgs e)
+        private void OnLogOutTapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SignInPage());
         }

@@ -7,10 +7,11 @@
             android:TabbedPage.BarSelectedItemColor="DeepPink"
             
              xmlns:local="clr-namespace:HabitTracking.Pages"
-             x:Class="HabitTracking.TabbedPage1" 
+             x:Class="HabitTracking.TabbedPage1"
             BarTextColor="#800040"
             BarBackground="pink"
             UnselectedTabColor="black"
+            NavigationPage.HasNavigationBar="False"
             >
   <!--Pages can be added as references or inline-->
   <!--<ContentPage Title="Tab 1" />

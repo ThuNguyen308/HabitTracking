@@ -30,11 +30,11 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding categoryName}" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
                                     <AbsoluteLayout>
-                                        <Frame BackgroundColor="{Binding categoryColor}" WidthRequest="20" HeightRequest="20" Opacity="0.1" CornerRadius="5" HorizontalOptions="EndAndExpand"></Frame>
-                                        <Image Source="{Binding categoryImage}"
+                                        <Frame BackgroundColor="{Binding colorCode}" WidthRequest="20" HeightRequest="20" Opacity="0.1" CornerRadius="5" HorizontalOptions="EndAndExpand"></Frame>
+                                        <Image Source="{Binding iconImage}"
                                                AbsoluteLayout.LayoutBounds="0.5,0.5"
                                                AbsoluteLayout.LayoutFlags="PositionProportional"
-                                               xct:IconTintColorEffect.TintColor="{Binding categoryColor}"
+                                               xct:IconTintColorEffect.TintColor="{Binding colorCode}"
                                                WidthRequest="20" HeightRequest="20"></Image>
                                     </AbsoluteLayout>
                                 </StackLayout>
