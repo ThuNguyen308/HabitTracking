@@ -10,8 +10,8 @@
         <!---->
         <StackLayout  Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Spacing="5">
             <SearchBar BackgroundColor="Pink"  Placeholder="Search habit"></SearchBar>
-            <Button    Clicked="btnCalendaar_Clicked"
-                BackgroundColor="Pink" HeightRequest="50" WidthRequest="50" CornerRadius="25"  ImageSource="calendar" HorizontalOptions="End" VerticalOptions="End"/>
+            <Button Clicked="btnCalendaar_Clicked"
+                BackgroundColor="Pink" HeightRequest="50" WidthRequest="50" CornerRadius="25"  ImageSource="calendar" HorizontalOptions="End" VerticalOptions="End"></Button>
         </StackLayout>
         
         

@@ -41,9 +41,9 @@ namespace HabitTracking.HabitPages
             kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/CreateHabit", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
             if (int.Parse(kqtv.ToString()) > 0)
-                await DisplayAlert("Thông báo", "Thêm Thoi quen thành công", "ok");
+                await DisplayAlert("Success", "Add new habit successfully", "ok");
             else
-                await DisplayAlert("Thông báo", "Thêm thoi quen tb", "ok");
+                await DisplayAlert("Error", "Can't add new habit.", "ok");
             Navigation.PushAsync(new TabbedPage1());
         }
 

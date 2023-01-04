@@ -20,5 +20,13 @@ namespace HabitTracking.Pages
         {
             Navigation.PushAsync(new SignInPage());
         }
+        private void OnAboutTapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AboutPage());
+        }
+        private void OnHelpTapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HelpPage());
+        }
     }
 }
