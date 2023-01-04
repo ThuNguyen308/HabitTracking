@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 
 namespace HabitTracking.Classes
@@ -12,18 +14,21 @@ namespace HabitTracking.Classes
         public DateTime startDate{ get; set; }
         public DateTime endtDate { get; set; }
         public string habitDescription { get; set; }
+        public string colorCode { get; set; }
+        public string iconImage { get; set; }
+        public int userId { get; set; }
 
-        public static List<Habit> InitHabits()
+        public void setIconImage_ColorCode()
         {
-            List<Habit> lstHabits;
-            lstHabits = new List<Habit>();
-
-            lstHabits.Add(new Habit { habitId = 1, habitName="do housework"});
-            lstHabits.Add(new Habit { habitId = 2, habitName="do homework" });
-            lstHabits.Add(new Habit { habitId = 3, habitName = "workout" });
-
-            return lstHabits;
-
+            foreach(Category c in Category.categoryList)
+            {
+                if(c.categoryId == categoryId)
+                {
+                    colorCode = c.colorCode;
+                    iconImage = c.iconImage;
+                }
+            }
         }
+        
     }
 }

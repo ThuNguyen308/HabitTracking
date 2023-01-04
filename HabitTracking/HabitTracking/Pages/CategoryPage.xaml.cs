@@ -19,7 +19,7 @@ namespace HabitTracking.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CategoryPage : ContentPage
     {
-        bool isCreate = true;
+        User user = new User { userName = "Thu", password = "123" };
         Category newCategory = new Category { categoryName = "New Category", iconId = 1, colorId = 1, userId=1};
         Category _categorySelected;
         public CategoryPage()
@@ -31,8 +31,8 @@ namespace HabitTracking.Pages
         }
         public void InitNewCategory()
         {
-            newCategory.setIconImage(Classes.Icon.InitIcons());
-            newCategory.setColorCode(Classes.Color.InitColors());
+            newCategory.setIconImage();
+            newCategory.setColorCode();
             iconImg.Source = newCategory.iconImage;
             SetColor(newCategory);
         }
@@ -41,14 +41,14 @@ namespace HabitTracking.Pages
             HttpClient http = new HttpClient();
             var kq = await http.GetStringAsync
                 ("http://webapiqltq.somee.com/api/Category/GetCategoryList?userId=" + 1);
-        
-            var categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);
-            foreach (Category c in categoryList)
+
+            Category.categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);
+            foreach (Category c in Category.categoryList)
             {
-                c.setIconImage(Classes.Icon.InitIcons());
-                c.setColorCode(Classes.Color.InitColors());
+                c.setIconImage();
+                c.setColorCode();
             }
-            CVCategory.ItemsSource = categoryList;
+            CVCategory.ItemsSource = Category.categoryList;
         }
         private void SetColor(Category category)
         {
@@ -56,10 +56,10 @@ namespace HabitTracking.Pages
             string currentColor = category.colorCode;
             IconTintColorEffect.SetTintColor(iconImg, (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor)));
             IconTintColorEffect.SetTintColor(eiconImg, (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor)));
-            colorFr.BackgroundColor = (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor));
-            ecolorFr.BackgroundColor = (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor));
             ecolorBV.BackgroundColor = (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor));
+            ecolorBV1.BackgroundColor = (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor));
             colorBV.BackgroundColor = (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor));
+            colorBV1.BackgroundColor = (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor));
             btnCreateCategory.TextColor = (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor));
         }
 

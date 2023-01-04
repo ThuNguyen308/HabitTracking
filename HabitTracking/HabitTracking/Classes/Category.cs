@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using HabitTracking.Classes;
+using Newtonsoft.Json;
 
 namespace HabitTracking.Classes
 {
@@ -14,10 +16,11 @@ namespace HabitTracking.Classes
         public int userId { get; set; }
         public string colorCode { get; set; }
         public string iconImage { get; set; }
-        public void setIconImage(List<Icon> lstIcon)
+        public static List<Category> categoryList { get; set; }
+        public void setIconImage()
         {
 
-            foreach (Icon ic in lstIcon)
+            foreach (Icon ic in Icon.InitIcons())
             {
                 if (iconId == ic.iconId)
                 {
@@ -26,10 +29,10 @@ namespace HabitTracking.Classes
                 }
             }
         }
-        public void setColorCode(List<Color> lstColor)
+        public void setColorCode()
         {
 
-            foreach (Color c in lstColor)
+            foreach (Color c in Color.InitColors())
             {
                 if (colorId == c.colorId)
                 {

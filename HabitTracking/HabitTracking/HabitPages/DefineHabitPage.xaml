@@ -10,11 +10,11 @@
                 HorizontalOptions="CenterAndExpand" />
             <StackLayout>
                 <Label Text="Habit Name" TextColor="DeepPink" HorizontalOptions="Start" FontSize="Medium" FontAttributes="Bold"></Label>
-                <Entry Placeholder="e.g., Meditate in the morning"></Entry>
+                <Entry x:Name="txtName" Placeholder="e.g., Meditate in the morning"></Entry>
             </StackLayout>
             <StackLayout>
                 <Label Text="Description" TextColor="DeepPink" HorizontalOptions="Start" FontSize="Medium" FontAttributes="Bold"></Label>
-                <Entry Placeholder="Description (optional)"></Entry>
+                <Entry x:Name="txtDsc" Placeholder="Description (optional)"></Entry>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
                 <Button x:Name="btnBack" Text="Back" Clicked="btnBack_Clicked" HorizontalOptions="Start" WidthRequest="200" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Transparent"></Button>

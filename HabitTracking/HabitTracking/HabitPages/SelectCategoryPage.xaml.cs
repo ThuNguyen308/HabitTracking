@@ -15,31 +15,18 @@ namespace HabitTracking.HabitPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SelectCategoryPage : ContentPage
     {
-        List<Classes.Category> lstCategory = new List<Classes.Category>();
+        Habit newHabit = new Habit() { userId = 1};
         public SelectCategoryPage()
         {
             InitializeComponent();
-            InitCategory();
-           
-        }
-        private async void InitCategory()
-        {
-            HttpClient http = new HttpClient();
-            var kq = await http.GetStringAsync
-               ("http://10.45.95.61/webapiqltq/api/Category/GetCategoryList?userId=" + 1);
-
-            var categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);
-            foreach (Category c in categoryList)
-            {
-                c.setIconImage(Classes.Icon.InitIcons());
-                c.setColorCode(Classes.Color.InitColors());
-            }
-            CVCategorySelect.ItemsSource = categoryList;
+            CVCategorySelect.ItemsSource = Category.categoryList;
         }
 
         private void CVCategorySelect_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Navigation.PushAsync(new HabitPages.DefineHabitPage());
+            Category selectedCategory = e.CurrentSelection[0] as Category;
+            newHabit.categoryId = selectedCategory.categoryId;
+            Navigation.PushAsync(new HabitPages.DefineHabitPage(newHabit));
         }
 
         private void btnCalcel_Clicked(object sender, EventArgs e)
