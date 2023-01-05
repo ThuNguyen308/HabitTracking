@@ -17,6 +17,7 @@ namespace HabitTracking.Pages
     {
         public SignInPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
         }
 

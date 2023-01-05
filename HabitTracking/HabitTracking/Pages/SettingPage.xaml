@@ -39,8 +39,11 @@
 
         <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="5,10">
             <StackLayout>
-                <!--help-->
+                <!--about-->
                 <Frame  BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                    <Frame.GestureRecognizers >
+                        <TapGestureRecognizer Tapped="OnAboutTapped"/>
+                    </Frame.GestureRecognizers>
                     <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -58,8 +61,11 @@
                     </Grid>
                 </Frame>
 
-                <!--about-->
+                <!--help-->
                 <Frame  BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                    <Frame.GestureRecognizers >
+                        <TapGestureRecognizer Tapped="OnHelpTapped"/>
+                    </Frame.GestureRecognizers>
                     <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -129,7 +135,8 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Image Grid.Row="0" Grid.Column="0" Source="logout.png"  HorizontalOptions="Center" VerticalOptions="Center"/>
-                        <Label Grid.Row="0" Grid.Column="1"  Text="Log out" TextColor="Black" FontSize="18" FontAttributes="Bold"  VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="1"  Text="Log out" TextColor="Black" FontSize="18" FontAttributes="Bold"  VerticalOptions="Center">
+                        </Label>
 
                     </Grid>
                 </Frame>

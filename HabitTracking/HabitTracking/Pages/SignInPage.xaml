@@ -36,6 +36,7 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
+                        <Button Text="Register" TextColor="DeepPink" />
             </Grid>
     </ContentPage.Content>
 </ContentPage>
