@@ -81,10 +81,14 @@
                                     <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
                                         <SwipeItem Text="Delete"
                                            IconImageSource="scoreIcon"
-                                            BackgroundColor="#800040"/>
+                                            BackgroundColor="#800040"
+                                            CommandParameter="{Binding .}"
+                                            Invoked="SwipeDeleteItem_Invoked"/>
                                         <SwipeItem Text="Edit"
                                            IconImageSource="scoreIcon"
-                                            BackgroundColor="Green"/>
+                                            BackgroundColor="Green"
+                                            CommandParameter="{Binding .}"
+                                            Invoked="SwipeEditItem_Invoked"/>
                                     </SwipeItems>
                                 </SwipeView.RightItems>
 

@@ -66,7 +66,38 @@ namespace HabitTracking.Pages
         private void listHabits_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Habit habitSelected = e.CurrentSelection[0] as Habit;
-            Navigation.PushAsync(new Pages.HabitPage());
+            
+        }
+
+        private async void SwipeDeleteItem_Invoked(object sender, EventArgs e)
+        {
+            bool answer = await DisplayAlert("Warning", "Do you really want to delete it?", "Yes", "No");
+            if (answer)
+            {
+                SwipeItem swipeItem = (SwipeItem)sender;
+                Habit product = swipeItem.CommandParameter as Habit;
+
+                HttpClient http = new HttpClient();
+                string jsonlh = JsonConvert.SerializeObject(product);
+                StringContent httpcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
+                HttpResponseMessage kq;
+                kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/DeleteHabit", httpcontent);
+                var kqtv = await kq.Content.ReadAsStringAsync();
+                if (int.Parse(kqtv.ToString()) > 0)
+                {
+                    await DisplayAlert("Thông báo", "Xóa dữ liệu thành công", "ok");
+                    InitHabit();
+                }
+                else
+                    await DisplayAlert("Thông báo", "Xóa dữ liệu Lỗi", "ok");
+            }
+        }
+        private async void SwipeEditItem_Invoked(object sender, EventArgs e)
+        {
+            SwipeItem swipeItem = (SwipeItem)sender;
+            Habit habit = swipeItem.CommandParameter as Habit;
+
+            Navigation.PushAsync(new Pages.HabitPage(habit));
         }
     }
 }

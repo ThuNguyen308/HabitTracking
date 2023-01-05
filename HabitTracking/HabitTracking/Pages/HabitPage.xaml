@@ -10,7 +10,8 @@
                 <Frame BorderColor="Transparent" Padding="15,15,5,15">
                     <Image Source="nameIcon.png" xct:IconTintColorEffect.TintColor="#e6005c" WidthRequest="20" HeightRequest="20" Aspect="AspectFit"></Image>
                 </Frame>
-                <Label x:Name="habitLbl" Text="Habit name" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label Text="Habit name" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label x:Name="nameLbl" FontSize="Medium" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"></Label>
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Tap_OpenHabitName"></TapGestureRecognizer>
                 </StackLayout.GestureRecognizers>
@@ -22,17 +23,16 @@
                     <Image Source="categoryIcon.png" xct:IconTintColorEffect.TintColor="#e6005c" WidthRequest="20" HeightRequest="20" Aspect="AspectFit"></Image>
                 </Frame>
                 <Label Text="Category" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"></Label>
-                <Label Text="Art" FontSize="Medium" VerticalOptions="CenterAndExpand"></Label>
+                <Label x:Name="categoryNameLbl" FontSize="Medium" VerticalOptions="CenterAndExpand"></Label>
                 <AbsoluteLayout>
-                    <Frame CornerRadius="5" BackgroundColor="#e6005c" WidthRequest="10" HeightRequest="10" Opacity="0.1"
+                    <BoxView x:Name="colorBV" CornerRadius="5" WidthRequest="30" HeightRequest="30" Opacity="0.1"
                            AbsoluteLayout.LayoutBounds="0.5,0.5"
                             AbsoluteLayout.LayoutFlags="PositionProportional">
-                    </Frame>
-                        <Image Source="categoryIcon"
-                           xct:IconTintColorEffect.TintColor="#e6005c"
+                    </BoxView>
+                        <Image x:Name="categoryImg"
                            WidthRequest="20" HeightRequest="20" Aspect="AspectFit"
                            AbsoluteLayout.LayoutBounds="0.5,0.5"
-                 AbsoluteLayout.LayoutFlags="PositionProportional"></Image>
+                            AbsoluteLayout.LayoutFlags="PositionProportional"></Image>
                 </AbsoluteLayout>
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Tap_OpenIconCategory"></TapGestureRecognizer>
@@ -45,7 +45,7 @@
                     <Image Source="startTime.png" xct:IconTintColorEffect.TintColor="#e6005c" WidthRequest="20" HeightRequest="20" Aspect="AspectFit"></Image>
                 </Frame>
                 <Label Text="Start date" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"></Label>
-                <DatePicker Format="d"></DatePicker>
+                <DatePicker x:Name="startDate" Format="d"></DatePicker>
             </StackLayout>
             <BoxView HeightRequest="1" BackgroundColor="#f9ecf2"></BoxView>
             
@@ -54,19 +54,20 @@
                     <Image Source="endTime.png" xct:IconTintColorEffect.TintColor="#e6005c" WidthRequest="20" HeightRequest="20" Aspect="AspectFit"></Image>
                 </Frame>
                 <Label Text="End date" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"></Label>
-                <DatePicker Format="d"></DatePicker>
+                <DatePicker x:Name="endDate" Format="d"></DatePicker>
             </StackLayout>
             <BoxView HeightRequest="1" BackgroundColor="#f9ecf2"></BoxView>
             
             <StackLayout Orientation="Horizontal">
                 <Frame BorderColor="Transparent" Padding="15,15,5,15">
-                    <Image Source="nameIcon.png" xct:IconTintColorEffect.TintColor="#e6005c" WidthRequest="20" HeightRequest="20" Aspect="AspectFit"></Image>
+                    <Image Source="nameIcon.png" WidthRequest="20" HeightRequest="20" Aspect="AspectFit"></Image>
                 </Frame>
                 <Label Text="Description" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"></Label>
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Tap_OpenDescription"></TapGestureRecognizer>
                 </StackLayout.GestureRecognizers>
             </StackLayout>
+            <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked" VerticalOptions="EndAndExpand" BackgroundColor="DeepPink" TextColor="White" FontSize="Medium" FontAttributes="Bold" CornerRadius="10"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

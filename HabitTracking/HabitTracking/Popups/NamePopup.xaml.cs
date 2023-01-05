@@ -12,10 +12,12 @@ namespace HabitTracking.Popups
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NamePopup : Popup
     {
-        public NamePopup(string name)
+        public NamePopup(string lblName, string name)
         {
             InitializeComponent();
+            nameLbl.Text = lblName + " Name";
             nameEnt.Text = name;
+            nameEnt.Placeholder = "New " + lblName;
         }
 
         private void btnCreate_Clicked(object sender, EventArgs e)

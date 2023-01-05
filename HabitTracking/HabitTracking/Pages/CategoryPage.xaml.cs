@@ -91,12 +91,12 @@ namespace HabitTracking.Pages
         {
             if (_categorySelected is null)
             {
-                var result = await Navigation.ShowPopupAsync(new NamePopup("Category"));
+                var result = await Navigation.ShowPopupAsync(new NamePopup("Category", null));
                 newCategory.categoryName = result.ToString();
             }
             else
             {
-                var result = await Navigation.ShowPopupAsync(new NamePopup(_categorySelected.categoryName));
+                var result = await Navigation.ShowPopupAsync(new NamePopup("Category", _categorySelected.categoryName));
                 _categorySelected.categoryName = result.ToString();
 
                 HttpClient http = new HttpClient();
@@ -115,8 +115,8 @@ namespace HabitTracking.Pages
         }
         private async void Tap_OpenIconCategory(object sender, EventArgs e)
         {
-            
-            var result = await Navigation.ShowPopupAsync(new IconCategoryPopup());
+            Category category = new Category() { categoryId = _categorySelected.categoryId };
+            var result = await Navigation.ShowPopupAsync(new IconCategoryPopup(category));
             Icon icon = result as Icon;
             if (_categorySelected is null)
             {

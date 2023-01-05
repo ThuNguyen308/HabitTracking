@@ -31,9 +31,10 @@ namespace HabitTracking.HabitPages
 
         private async void btnSaveHabit_Clicked(object sender, EventArgs e)
         {
-            _newhabit.startDate = startDatePkr.Date;
-            _newhabit.endtDate = endDatePkr.Date;
+            _newhabit.habitStartDate = startDatePkr.Date;
+            _newhabit.habitEndDate = endDatePkr.Date;
 
+            //await DisplayAlert("", _newhabit.habitStartDate.ToString("MM-dd-yyyy") + " " + _newhabit.habitEndtDate.ToString("MM-dd-yyyy"), "ok");
             HttpClient http = new HttpClient();
             string jsonlh = JsonConvert.SerializeObject(_newhabit);
             StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");

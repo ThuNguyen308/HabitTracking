@@ -11,9 +11,10 @@ namespace HabitTracking.Classes
         public int habitId { get; set; }
         public int categoryId { get; set; }
         public string habitName { get; set; }
-        public DateTime startDate{ get; set; }
-        public DateTime endtDate { get; set; }
+        public DateTime habitStartDate{ get; set; }
+        public DateTime habitEndDate { get; set; }
         public string habitDescription { get; set; }
+        public string categoryName { get; set; }
         public string colorCode { get; set; }
         public string iconImage { get; set; }
         public int userId { get; set; }
@@ -26,6 +27,7 @@ namespace HabitTracking.Classes
                 {
                     colorCode = c.colorCode;
                     iconImage = c.iconImage;
+                    categoryName = c.categoryName;
                 }
             }
         }

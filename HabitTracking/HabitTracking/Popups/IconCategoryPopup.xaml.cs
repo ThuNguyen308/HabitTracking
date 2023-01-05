@@ -15,21 +15,22 @@ namespace HabitTracking.Popups
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IconCategoryPopup : Popup
     {
-        public IconCategoryPopup()
+        Category categorySelected = new Category();
+        public IconCategoryPopup(Category category)
         {
             InitializeComponent();
-            CVCategoryIcon.ItemsSource = Classes.Icon.InitIcons();
+            categorySelected = category;
+            CVCategory.ItemsSource = Category.categoryList;
         }
-        private void CVCategoryIcon_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        private void CVCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-            Classes.Icon iconSelected = e.CurrentSelection[0] as Icon;
-            Dismiss(iconSelected);
+            categorySelected = e.CurrentSelection[0] as Category;
+            Dismiss(categorySelected);
         }
-
         private void btnClose_Clicked(object sender, EventArgs e)
         {
-            Dismiss(null);
+            Dismiss(categorySelected);
         }
     }
 }
