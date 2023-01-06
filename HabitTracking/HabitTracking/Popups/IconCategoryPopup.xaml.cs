@@ -31,7 +31,6 @@ namespace HabitTracking.Popups
         private void btnClose_Clicked(object sender, EventArgs e)
         {
             Dismiss(categorySelected);
-            //done
         }
     }
 }
