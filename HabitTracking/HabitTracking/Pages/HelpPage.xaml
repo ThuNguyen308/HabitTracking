@@ -4,18 +4,18 @@
              x:Class="HabitTracking.Pages.HelpPage"
              Title="Help">
     <StackLayout Padding="10">
-        <Label Text="Asked Question" FontAttributes="Bold" FontSize="Large"></Label>
+        <Label Text="Asked Question" Style="{StaticResource header}"></Label>
         <ScrollView>
         <StackLayout>
-                <Label Text="How can I track bad habits I want to break?" FontSize="Medium" FontAttributes="Bold"/>
-                <Label Text="This app only suports tracking positive habits repeat everyday. You can create your own habit category and theme color for each category." FontSize="Medium"/>
-                <Label Text="How to create new habit" FontSize="Medium" FontAttributes="Bold"/>
-                <Label Text=" 1. You choose your habit category. " FontSize="Medium" />
-                <Label Text="2. Entering the habit name and its description." FontSize="Medium"/>
-                <Label Text="3. You set the start date and end date of the habit. " FontSize="Medium"/>
-                <Label Text="4. Click Save button.  " FontSize="Medium"/>
-                <Label Text="How can You donate to the project?" FontSize="Medium" FontAttributes="Bold"/>
-                <Label Text="HabitTracking does not accept any monetary donations. There are many other ways yu can contribute to the project, however, even if ou are not software developer, such as providing feedback, finding bugs, sharing the app with your friends, rating and writing a review on Google Play store, or translating the app into your language." FontSize="Medium"/>
+                <Label Text="How can I track bad habits I want to break?" Style="{StaticResource header1}"/>
+                <Label Text="This app only suports tracking positive habits repeat everyday. You can create your own habit category and theme color for each category." Style="{StaticResource content}"/>
+                <Label Text="How to create new habit" Style="{StaticResource header1}"/>
+                <Label Text=" 1. You choose your habit category. " Style="{StaticResource content}"/>
+                <Label Text="2. Entering the habit name and its description." Style="{StaticResource content}"/>
+                <Label Text="3. You set the start date and end date of the habit. " Style="{StaticResource content}"/>
+                <Label Text="4. Click Save button.  " Style="{StaticResource content}"/>
+                <Label Text="How can You donate to the project?" Style="{StaticResource header1}"/>
+                <Label Text="HabitTracking does not accept any monetary donations. There are many other ways yu can contribute to the project, however, even if ou are not software developer, such as providing feedback, finding bugs, sharing the app with your friends, rating and writing a review on Google Play store, or translating the app into your language." Style="{StaticResource content}"/>
             </StackLayout>
         </ScrollView>
     </StackLayout>

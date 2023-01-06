@@ -15,10 +15,10 @@
                 <Label Grid.Row="1" Text=""/>
 
                 <!-- Fields-->
-                <Label Grid.Row="2" Text="Email" TextColor="#a6a5a0" FontSize="15" FontAttributes="Bold"/>
-                <Entry Grid.Row="3" Placeholder="yourname@domain.com" HeightRequest="40" BackgroundColor="#fdfbf6" />
+                <Label Grid.Row="2" Text="Username" TextColor="#a6a5a0" FontSize="15" FontAttributes="Bold"/>
+                <Entry x:Name="txtUsername" Grid.Row="3" Placeholder="yourname@domain.com" HeightRequest="40" BackgroundColor="#fdfbf6" />
                 <Label Grid.Row="4" Text="Password" TextColor="#a6a5a0" FontSize="15" FontAttributes="Bold" />
-                <Entry Grid.Row="5" IsPassword="True" Placeholder="******" HeightRequest="40" BackgroundColor="#fdfbf6"/>
+            <Entry x:Name="txtPassword" Grid.Row="5" IsPassword="True" Placeholder="******" HeightRequest="40" BackgroundColor="#fdfbf6"/>
 
                 <!-- Forget password label-->
                 <Label Grid.Row="6" Text="Forgot your password?" FontAttributes="Bold" FontSize="15" HorizontalOptions="End" />

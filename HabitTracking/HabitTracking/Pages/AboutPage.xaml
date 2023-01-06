@@ -5,26 +5,26 @@
              Title="About us">
     <ContentPage.Content>
         <StackLayout Padding="10">
-            <Label Text="About this app:" FontAttributes="Bold" FontSize="Large"></Label>
+            <Label Text="About this app:" Style="{StaticResource header}"></Label>
             <ScrollView>
                 <StackLayout>
                     <Label Text="If you want to stick with a habit for good, one simple and effective things you can do is keep a habit tracker. 
 HabitTracking helps you create and maintain good habits, allowing you to achieve your long-term goals. Detailed charts and statistics show you how your habits improved over time. The app is completely ad-free, open source and it respects your privacy.
-" FontSize="Medium"></Label>
+" Style="{StaticResource content}"></Label>
 
-                    <Label Text="Simple, beautiful and modern interface" FontSize="Medium" FontAttributes="Bold"/>
+                    <Label Text="Simple, beautiful and modern interface" Style="{StaticResource header1}"/>
                     <Label Text="HabitTracking has a minimalistic interface that is very easy to use and follows the material design guidelines.
-Habit score. In addition to showing your current streak, HabitTracking has an advanced formula for calculating the strength of your habits. Every repetition makes your habit stronger, and every missed day makes it weaker." FontSize="Medium"/>
-                    <Label Text="Detail graphs and statistics" FontSize="Medium" FontAttributes="Bold"/>
+Habit score. In addition to showing your current streak, HabitTracking has an advanced formula for calculating the strength of your habits. Every repetition makes your habit stronger, and every missed day makes it weaker." Style="{StaticResource content}"/>
+                    <Label Text="Detail graphs and statistics" Style="{StaticResource header1}"/>
                     <Label Text="Clearly see how your habits improved over time with detailed charts and statistics. Scroll back to see the complete history of your habits."
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
-                    <Label Text="Reminders" FontSize="Medium" FontAttributes="Bold"/>
-                    <Label Text="Create an individual reminder for each habit, at a chosen hour of the day. Easily check, dismiss or snooze your directly from the notification, without opening the app." FontSize="Medium"/>
-                    <Label Text="Completely ad-free and open source" FontSize="Medium" FontAttributes="Bold"/>
-                    <Label Text="There are absolutely no advertisements, annoying notifications or intrusive permissions in this app, and there will never be. " FontSize="Medium"/>
-                    <Label Text="Work offline and respects your privacy" FontSize="Medium" FontAttributes="Bold"/>
-                    <Label Text="HabitTracking doesn't require an Internet connection or onlien account registration. Your confidential habit data never leaves your phone. Neither the developers nor any third-parties have access to it." FontSize="Medium"/>
+                HorizontalOptions="CenterAndExpand" Style="{StaticResource content}"/>
+                    <Label Text="Reminders" Style="{StaticResource header1}"/>
+                    <Label Text="Create an individual reminder for each habit, at a chosen hour of the day. Easily check, dismiss or snooze your directly from the notification, without opening the app." Style="{StaticResource content}"/>
+                    <Label Text="Completely ad-free and open source" Style="{StaticResource header1}"/>
+                    <Label Text="There are absolutely no advertisements, annoying notifications or intrusive permissions in this app, and there will never be. " Style="{StaticResource content}"/>
+                    <Label Text="Work offline and respects your privacy" Style="{StaticResource header1}"/>
+                    <Label Text="HabitTracking doesn't require an Internet connection or onlien account registration. Your confidential habit data never leaves your phone. Neither the developers nor any third-parties have access to it." Style="{StaticResource content}"/>
 
                 </StackLayout>
             </ScrollView>

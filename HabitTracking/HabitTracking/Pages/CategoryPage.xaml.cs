@@ -77,6 +77,7 @@ namespace HabitTracking.Pages
         private void cmdOpenCreateCategory_Clicked(object sender, EventArgs e)
         {
             overlay.IsVisible = true;
+            overlay1.IsVisible = true;
             popupAddCategory.IsVisible = true;
             _categorySelected = null;
         }
@@ -85,6 +86,7 @@ namespace HabitTracking.Pages
         private void Tap_RemovePopup(object sender, EventArgs e)
         {
             overlay.IsVisible = false;
+            overlay1.IsVisible = false;
             _ = popupAddCategory.IsVisible == true ? popupAddCategory.IsVisible = false : popupEditCategory.IsVisible = false;
         }
         private async void Tap_OpenNameCategory(object sender, EventArgs e)
@@ -106,9 +108,9 @@ namespace HabitTracking.Pages
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
-                    await DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
+                    await DisplayAlert("Success!", "Your category has been updated.", "Ok");
                 else
-                    await DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
+                    await DisplayAlert("Error", "Oops, something went wrong.", "Ok");
                 InitCategory();
             }
 
@@ -135,9 +137,9 @@ namespace HabitTracking.Pages
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
-                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
+                    await DisplayAlert("Success!", "Your category has been updated.", "Ok");
                 else
-                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
+                    await DisplayAlert("Error", "Oops, something went wrong.", "Ok");
                 InitCategory();
             }
         }
@@ -166,9 +168,9 @@ namespace HabitTracking.Pages
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
-                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
+                    await DisplayAlert("Success!", "Your category has been updated.", "Ok");
                 else
-                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
+                    await DisplayAlert("Error!", "Oops, something went wrong.", "Ok");
                 InitCategory();
             }
         }
@@ -181,11 +183,12 @@ namespace HabitTracking.Pages
             kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/CreateCategory", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
             if(int.Parse(kqtv.ToString()) > 0)
-                DisplayAlert("Thông báo", "Thêm dữ liệu thành công", "ok");
+                DisplayAlert("Success!", "Your habit category has been created", "Ok");
             else
-                DisplayAlert("Thông báo", "Thêm dữ liệu tb", "ok");
+                DisplayAlert("Error!", "Oops, something went wrong.", "Ok");
             InitCategory();
             overlay.IsVisible = false;
+            overlay1.IsVisible = false;
             popupAddCategory.IsVisible = false;
         }
 

@@ -13,6 +13,10 @@ namespace HabitTracking.Classes
         public string password { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
+        public string email { get; set; }
+        public string userImage { get; set; }
+
+        public static User user;
         public static List<Habit> habitList { get; set; }
 
     }
