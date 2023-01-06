@@ -73,7 +73,7 @@
                 <StackLayout Padding="5,0,0,0">
                     <StackLayout Orientation="Horizontal" Padding="10">
                         <BoxView x:Name="colorBV" HeightRequest="10" WidthRequest="5" CornerRadius="5"/>
-                        <Label Text="New Category" FontSize="Medium" Padding="5" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
+                        <Label x:Name="txtCategoyName" Text="New Category" FontSize="Medium" Padding="5" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
                         <AbsoluteLayout>
                             <BoxView x:Name="colorBV1"
                                      CornerRadius="5"

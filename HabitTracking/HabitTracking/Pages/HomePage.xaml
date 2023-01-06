@@ -17,7 +17,6 @@
         
         
         <Label Text="TODAY" FontSize="20" VerticalOptions="Center" FontAttributes="Bold" Margin="10,10"/>
-
             <!--date-->
         <Frame HasShadow="True" CornerRadius="10" Margin="20,0,20,10" Padding="0" HeightRequest="120" VerticalOptions="Start">
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
@@ -139,9 +138,6 @@
                         AbsoluteLayout.LayoutBounds="0.97,0"   AbsoluteLayout.LayoutFlags="PositionProportional" Margin="5,15"
                         Style="{StaticResource buttonPlus}"/>
             </AbsoluteLayout>
-       
-
-       
     </StackLayout>
    
 </ContentPage>

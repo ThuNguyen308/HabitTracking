@@ -21,24 +21,18 @@
                 <!-- Basic information-->
 
                 <!--first name, last name-->
-                <Label Grid.Row="2" Grid.Column="0" Text="First name" TextColor="#787878" FontSize="15" FontAttributes="Bold"/>
-                <Entry x:Name="txtFirstName" Grid.Row="3" Grid.Column="0" HeightRequest="40"  Placeholder="Abc" BackgroundColor="#fdfbf6"/>
-                <Label Grid.Row="2" Grid.Column="1" Text="Last name" TextColor="#787878" FontSize="15" FontAttributes="Bold"/>
-                <Entry x:Name="txtLastName" Grid.Row="3" Grid.Column="1" HeightRequest="40"  Placeholder="Abc" BackgroundColor="#fdfbf6"/>
+                <Entry x:Name="txtFirstName" Grid.Row="3" Grid.Column="0" HeightRequest="40"  Placeholder="First name" BackgroundColor="#fdfbf6"/>
+                <Entry x:Name="txtLastName" Grid.Row="3" Grid.Column="1" HeightRequest="40"  Placeholder="Last name" BackgroundColor="#fdfbf6"/>
 
 
                 <!--username-->
-                <Label Grid.Row="4" Grid.Column="0" Text="Username" TextColor="#787878" FontSize="15" FontAttributes="Bold"/>
-                <Entry x:Name="txtUsername" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  HeightRequest="40"  Placeholder="Abc" BackgroundColor="#fdfbf6"/>
+                <Entry x:Name="txtUsername" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  HeightRequest="40"  Placeholder="Username" BackgroundColor="#fdfbf6"/>
 
                 <!-- Email-->
-                <Label Grid.Row="6" Grid.Column="0" Text="Email" TextColor="#787878" FontSize="15" FontAttributes="Bold"/>
-                <Entry x:Name="txtEmail" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"  HeightRequest="40" Placeholder="yourname@domain.com" BackgroundColor="#fdfbf6"/>
+                <Entry x:Name="txtEmail" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"  HeightRequest="40" Placeholder="email@gmail.com" BackgroundColor="#fdfbf6"/>
                 <!-- Password-->
-                <Label Grid.Row="8" Grid.Column="0" Text="Password" TextColor="#787878" FontSize="15" FontAttributes="Bold" />
-                <Entry x:Name="txtPassword" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" IsPassword="True"  HeightRequest="40" Placeholder="******" BackgroundColor="#fdfbf6"/>
-                <Label Grid.Row="10" Text="Confirm Password" TextColor="#787878" FontSize="15" FontAttributes="Bold"/>
-                <Entry x:Name="txtPassword2" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" IsPassword="True" HeightRequest="40" Placeholder="******" BackgroundColor="#fdfbf6"/>
+                <Entry x:Name="txtPassword" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" IsPassword="True"  HeightRequest="40" Placeholder="Password" BackgroundColor="#fdfbf6"/>
+                <Entry x:Name="txtPassword2" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" IsPassword="True" HeightRequest="40" Placeholder="Confirm password" BackgroundColor="#fdfbf6"/>
 
 
                 <!-- Register button-->

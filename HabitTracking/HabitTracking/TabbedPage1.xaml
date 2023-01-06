@@ -13,13 +13,8 @@
             UnselectedTabColor="black"
             NavigationPage.HasNavigationBar="False"
             >
-  <!--Pages can be added as references or inline-->
-  <!--<ContentPage Title="Tab 1" />
-  <ContentPage Title="Tab 2" />
-  <ContentPage Title="Tab 3" />-->
-
-    <local:HomePage></local:HomePage>
-    <local:StatisticsPage></local:StatisticsPage>
-    <local:CategoryPage></local:CategoryPage>
-    <local:SettingPage></local:SettingPage>
+            <local:HomePage></local:HomePage>
+            <local:StatisticsPage></local:StatisticsPage>
+            <local:CategoryPage></local:CategoryPage>
+            <local:SettingPage></local:SettingPage>
 </TabbedPage>

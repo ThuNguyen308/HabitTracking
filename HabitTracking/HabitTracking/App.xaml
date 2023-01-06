@@ -25,6 +25,12 @@
                 <Setter Property="FontSize" Value="30"/>
             </Style>
             <!--category page-->
+            <Style x:Key="signInHeader" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="TextColor" Value="#a6a5a0"/>
+            </Style>
+            <!--category page-->
             <Style x:Key="button" TargetType="Button">
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="TextColor" Value="White"/>

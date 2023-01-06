@@ -26,7 +26,7 @@ namespace HabitTracking.Pages
 
             //Category List
             var kq = await http.GetStringAsync
-                ("http://webapiqltq.somee.com/api/Category/GetCategoryList?userId=" + 1);
+                ("http://webapiqltq.somee.com/api/Category/GetCategoryList?userId=" + User.user.userId);
 
             Category.categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);
             foreach (Category c in Category.categoryList)
@@ -37,7 +37,7 @@ namespace HabitTracking.Pages
 
             //Habit List
             var kq1 = await http.GetStringAsync
-                ("http://webapiqltq.somee.com/api/Habit/GetHabitList?userId=" + 1);
+                ("http://webapiqltq.somee.com/api/Habit/GetHabitList?userId=" + User.user.userId);
             User.habitList = JsonConvert.DeserializeObject<List<Habit>>(kq1);
             foreach (Habit hb in User.habitList)
             {
@@ -71,7 +71,7 @@ namespace HabitTracking.Pages
 
         private async void SwipeDeleteItem_Invoked(object sender, EventArgs e)
         {
-            bool answer = await DisplayAlert("Warning", "Do you really want to delete it?", "Yes", "No");
+            bool answer = await DisplayAlert("Warning", "Do you really want to delete this habit?", "Yes", "No");
             if (answer)
             {
                 SwipeItem swipeItem = (SwipeItem)sender;
@@ -85,11 +85,11 @@ namespace HabitTracking.Pages
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
                 {
-                    await DisplayAlert("Thông báo", "Xóa dữ liệu thành công", "ok");
+                    await DisplayAlert("Habit deleted", "Habit is successfully deleted", "OK");
                     InitHabit();
                 }
                 else
-                    await DisplayAlert("Thông báo", "Xóa dữ liệu Lỗi", "ok");
+                    await DisplayAlert("Error", "Can't delete this habit.", "OK");
             }
         }
         private async void SwipeEditItem_Invoked(object sender, EventArgs e)

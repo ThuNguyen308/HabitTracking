@@ -19,8 +19,8 @@ namespace HabitTracking.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CategoryPage : ContentPage
     {
-        User user = new User { userName = "Thu", password = "123" };
-        Category newCategory = new Category { categoryName = "New Category", iconId = 1, colorId = 1, userId=1};
+        //User user = new User { userName = "Thu", password = "123" };
+        Category newCategory = new Category { categoryName = "New Category", iconId = 1, colorId = 1, userId= User.user.userId};
         Category _categorySelected;
         public CategoryPage()
         {
@@ -40,7 +40,7 @@ namespace HabitTracking.Pages
         {
             HttpClient http = new HttpClient();
             var kq = await http.GetStringAsync
-                ("http://webapiqltq.somee.com/api/Category/GetCategoryList?userId=" + 1);
+                ("http://webapiqltq.somee.com/api/Category/GetCategoryList?userId=" + User.user.userId);
 
             Category.categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);
             foreach (Category c in Category.categoryList)
@@ -95,6 +95,7 @@ namespace HabitTracking.Pages
             {
                 var result = await Navigation.ShowPopupAsync(new NamePopup("Category", null));
                 newCategory.categoryName = result.ToString();
+                txtCategoyName.Text = result.ToString();
             }
             else
             {
@@ -145,6 +146,8 @@ namespace HabitTracking.Pages
         }
         private async void Tap_OpenColorCategory(object sender, EventArgs e)
         {
+            int newColorCode = 0;
+            if (_categorySelected is null) newColorCode = newCategory.colorId;
             var result = await Navigation.ShowPopupAsync(new ColorCategoryPopup());
             Classes.Color color = result as Classes.Color;
             
@@ -183,9 +186,9 @@ namespace HabitTracking.Pages
             kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/CreateCategory", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
             if(int.Parse(kqtv.ToString()) > 0)
-                DisplayAlert("Success!", "Your habit category has been created", "Ok");
+                await DisplayAlert("Success!", "Your habit category has been created", "Ok");
             else
-                DisplayAlert("Error!", "Oops, something went wrong.", "Ok");
+                await DisplayAlert("Error!", "Oops, something went wrong.", "Ok");
             InitCategory();
             overlay.IsVisible = false;
             overlay1.IsVisible = false;
