@@ -4,12 +4,12 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="HabitTracking.Pages.HomePage"
              Title="Home"
-             IconImageSource="Home">
+             IconImageSource="Home32">
 
     <StackLayout>
         <!---->
-        <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Spacing="5">
-            <SearchBar x:Name="SearchBarHabit"
+        <StackLayout  Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Spacing="5">
+             <SearchBar x:Name="SearchBarHabit"
                        HorizontalOptions="Fill"
                        VerticalOptions="CenterAndExpand"
                        Placeholder="Search habit..."
@@ -20,13 +20,12 @@
                        HorizontalTextAlignment="Start"
                        TextChanged="SearchBarHabit_TextChanged"></SearchBar>
             <Button Clicked="btnCalendaar_Clicked"
-                BackgroundColor="Pink" HeightRequest="50" WidthRequest="50" CornerRadius="25"  ImageSource="calendar" HorizontalOptions="End" VerticalOptions="End"></Button>
+                BackgroundColor="#FF96AD" HeightRequest="50" WidthRequest="50"  ImageSource="calendar"></Button>
         </StackLayout>
         
         
         
-        <Label Text="TODAY" FontSize="16" VerticalOptions="Center" TextColor="black"  Margin="10,10"/>
-
+        <Label Text="TODAY" FontSize="20" VerticalOptions="Center" FontAttributes="Bold" Margin="10,10"/>
             <!--date-->
         <Frame HasShadow="True" CornerRadius="10" Margin="20,0,20,10" Padding="0" HeightRequest="120" VerticalOptions="Start">
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
@@ -89,12 +88,12 @@
                                 <SwipeView.RightItems>
                                     <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
                                         <SwipeItem Text="Delete"
-                                           IconImageSource="delete"
+                                           IconImageSource="scoreIcon"
                                             BackgroundColor="#800040"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeDeleteItem_Invoked"/>
                                         <SwipeItem Text="Edit"
-                                           IconImageSource="edit"
+                                           IconImageSource="scoreIcon"
                                             BackgroundColor="Green"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeEditItem_Invoked"/>
@@ -131,9 +130,9 @@
 
                                             </Image>
                                         </AbsoluteLayout>
-                                        <Label Grid.Column="1"  Text="{Binding habitName}" TextColor="Black" FontSize="18" FontAttributes="Bold"  VerticalOptions="Center"/>
+                                        <Label Grid.Column="1"  Text="{Binding habitName}" Style="{StaticResource text}"/>
                                         <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                                            <CheckBox></CheckBox>
+                                            <CheckBox ></CheckBox>
                                         </StackLayout>
                                     </Grid>
                                     </Frame>
@@ -148,8 +147,10 @@
 
 
 
-                <Button ImageSource="plus" FontSize="30" x:Name="btnAddHabit" Clicked="btnAddHabit_Clicked" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"  Margin="5,5"
-                BackgroundColor="Pink" HeightRequest="54" WidthRequest="54" CornerRadius="27" />
+            <AbsoluteLayout>
+                <Button ImageSource="plus" FontSize="30" x:Name="btnAddHabit" Clicked="btnAddHabit_Clicked"  AbsoluteLayout.LayoutBounds="0.97,0"   AbsoluteLayout.LayoutFlags="PositionProportional" Margin="5,5"
+                BackgroundColor="Pink" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="54" WidthRequest="54" CornerRadius="27" />
+            </AbsoluteLayout>
        
 
        

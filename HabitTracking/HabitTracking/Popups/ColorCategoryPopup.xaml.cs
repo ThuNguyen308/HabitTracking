@@ -15,12 +15,16 @@ namespace HabitTracking.Popups
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ColorCategoryPopup : Popup
     {
+        
+        
+
         public ColorCategoryPopup()
         {
             InitializeComponent();
             CVCategoryColor.ItemsSource = Classes.Color.InitColors() ;
 
         }
+      
 
         private void CVCategoryColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -30,7 +34,9 @@ namespace HabitTracking.Popups
 
         private void btnClose_Clicked(object sender, EventArgs e)
         {
-            Dismiss(null);
+            Classes.Color oldColor = new Classes.Color();
+            oldColor = Classes.Color.InitColors()[0];
+            Dismiss(oldColor);
         }
     }
 }

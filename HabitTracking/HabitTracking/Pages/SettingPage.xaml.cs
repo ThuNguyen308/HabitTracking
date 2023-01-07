@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HabitTracking.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,16 @@ namespace HabitTracking.Pages
         public SettingPage()
         {
             InitializeComponent();
+            if(User.user.userId > 0)
+            {
+                txtUsername.Text = User.user.userName;
+                txtEmail.Text = User.user.email;
+            }
+            else
+            {
+                txtUsername.Text = "Anonymous";
+                txtEmail.Text = "anonymous@gmail.com";
+            }
         }
         private void OnLogOutTapped(object sender, EventArgs e)
         {

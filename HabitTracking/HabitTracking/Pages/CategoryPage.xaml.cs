@@ -19,8 +19,8 @@ namespace HabitTracking.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CategoryPage : ContentPage
     {
-        User user = new User { userName = "Thu", password = "123" };
-        Category newCategory = new Category { categoryName = "New Category", iconId = 1, colorId = 1, userId=1};
+        //User user = new User { userName = "Thu", password = "123" };
+        Category newCategory = new Category { categoryName = "New Category", iconId = 1, colorId = 1, userId= User.user.userId};
         Category _categorySelected;
         public CategoryPage()
         {
@@ -40,7 +40,7 @@ namespace HabitTracking.Pages
         {
             HttpClient http = new HttpClient();
             var kq = await http.GetStringAsync
-                ("http://webapiqltq.somee.com/api/Category/GetCategoryList?userId=" + 1);
+                ("http://webapiqltq.somee.com/api/Category/GetCategoryList?userId=" + User.user.userId);
 
             Category.categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);
             foreach (Category c in Category.categoryList)
@@ -77,6 +77,7 @@ namespace HabitTracking.Pages
         private void cmdOpenCreateCategory_Clicked(object sender, EventArgs e)
         {
             overlay.IsVisible = true;
+            overlay1.IsVisible = true;
             popupAddCategory.IsVisible = true;
             _categorySelected = null;
         }
@@ -85,6 +86,7 @@ namespace HabitTracking.Pages
         private void Tap_RemovePopup(object sender, EventArgs e)
         {
             overlay.IsVisible = false;
+            overlay1.IsVisible = false;
             _ = popupAddCategory.IsVisible == true ? popupAddCategory.IsVisible = false : popupEditCategory.IsVisible = false;
         }
         private async void Tap_OpenNameCategory(object sender, EventArgs e)
@@ -93,6 +95,7 @@ namespace HabitTracking.Pages
             {
                 var result = await Navigation.ShowPopupAsync(new NamePopup("Category", null));
                 newCategory.categoryName = result.ToString();
+                txtCategoyName.Text = result.ToString();
             }
             else
             {
@@ -106,9 +109,9 @@ namespace HabitTracking.Pages
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
-                    await DisplayAlert(null, "Habit was updated", "ok");
+                    await DisplayAlert("Success!", "Your category has been updated.", "Ok");
                 else
-                    await DisplayAlert(null, "Update failed", "ok");
+                    await DisplayAlert("Error", "Oops, something went wrong.", "Ok");
                 InitCategory();
             }
 
@@ -135,14 +138,16 @@ namespace HabitTracking.Pages
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
-                    await DisplayAlert(null, "Habit was updated", "ok");
+                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
                 else
-                    await DisplayAlert(null, "Update failed", "ok");
+                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
                 InitCategory();
             }
         }
         private async void Tap_OpenColorCategory(object sender, EventArgs e)
         {
+            int newColorCode = 0;
+            if (_categorySelected is null) newColorCode = newCategory.colorId;
             var result = await Navigation.ShowPopupAsync(new ColorCategoryPopup());
             Classes.Color color = result as Classes.Color;
             
@@ -166,9 +171,9 @@ namespace HabitTracking.Pages
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
-                    await DisplayAlert(null, "Habit was updated", "ok");
+                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
                 else
-                    await DisplayAlert(null, "Update failed", "ok");
+                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
                 InitCategory();
             }
         }
@@ -180,12 +185,13 @@ namespace HabitTracking.Pages
             HttpResponseMessage kq;
             kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/CreateCategory", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
-            if (int.Parse(kqtv.ToString()) > 0)
-                await DisplayAlert(null, "Add new category successfully", "ok");
+            if(int.Parse(kqtv.ToString()) > 0)
+                DisplayAlert("Thông báo", "Thêm dữ liệu thành công", "ok");
             else
-                await DisplayAlert(null, "Can't add new category", "ok");
+                DisplayAlert("Thông báo", "Thêm dữ liệu tb", "ok");
             InitCategory();
             overlay.IsVisible = false;
+            overlay1.IsVisible = false;
             popupAddCategory.IsVisible = false;
         }
 

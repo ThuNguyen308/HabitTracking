@@ -2,17 +2,17 @@
 <xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
-             Size="300,400"
+             Size="300,400" 
              x:Class="HabitTracking.Popups.ColorCategoryPopup">
-    <StackLayout Padding="10">
-        <Label Text="Category Color" FontSize="Medium" TextColor="Black" HorizontalOptions="CenterAndExpand" Padding="0,10,0,10"></Label>
-        <BoxView HeightRequest="1" Color="Black" />
+    <StackLayout Padding="10" >
+        <Label Text="Category Color" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Padding="0,10,0,10"></Label>
+        <BoxView HeightRequest="1" Color="#f9ecf2" />
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <CollectionView x:Name="CVCategoryColor"
-                            SelectionMode="Single"
+                            SelectionMode="Single" 
                             SelectionChanged="CVCategoryColor_SelectionChanged">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="4"
@@ -21,19 +21,20 @@
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate >
                         <!--<Frame.BackgroundColor>
                                 <OnPlatform x:TypeArguments="Color">
                                     <On Platform="Android" Value="{Binding colorCode}"></On>
                                     <On Platform="iOS" Value="{Binding colorCode}"></On>
                                 </OnPlatform>
                             </Frame.BackgroundColor>-->
-                            <BoxView BackgroundColor="{Binding colorCode}" CornerRadius="25" WidthRequest="50" HeightRequest="50"></BoxView>
+                        
+                        <BoxView BackgroundColor="{Binding colorCode}"  CornerRadius="25"  WidthRequest="50" HeightRequest="50" ></BoxView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </Grid>
-        <BoxView HeightRequest="1" Color="Black" />
+        <BoxView HeightRequest="1" Color="#f9ecf2" />
         <Button x:Name="btnClose" Text="Close" Clicked="btnClose_Clicked" FontAttributes="Bold" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"></Button>
     </StackLayout>
 </xct:Popup>

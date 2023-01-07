@@ -22,7 +22,14 @@ namespace HabitTracking.Popups
 
         private void btnCreate_Clicked(object sender, EventArgs e)
         {
-            var result = nameEnt.Text;
+            var result = "" ;
+            if (nameEnt.Text != "" && nameEnt.Text != null)
+            {
+                result = nameEnt.Text;
+            }
+            else
+                result = "New category";
+
             Dismiss(result);
         }
     }

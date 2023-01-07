@@ -24,12 +24,15 @@ namespace HabitTracking.Classes
             lstColors.Add(new Classes.Color { colorId = 9, colorCode = "#00b386" });
             lstColors.Add(new Classes.Color { colorId = 10, colorCode = "#2d862d" });
             lstColors.Add(new Classes.Color { colorId = 11, colorCode = "#00cc00" });
-            lstColors.Add(new Classes.Color { colorId = 12, colorCode = " #73e600" });
+            lstColors.Add(new Classes.Color { colorId = 12, colorCode = "#73e600" });
             lstColors.Add(new Classes.Color { colorId = 13, colorCode = "#999900" });
             lstColors.Add(new Classes.Color { colorId = 14, colorCode = "#ff9900" });
             lstColors.Add(new Classes.Color { colorId = 15, colorCode = "#ff8000" });
             lstColors.Add(new Classes.Color { colorId = 16, colorCode = "#cc4400" });
             lstColors.Add(new Classes.Color { colorId = 17, colorCode = "#ff3300" });
+            lstColors.Add(new Classes.Color { colorId = 18, colorCode = "#FFC93C" }); 
+            lstColors.Add(new Classes.Color { colorId = 19, colorCode = "#472183" });
+            lstColors.Add(new Classes.Color { colorId = 20, colorCode = "#ADA2FF" });
 
             return lstColors;
         }
