@@ -14,13 +14,27 @@ namespace HabitTracking.Popups
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IconPopup : Popup
     {
+        Classes.Icon oldIcon = new Classes.Icon();
         public IconPopup()
         {
             InitializeComponent();
             CVIcon.ItemsSource = Icon.InitIcons();
 
         }
-        
+        public IconPopup(int oldIconId)
+        {
+            InitializeComponent();
+            CVIcon.ItemsSource = Icon.InitIcons();
+
+            foreach (Classes.Icon ic in Classes.Icon.InitIcons())
+            {
+                if (oldIconId == ic.iconId)
+                {
+                    oldIcon = ic; break;
+                }
+            }
+        }
+
         private void CVCategoryColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Classes.Icon iconSelected = e.CurrentSelection[0] as Icon;
@@ -29,10 +43,8 @@ namespace HabitTracking.Popups
 
         private void btnClose_Clicked(object sender, EventArgs e)
         {
-            //Classes.Icon oldIcon = new Classes.Icon();
-            //oldIcon = Classes.Icon.InitIcons()[0];
-            //Dismiss(oldIcon);
-            Dismiss(null);
+            
+            Dismiss(oldIcon);
         }
     }
 }

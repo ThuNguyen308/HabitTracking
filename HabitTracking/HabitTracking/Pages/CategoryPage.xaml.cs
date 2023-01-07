@@ -13,6 +13,8 @@ using Xamarin.CommunityToolkit.Effects;
 using System.Net.Http;
 using Newtonsoft.Json;
 using HabitTracking.Classes;
+using Color = HabitTracking.Classes.Color;
+using System.Drawing;
 
 namespace HabitTracking.Pages
 {
@@ -21,6 +23,9 @@ namespace HabitTracking.Pages
     {
         //User user = new User { userName = "Thu", password = "123" };
         Category newCategory = new Category { categoryName = "New Category", iconId = 1, colorId = 1, userId= User.user.userId};
+        Category defaultCategory = new Category { categoryName = "New Category", iconId = 1, colorId = 1, userId= User.user.userId};
+
+        Category oldCategory;
         Category _categorySelected;
         public CategoryPage()
         {
@@ -30,10 +35,13 @@ namespace HabitTracking.Pages
         }
         public void InitNewCategory()
         {
-            newCategory.setIconImage();
-            newCategory.setColorCode();
-            iconImg.Source = newCategory.iconImage;
-            SetColor(newCategory);
+            defaultCategory.setIconImage();
+            defaultCategory.setColorCode();
+            iconImg.Source = defaultCategory.iconImage;
+            SetColor(defaultCategory);
+            txtCategoyName.Text = defaultCategory.categoryName;
+            oldCategory = defaultCategory;
+            return ;
         }
         private async void InitCategory()
         {
@@ -75,12 +83,14 @@ namespace HabitTracking.Pages
 
         private void cmdOpenCreateCategory_Clicked(object sender, EventArgs e)
         {
+
             overlay.IsVisible = true;
             overlay1.IsVisible = true;
-            popupAddCategory.IsVisible = true;
+            InitNewCategory();
             _categorySelected = null;
+            popupAddCategory.IsVisible = true;
         }
-        
+
 
         private void Tap_RemovePopup(object sender, EventArgs e)
         {
@@ -117,9 +127,10 @@ namespace HabitTracking.Pages
         }
         private async void Tap_OpenIconCategory(object sender, EventArgs e)
         {
-            //Category category = new Category() { categoryId = _categorySelected.categoryId };
-            //var result = await Navigation.ShowPopupAsync(new IconCategoryPopup(category));
-            var result = await Navigation.ShowPopupAsync(new IconPopup());
+            if (_categorySelected is null) oldCategory.iconId = newCategory.iconId;
+            else oldCategory.iconId = _categorySelected.iconId;
+
+            var result = await Navigation.ShowPopupAsync(new IconPopup(oldCategory.iconId));
 
             Icon  icon = result as Icon;
 
@@ -148,9 +159,10 @@ namespace HabitTracking.Pages
         }
         private async void Tap_OpenColorCategory(object sender, EventArgs e)
         {
-            int newColorCode = 0;
-            if (_categorySelected is null) newColorCode = newCategory.colorId;
-            var result = await Navigation.ShowPopupAsync(new ColorCategoryPopup());
+            if (_categorySelected is null) oldCategory.colorId = newCategory.colorId;
+            else oldCategory.colorId = _categorySelected.colorId;
+
+            var result = await Navigation.ShowPopupAsync(new ColorCategoryPopup(oldCategory.colorId));
             Classes.Color color = result as Classes.Color;
             
             
@@ -172,10 +184,14 @@ namespace HabitTracking.Pages
                 HttpResponseMessage kq;
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
-                if (int.Parse(kqtv.ToString()) > 0)
-                    await DisplayAlert("Success!", "Your category has been updated.", "Ok");
-                else
-                    await DisplayAlert("Error", "Oops, something went wrong.", "Ok");
+                if (_categorySelected.colorId != oldCategory.colorId)
+                {
+                    if (int.Parse(kqtv.ToString()) > 0)
+                        await DisplayAlert("Success!", "Your category has been updated.", "Ok");
+                    else
+                        await DisplayAlert("Error", "Oops, something went wrong.", "Ok");
+                }
+               
                 InitCategory();
             }
         }
