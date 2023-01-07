@@ -83,7 +83,7 @@ namespace HabitTracking.Pages
                 HttpResponseMessage kq;
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/DeleteHabit", httpcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
-                f(int.Parse(kqtv.ToString()) > 0)
+                if(int.Parse(kqtv.ToString()) > 0)
                 {
                     await DisplayAlert("Habit deleted", "Habit is successfully deleted", "OK");
                     InitHabit();

@@ -118,8 +118,10 @@ namespace HabitTracking.Pages
         }
         private async void Tap_OpenIconCategory(object sender, EventArgs e)
         {
-            Category category = new Category() { categoryId = _categorySelected.categoryId };
-            var result = await Navigation.ShowPopupAsync(new IconCategoryPopup(category));
+            //Category category = new Category() { categoryId = _categorySelected.categoryId };
+            //var result = await Navigation.ShowPopupAsync(new IconCategoryPopup(category));
+            var result = await Navigation.ShowPopupAsync(new IconPopup());
+
             Icon icon = result as Icon;
             if (_categorySelected is null)
             {
@@ -138,9 +140,9 @@ namespace HabitTracking.Pages
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
-                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
+                    await DisplayAlert("Success", "Update new Icon Successfully", "Ok");
                 else
-                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
+                    await DisplayAlert("Error", "Failed to update.", "Ok");
                 InitCategory();
             }
         }
@@ -171,9 +173,9 @@ namespace HabitTracking.Pages
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
-                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
+                    await DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
                 else
-                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
+                    await DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
                 InitCategory();
             }
         }
@@ -186,9 +188,9 @@ namespace HabitTracking.Pages
             kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/CreateCategory", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
             if(int.Parse(kqtv.ToString()) > 0)
-                DisplayAlert("Thông báo", "Thêm dữ liệu thành công", "ok");
+                await DisplayAlert("Thông báo", "Thêm dữ liệu thành công", "ok");
             else
-                DisplayAlert("Thông báo", "Thêm dữ liệu tb", "ok");
+                await DisplayAlert("Thông báo", "Thêm dữ liệu tb", "ok");
             InitCategory();
             overlay.IsVisible = false;
             overlay1.IsVisible = false;
@@ -209,6 +211,9 @@ namespace HabitTracking.Pages
                 if (int.Parse(kqtv.ToString()) > 0)
                 {
                     await DisplayAlert(null, "Category was deleted", "ok");
+                    overlay.IsVisible = false;
+                    overlay1.IsVisible = false;
+                    popupEditCategory.IsVisible = false;
                     InitCategory();
                 }
                 else

@@ -76,7 +76,7 @@
                             </Grid.ColumnDefinitions>
                             <StackLayout Grid.Column="0" VerticalOptions="CenterAndExpand">
                                 <Label Text="Current" HorizontalTextAlignment="Center"></Label>
-                                <Label x:Name="currentStreakLbl" TextColor="DeepPink" FStyle="{StaticResource header1}" HorizontalTextAlignment="Center"></Label>
+                                <Label x:Name="currentStreakLbl" TextColor="DeepPink" Style="{StaticResource header1}" HorizontalTextAlignment="Center"></Label>
                             </StackLayout>
                             <BoxView HeightRequest="90" Grid.Column="1" WidthRequest="1" BackgroundColor="#f9ecf2"></BoxView>
 

@@ -8,7 +8,7 @@
 
     <StackLayout>
         <!---->
-        <StackLayout  Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Spacing="5">
+        <StackLayout  Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Spacing="0" BackgroundColor="Pink">
              <SearchBar x:Name="SearchBarHabit"
                        HorizontalOptions="Fill"
                        VerticalOptions="CenterAndExpand"
@@ -88,18 +88,18 @@
                                 <SwipeView.RightItems>
                                     <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
                                         <SwipeItem Text="Delete"
-                                           IconImageSource="scoreIcon"
-                                            BackgroundColor="#800040"
+                                           IconImageSource="delete32"
+                                            BackgroundColor="#EA8A8A"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeDeleteItem_Invoked"/>
                                         <SwipeItem Text="Edit"
-                                           IconImageSource="scoreIcon"
-                                            BackgroundColor="Green"
+                                           IconImageSource="pen32"
+                                            BackgroundColor="#DBE9B7"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeEditItem_Invoked"/>
                                     <SwipeItem Text="Statistics"
-                                           IconImageSource="statistics"
-                                            BackgroundColor="Green"
+                                           IconImageSource="barChart"
+                                            BackgroundColor="#8EA5EB"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeStatisticsItem_Invoked"/>
                                 </SwipeItems>
@@ -149,7 +149,7 @@
 
             <AbsoluteLayout>
                 <Button ImageSource="plus" FontSize="30" x:Name="btnAddHabit" Clicked="btnAddHabit_Clicked"  AbsoluteLayout.LayoutBounds="0.97,0"   AbsoluteLayout.LayoutFlags="PositionProportional" Margin="5,5"
-                BackgroundColor="Pink" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="54" WidthRequest="54" CornerRadius="27" />
+                          Style="{StaticResource buttonPlus}" xct:IconTintColorEffect.TintColor="White"/>
             </AbsoluteLayout>
        
 

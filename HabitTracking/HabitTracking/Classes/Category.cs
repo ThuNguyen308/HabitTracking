@@ -17,6 +17,7 @@ namespace HabitTracking.Classes
         public string colorCode { get; set; }
         public string iconImage { get; set; }
         public static List<Category> categoryList { get; set; }
+        
         public void setIconImage()
         {
 
@@ -41,5 +42,6 @@ namespace HabitTracking.Classes
                 }
             }
         }
+        
     }
 }
