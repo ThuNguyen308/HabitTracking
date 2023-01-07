@@ -22,7 +22,6 @@ namespace HabitTracking.Pages
     public partial class StatisticsPage : ContentPage
     {
         List<HabitHistory> checkinList = new List<HabitHistory>();
-        static float score;
         public StatisticsPage()
         {
             InitializeComponent();
@@ -34,8 +33,10 @@ namespace HabitTracking.Pages
         }
         private async void InitCheckinList(Habit habit)
         {
-            int processDate = (int)(DateTime.Now.Date - habit.habitStartDate).TotalDays;
-            int totalDate = (int)(habit.habitEndDate - habit.habitStartDate).TotalDays;
+            float score = 0;
+            int processDate = (int)(DateTime.Now.Date - habit.habitStartDate).TotalDays + 1;
+            if (processDate < 0) processDate = 0;
+            int totalDate = (int)(habit.habitEndDate - habit.habitStartDate).TotalDays + 1;
 
             HttpClient http = new HttpClient();
             var kq = await http.GetStringAsync
@@ -43,9 +44,7 @@ namespace HabitTracking.Pages
             checkinList = JsonConvert.DeserializeObject<List<HabitHistory>>(kq);
 
             //**** score
-            if(checkinList.Count == 0)
-                score = 0;
-            else
+            if(checkinList.Count != 0)
                 score = ((float)checkinList.Count / processDate * 100);
 
             ChartEntry[] entries = new[]
@@ -61,13 +60,11 @@ namespace HabitTracking.Pages
 
             };
             chartViewPie.Chart = new RadialGaugeChart { Entries = entries };
-            scoreLbl.Text = score.ToString("#");
-            await DisplayAlert(null, processDate + "; "+ checkinList.Count.ToString() + "; " + ((float)checkinList.Count / processDate)*100, "ok");
+            scoreLbl.Text = score > 0 ? score.ToString("#") : "0";
 
             //**** progess
             txtProgress.Text = processDate.ToString() + "/" + totalDate.ToString();
             double progress = (double)processDate / totalDate;
-            //progressBar.ProgressTo(0, 500, Easing.Linear);
             progressBar.Progress = progress;
             startDateLbl.Text = habit.habitStartDate.ToString("MM/dd/yyyy");
             endDateLbl.Text = habit.habitEndDate.ToString("MM/dd/yyyy");
@@ -80,14 +77,16 @@ namespace HabitTracking.Pages
             }
             var list = dates.OrderBy(x => x).ToList();
             var consecutiveDatesCounter = 1;
-            var bestStreak = 1;
-            var currentStreak = 1;
-            for (int i = 0; i < list.Count-1; i++)
+            var length = list.Count;
+            var bestStreak = length > 0 ? 1 : 0;
+            var currentStreak = length > 0 ? 1 : 0;
+            for (int i = 0; i < length - 1; i++)
             {
-                
                 if (list[i].AddDays(1) == list[i+1])
                 {
                     consecutiveDatesCounter++;
+                    if (i == length - 2)
+                        bestStreak = consecutiveDatesCounter;
                 }
                 else
                 {
@@ -95,26 +94,14 @@ namespace HabitTracking.Pages
                     {
                         bestStreak = consecutiveDatesCounter;
                     }
-
                     consecutiveDatesCounter = 1;
                 }
-                if(i == list.Count-1)
-                {
+                if (i == length -2)
                     currentStreak = consecutiveDatesCounter;
-                }
             }
-            _ = currentStreak > 1 ? currentStreakLbl.Text = currentStreak + " DAYS" : currentStreakLbl.Text = currentStreak + " DAY";
-            _ = bestStreak > 1 ? bestStreakLbl.Text = bestStreak + " DAYS" : bestStreakLbl.Text = bestStreak + " DAY";
+            currentStreakLbl.Text = currentStreak > 1 ? currentStreak + " DAYS" : currentStreak + " DAY";
+            bestStreakLbl.Text =  bestStreak > 1 ? bestStreak + " DAYS" : bestStreak + " DAY";
 
-            /*string st = "";
-
-
-            for (int i = 1; i < list.Count; i++)
-            {
-                    st += list[i - 1].AddDays(1).ToString("MM/dd/yyyy") + " == " + list[i].ToString("MM/dd/yyyy") + "= " + (list[i - 1].AddDays(1) == list[i]).ToString() +"\n";
-            }*/
-           // await DisplayAlert(null, st, "ok");
-            await DisplayAlert(null, bestStreak.ToString() + currentStreak.ToString(), "ok");
         }
     }
 }
