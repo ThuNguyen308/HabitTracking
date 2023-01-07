@@ -22,7 +22,12 @@ namespace HabitTracking.Pages
 
         private async void BtnSignin_Clicked(object sender, EventArgs e)
         {
-            if(txtPassword.Text != txtPassword2.Text)
+            if (txtFirstName.Text == null || txtLastName.Text == null || txtUsername.Text == null || txtEmail.Text == null | txtPassword.Text == null)
+            {
+                await DisplayAlert("Error!", "Please enter all infomation .", "Ok");
+                return;
+            }
+            else if(txtPassword.Text != txtPassword2.Text)
             {
                 await DisplayAlert("Error!", "Please make sure your passwords match.", "Ok");
                 return;

@@ -16,7 +16,7 @@
 
                 <!-- Fields-->
                 <Label Grid.Row="2" Text="Username" Style="{StaticResource signInHeader}"/>
-                <Entry x:Name="txtUsername" Grid.Row="3" Placeholder="Abc" HeightRequest="50" FontSize="20" BackgroundColor="#fdfbf6" />
+                <Entry x:Name="txtUsername" Grid.Row="3" Placeholder="Enter your username" HeightRequest="50" FontSize="20" BackgroundColor="#fdfbf6" />
             <Label Grid.Row="4" Text="Password" Style="{StaticResource signInHeader}" />
             <Entry x:Name="txtPassword" Grid.Row="5" IsPassword="True" Placeholder="******" HeightRequest="50" FontSize="20" BackgroundColor="#fdfbf6"/>
 
