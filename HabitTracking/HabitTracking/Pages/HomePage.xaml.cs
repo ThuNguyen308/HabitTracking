@@ -18,7 +18,6 @@ namespace HabitTracking.Pages
         public HomePage()
         {
             InitializeComponent();
-            IconImageSource = "home_full";
             InitHabit();
         }
         private async void InitHabit()

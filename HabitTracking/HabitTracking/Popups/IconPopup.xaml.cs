@@ -20,6 +20,7 @@ namespace HabitTracking.Popups
             CVIcon.ItemsSource = Icon.InitIcons();
 
         }
+        
         private void CVCategoryColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Classes.Icon iconSelected = e.CurrentSelection[0] as Icon;
@@ -28,9 +29,10 @@ namespace HabitTracking.Popups
 
         private void btnClose_Clicked(object sender, EventArgs e)
         {
-            Classes.Icon oldIcon = new Classes.Icon();
-            oldIcon = Classes.Icon.InitIcons()[0];
-            Dismiss(oldIcon);
+            //Classes.Icon oldIcon = new Classes.Icon();
+            //oldIcon = Classes.Icon.InitIcons()[0];
+            //Dismiss(oldIcon);
+            Dismiss(null);
         }
     }
 }

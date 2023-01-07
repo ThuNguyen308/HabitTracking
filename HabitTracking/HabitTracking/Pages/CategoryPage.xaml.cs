@@ -27,7 +27,6 @@ namespace HabitTracking.Pages
             InitializeComponent();
             InitCategory();
             InitNewCategory();
-            IconImageSource = "category_full";
         }
         public void InitNewCategory()
         {
@@ -122,8 +121,9 @@ namespace HabitTracking.Pages
             //var result = await Navigation.ShowPopupAsync(new IconCategoryPopup(category));
             var result = await Navigation.ShowPopupAsync(new IconPopup());
 
-            Icon icon = result as Icon;
-            if (_categorySelected is null)
+            Icon  icon = result as Icon;
+
+            if (_categorySelected is null )
             {
                 newCategory.iconId = icon.iconId;
                 iconImg.Source = icon.iconImage;
