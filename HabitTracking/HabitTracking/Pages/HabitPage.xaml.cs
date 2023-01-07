@@ -82,9 +82,10 @@ namespace HabitTracking.Pages
             kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/UpdateHabit", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
             if (int.Parse(kqtv.ToString()) > 0)
-                await DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
+                await DisplayAlert(null, "Habit was updated", "ok");
             else
-                await DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
+                await DisplayAlert(null, "Update failed", "ok");
+            Navigation.PushAsync(new TabbedPage1());
         }
     }
 }

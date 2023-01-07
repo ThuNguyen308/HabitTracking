@@ -8,8 +8,17 @@
 
     <StackLayout>
         <!---->
-        <StackLayout  Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Spacing="5">
-            <SearchBar BackgroundColor="Pink"  Placeholder="Search habit"></SearchBar>
+        <StackLayout  Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Spacing="5">
+            <SearchBar x:Name="SearchBarHabit"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="CenterAndExpand"
+                       Placeholder="Search habit..."
+                       CancelButtonColor="DeepPink"
+                       PlaceholderColor="DeepPink"
+                       BackgroundColor="Pink"
+                       TextTransform="Lowercase"
+                       HorizontalTextAlignment="Start"
+                       TextChanged="SearchBarHabit_TextChanged"></SearchBar>
             <Button Clicked="btnCalendaar_Clicked"
                 BackgroundColor="Pink" HeightRequest="50" WidthRequest="50" CornerRadius="25"  ImageSource="calendar" HorizontalOptions="End" VerticalOptions="End"></Button>
         </StackLayout>
@@ -80,16 +89,21 @@
                                 <SwipeView.RightItems>
                                     <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
                                         <SwipeItem Text="Delete"
-                                           IconImageSource="scoreIcon"
+                                           IconImageSource="delete"
                                             BackgroundColor="#800040"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeDeleteItem_Invoked"/>
                                         <SwipeItem Text="Edit"
-                                           IconImageSource="scoreIcon"
+                                           IconImageSource="edit"
                                             BackgroundColor="Green"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeEditItem_Invoked"/>
-                                    </SwipeItems>
+                                    <SwipeItem Text="Statistics"
+                                           IconImageSource="statistics"
+                                            BackgroundColor="Green"
+                                            CommandParameter="{Binding .}"
+                                            Invoked="SwipeStatisticsItem_Invoked"/>
+                                </SwipeItems>
                                 </SwipeView.RightItems>
 
                                 <StackLayout>
@@ -134,10 +148,8 @@
 
 
 
-            <AbsoluteLayout>
-                <Button ImageSource="plus" FontSize="30" x:Name="btnAddHabit" Clicked="btnAddHabit_Clicked"  AbsoluteLayout.LayoutBounds="0.97,0"   AbsoluteLayout.LayoutFlags="PositionProportional" Margin="5,5"
-                BackgroundColor="Pink" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="54" WidthRequest="54" CornerRadius="27" />
-            </AbsoluteLayout>
+                <Button ImageSource="plus" FontSize="30" x:Name="btnAddHabit" Clicked="btnAddHabit_Clicked" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"  Margin="5,5"
+                BackgroundColor="Pink" HeightRequest="54" WidthRequest="54" CornerRadius="27" />
        
 
        

@@ -4,7 +4,9 @@ using System.Text;
 
 namespace HabitTracking.Classes
 {
-    class HabitHistory
+    public class HabitHistory
     {
+        public int habitId {get;set;}
+        public DateTime checkinDate { get; set; }
     }
 }

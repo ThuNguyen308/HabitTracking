@@ -85,11 +85,11 @@ namespace HabitTracking.Pages
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
                 {
-                    await DisplayAlert("Thông báo", "Xóa dữ liệu thành công", "ok");
+                    await DisplayAlert(null, "Habit was deleted", "ok");
                     InitHabit();
                 }
                 else
-                    await DisplayAlert("Thông báo", "Xóa dữ liệu Lỗi", "ok");
+                    await DisplayAlert(null, "Delete failed", "ok");
             }
         }
         private async void SwipeEditItem_Invoked(object sender, EventArgs e)
@@ -99,6 +99,14 @@ namespace HabitTracking.Pages
 
             Navigation.PushAsync(new Pages.HabitPage(habit));
         }
+        
+        private async void SwipeStatisticsItem_Invoked(object sender, EventArgs e)
+        {
+            SwipeItem swipeItem = (SwipeItem)sender;
+            Habit habit = swipeItem.CommandParameter as Habit;
+
+            Navigation.PushAsync(new Pages.StatisticsPage(habit));
+        }
         private void btn_calendar_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new CalendarPage());
@@ -106,6 +114,11 @@ namespace HabitTracking.Pages
         private void btn_addhabit_clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new HabitPages.SelectCategoryPage());
+        }
+
+        private void SearchBarHabit_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            listHabits.ItemsSource = User.habitList.Where(habit => habit.habitName.ToLower().Contains(e.NewTextValue));
         }
     }
 }

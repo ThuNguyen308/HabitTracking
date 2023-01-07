@@ -22,7 +22,7 @@
                         <microcharts:ChartView x:Name="chartViewPie" HeightRequest="200"
                                            AbsoluteLayout.LayoutBounds="0.5,0.5,200,200"
                                            AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                        <Label Text="50" TextColor="#800040" FontSize="40" FontAttributes="Bold"
+                        <Label x:Name="scoreLbl" TextColor="#800040" FontSize="40" FontAttributes="Bold"
                             AbsoluteLayout.LayoutBounds="0.5,0.5"
                             AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
                     </AbsoluteLayout>
@@ -46,10 +46,10 @@
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
                             <Label Text="End" AbsoluteLayout.LayoutBounds="1,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
                         </AbsoluteLayout>
-                        <ProgressBar x:Name="progressBar" Progress="0.5" ProgressColor="DeepPink"></ProgressBar>
+                        <ProgressBar x:Name="progressBar" ProgressColor="DeepPink"></ProgressBar>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="11/17/2022" HorizontalOptions="Start"></Label>
-                            <Label Text="11/17/2022" HorizontalOptions="EndAndExpand"></Label>
+                            <Label x:Name="startDateLbl" HorizontalOptions="Start"></Label>
+                            <Label x:Name="endDateLbl" HorizontalOptions="EndAndExpand"></Label>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout >
@@ -61,7 +61,7 @@
                         <Frame BackgroundColor="#f9ecf2" Padding="4" CornerRadius="5"
                        AbsoluteLayout.LayoutBounds="0.5,0.5"
                         AbsoluteLayout.LayoutFlags="PositionProportional">
-                            <Label Text="Habit score" FontSize="Body" TextColor="#800040"></Label>
+                            <Label Text="Habit streak" FontSize="Body" TextColor="#800040"></Label>
                         </Frame>
                     </AbsoluteLayout>
                     <StackLayout Padding="0,20,0,20">
@@ -76,17 +76,17 @@
                             </Grid.ColumnDefinitions>
                             <StackLayout Grid.Column="0" VerticalOptions="CenterAndExpand">
                                 <Label Text="Current" HorizontalTextAlignment="Center"></Label>
-                                <Label Text="1 DAY" TextColor="DeepPink" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+                                <Label x:Name="currentStreakLbl" TextColor="DeepPink" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
                             </StackLayout>
                             <BoxView HeightRequest="90" Grid.Column="1" WidthRequest="1" BackgroundColor="#f9ecf2"></BoxView>
 
                             <StackLayout Grid.Column="2" VerticalOptions="CenterAndExpand">
                                 <Label Text="Best" HorizontalTextAlignment="Center"></Label>
-                                <Label Text="4 DAYS" TextColor="DeepPink" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+                                <Label x:Name="bestStreakLbl" TextColor="DeepPink" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
                             </StackLayout>
                         </Grid>
                     </StackLayout>
-                </StackLayout >
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
