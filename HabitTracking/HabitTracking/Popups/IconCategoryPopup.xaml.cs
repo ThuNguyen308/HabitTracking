@@ -16,6 +16,7 @@ namespace HabitTracking.Popups
     public partial class IconCategoryPopup : Popup
     {
         Category categorySelected = new Category();
+        
         public IconCategoryPopup(Category category)
         {
             InitializeComponent();
