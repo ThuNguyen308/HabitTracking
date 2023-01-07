@@ -4,7 +4,7 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="HabitTracking.Pages.HomePage"
              Title="Home"
-             IconImageSource="Home32">
+             IconImageSource="home">
 
     <StackLayout>
         <!---->
@@ -88,18 +88,18 @@
                                 <SwipeView.RightItems>
                                     <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
                                         <SwipeItem Text="Delete"
-                                           IconImageSource="scoreIcon"
+                                           IconImageSource="delete"
                                             BackgroundColor="#800040"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeDeleteItem_Invoked"/>
                                         <SwipeItem Text="Edit"
-                                           IconImageSource="scoreIcon"
+                                           IconImageSource="edit"
                                             BackgroundColor="Green"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeEditItem_Invoked"/>
                                     <SwipeItem Text="Statistics"
                                            IconImageSource="statistics"
-                                            BackgroundColor="Green"
+                                            BackgroundColor="Blue"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeStatisticsItem_Invoked"/>
                                 </SwipeItems>

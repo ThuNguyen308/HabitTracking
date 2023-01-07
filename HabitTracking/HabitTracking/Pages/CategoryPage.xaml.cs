@@ -27,7 +27,7 @@ namespace HabitTracking.Pages
             InitializeComponent();
             InitCategory();
             InitNewCategory();
-            
+            IconImageSource = "category_full";
         }
         public void InitNewCategory()
         {
@@ -138,9 +138,9 @@ namespace HabitTracking.Pages
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
-                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
+                    await DisplayAlert("Success!", "Your category has been updated.", "Ok");
                 else
-                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
+                    await DisplayAlert("Error", "Oops, something went wrong.", "Ok");
                 InitCategory();
             }
         }
@@ -171,9 +171,9 @@ namespace HabitTracking.Pages
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
-                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thành công", "ok");
+                    await DisplayAlert("Success!", "Your category has been updated.", "Ok");
                 else
-                    DisplayAlert("Thông báo", "Cập nhật dữ liệu thất bại", "ok");
+                    await DisplayAlert("Error", "Oops, something went wrong.", "Ok");
                 InitCategory();
             }
         }
@@ -185,10 +185,10 @@ namespace HabitTracking.Pages
             HttpResponseMessage kq;
             kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/CreateCategory", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
-            if(int.Parse(kqtv.ToString()) > 0)
-                DisplayAlert("Thông báo", "Thêm dữ liệu thành công", "ok");
+            if (int.Parse(kqtv.ToString()) > 0)
+                await DisplayAlert("Success!", "Your category has been updated.", "Ok");
             else
-                DisplayAlert("Thông báo", "Thêm dữ liệu tb", "ok");
+                await DisplayAlert("Error", "Oops, something went wrong.", "Ok");
             InitCategory();
             overlay.IsVisible = false;
             overlay1.IsVisible = false;
