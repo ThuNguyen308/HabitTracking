@@ -24,8 +24,7 @@ namespace HabitTracking.HabitPages
         {
             InitializeComponent();
             _newhabit = newHabit;
-            startDatePkr.MinimumDate = DateTime.Now.Date;
-            endDatePkr.MinimumDate = DateTime.Now.Date;
+            startDatePkr.Date = DateTime.Now.Date;
             endDatePkr.Date = endDatePkr.Date.AddDays(7).Date;
         }
 
@@ -34,6 +33,7 @@ namespace HabitTracking.HabitPages
             _newhabit.habitStartDate = startDatePkr.Date;
             _newhabit.habitEndDate = endDatePkr.Date;
             _newhabit.userId = User.user.userId;
+            await DisplayAlert(null, _newhabit.habitStartDate.ToString("MM-dd-yyyy"), "ok");
             //await DisplayAlert("", _newhabit.habitStartDate.ToString("MM-dd-yyyy") + " " + _newhabit.habitEndtDate.ToString("MM-dd-yyyy"), "ok");
             HttpClient http = new HttpClient();
             string jsonlh = JsonConvert.SerializeObject(_newhabit);

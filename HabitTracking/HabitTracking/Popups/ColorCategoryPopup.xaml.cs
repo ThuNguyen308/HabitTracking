@@ -24,8 +24,6 @@ namespace HabitTracking.Popups
             CVCategoryColor.ItemsSource = Classes.Color.InitColors() ;
 
         }
-      
-
         private void CVCategoryColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Classes.Color colorSelected = e.CurrentSelection[0] as Classes.Color;
