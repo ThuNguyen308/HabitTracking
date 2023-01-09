@@ -16,7 +16,6 @@ namespace HabitTracking.Pages
         public SettingPage()
         {
             InitializeComponent();
-            IconImageSource = "setting_full";
             if(User.user.userId > 0)
             {
                 txtUsername.Text = User.user.userName;
