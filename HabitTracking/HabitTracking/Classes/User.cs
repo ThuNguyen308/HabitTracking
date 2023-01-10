@@ -17,7 +17,7 @@ namespace HabitTracking.Classes
         public string userImage { get; set; }
 
         public static User user;
-        public static List<Habit> habitList { get; set; }
+        public static List<Habit> habitList { get; set; } = new List<Habit>();
 
     }
 }

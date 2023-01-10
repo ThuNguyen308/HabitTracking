@@ -31,6 +31,8 @@ namespace HabitTracking.Pages
                 await DisplayAlert("Success", "You are successfully logged in to your account.", "Ok");
                 User.user = user;
                 await Navigation.PushAsync(new TabbedPage1());
+
+                
             }
             else 
                 await DisplayAlert("Error", "Something wrong happen. Check your login credentials again.", "Ok");

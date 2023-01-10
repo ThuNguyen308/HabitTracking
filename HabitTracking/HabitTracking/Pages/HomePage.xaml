@@ -105,14 +105,14 @@
                                 </SwipeItems>
                                 </SwipeView.RightItems>
 
-                                <StackLayout>
-                                    <Frame BackgroundColor="White" BorderColor="#F0F0F0" HasShadow="False" >
-                                        <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="3*"/>
-                                                <ColumnDefinition Width="*"/>
-                                            </Grid.ColumnDefinitions>
+                            <StackLayout>
+                                <Frame BackgroundColor="White" BorderColor="#F0F0F0" HasShadow="False" >
+                                    <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
 
                                         <AbsoluteLayout Grid.Column="0"  HorizontalOptions="CenterAndExpand">
                                             <BoxView BackgroundColor="{Binding colorCode}"
@@ -135,9 +135,12 @@
                                             <CheckBox ></CheckBox>
                                         </StackLayout>
                                     </Grid>
-                                    </Frame>
-                                </StackLayout>
-                            </SwipeView>
+                                </Frame>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="isChecked" Tapped="isChecked_Tapped"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </SwipeView>
                             
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

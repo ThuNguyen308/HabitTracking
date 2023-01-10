@@ -24,7 +24,8 @@ namespace HabitTracking.HabitPages
         {
             InitializeComponent();
             _newhabit = newHabit;
-            startDatePkr.Date = DateTime.Now.Date;
+            startDatePkr.MinimumDate = DateTime.Now.Date;
+            endDatePkr.MinimumDate = DateTime.Now.Date;
             endDatePkr.Date = endDatePkr.Date.AddDays(7).Date;
         }
 

@@ -14,14 +14,6 @@ namespace HabitTracking
         {
             InitializeComponent();
             MainPage = new NavigationPage(new Pages.SignInPage());
-
-            InitApp();
-            
-        }
-        public async void InitApp()
-        {
-            User user = new User { userName = "Thu", password = "123" };
-            
         }
         protected override void OnStart()
         {

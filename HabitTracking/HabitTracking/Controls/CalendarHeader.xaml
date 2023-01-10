@@ -32,7 +32,6 @@
             WidthRequest="36">
             <Label
                 FontAttributes="Bold"
-                FontFamily="{StaticResource FontAwesomeSolid}"
                 FontSize="25"
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
@@ -76,7 +75,6 @@
             WidthRequest="36">
             <Label
                 FontAttributes="Bold"
-                FontFamily="{StaticResource FontAwesomeSolid}"
                 FontSize="25"
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
