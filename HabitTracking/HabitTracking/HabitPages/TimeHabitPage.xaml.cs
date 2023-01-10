@@ -34,6 +34,7 @@ namespace HabitTracking.HabitPages
             _newhabit.habitStartDate = startDatePkr.Date;
             _newhabit.habitEndDate = endDatePkr.Date;
             _newhabit.userId = User.user.userId;
+            await DisplayAlert(null, _newhabit.habitStartDate.ToString("MM-dd-yyyy"), "ok");
             //await DisplayAlert("", _newhabit.habitStartDate.ToString("MM-dd-yyyy") + " " + _newhabit.habitEndtDate.ToString("MM-dd-yyyy"), "ok");
             HttpClient http = new HttpClient();
             string jsonlh = JsonConvert.SerializeObject(_newhabit);

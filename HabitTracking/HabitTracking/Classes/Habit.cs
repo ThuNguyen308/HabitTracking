@@ -18,7 +18,7 @@ namespace HabitTracking.Classes
         public string colorCode { get; set; }
         public string iconImage { get; set; }
         public int userId { get; set; }
-
+        public List<CheckIn> checkinList { get; set; } = new List<CheckIn>();
         public void setIconImage_ColorCode()
         {
             foreach(Category c in Category.categoryList)

@@ -44,7 +44,33 @@ namespace HabitTracking.Pages
                 hb.setIconImage_ColorCode();
             }
             listHabits.ItemsSource = User.habitList;
+
+            //Tao ds checkinList cua tung thoi quen theo tung ngay
+            foreach (Habit habit in User.habitList)
+            {
+                HttpClient httpClient = new HttpClient();
+                var checkinLst = await httpClient.GetStringAsync("http://webapiqltq.somee.com/api/Habit/GetCheckinList?habitId=" + habit.habitId);
+                List<CheckIn> checkinListConverted = JsonConvert.DeserializeObject<List<CheckIn>>(checkinLst);
+
+                //tao ds checkin cua thoi quen theo chuoi ngay lien tiep, tinh luon da checkin ngay do chua
+                int length = (int)(habit.habitEndDate - habit.habitStartDate).TotalDays + 1;//so luong phan tu cua checkinList
+                for (int i = 0; i < length; i++)
+                {
+                    CheckIn ciDay = new CheckIn { habitId = habit.habitId, habitName = habit.habitName, checkinDate = habit.habitStartDate.AddDays(i), isChecked = false, colorCode = habit.colorCode, iconImage = habit.iconImage };
+                    foreach (CheckIn c in checkinListConverted)
+                    {
+                        if (ciDay.checkinDate == c.checkinDate)
+                        {
+                            ciDay.isChecked = true;
+                        }
+                    }
+                    habit.checkinList.Add(ciDay);
+                }
+
+            }
+
         }
+
 
         /*private void SetColor(Category category)
         {
@@ -66,7 +92,7 @@ namespace HabitTracking.Pages
         private void listHabits_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Habit habitSelected = e.CurrentSelection[0] as Habit;
-            
+
         }
 
         private async void SwipeDeleteItem_Invoked(object sender, EventArgs e)
@@ -83,7 +109,7 @@ namespace HabitTracking.Pages
                 HttpResponseMessage kq;
                 kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/DeleteHabit", httpcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
-                if(int.Parse(kqtv.ToString()) > 0)
+                if (int.Parse(kqtv.ToString()) > 0)
                 {
                     await DisplayAlert("Habit deleted", "Habit is successfully deleted", "OK");
                     InitHabit();
@@ -99,7 +125,7 @@ namespace HabitTracking.Pages
 
             Navigation.PushAsync(new Pages.HabitPage(habit));
         }
-        
+
         private async void SwipeStatisticsItem_Invoked(object sender, EventArgs e)
         {
             SwipeItem swipeItem = (SwipeItem)sender;
@@ -119,6 +145,13 @@ namespace HabitTracking.Pages
         private void SearchBarHabit_TextChanged(object sender, TextChangedEventArgs e)
         {
             listHabits.ItemsSource = User.habitList.Where(habit => habit.habitName.ToLower().Contains(e.NewTextValue));
+        }
+
+        private void isChecked_Tapped(object sender, EventArgs e)
+        {
+            StackLayout stackLayout = (StackLayout)sender;
+            Habit habit = stackLayout.BindingContext as Habit;
+            DisplayAlert("Title", habit.habitName.ToString(), "Ok");
         }
     }
 }

@@ -13,6 +13,8 @@ using Xamarin.Plugin.Calendar.Enums;
 using Xamarin.Forms;
 using SampleApp.Model;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Net.Http;
 
 namespace HabitTracking.ViewModels
 {
@@ -30,46 +32,43 @@ namespace HabitTracking.ViewModels
         {
             // testing all kinds of adding events
             // when initializing collection
-            Events = new EventCollection
+            Events = new EventCollection();
+            List<DateTime> dateList = new List<DateTime>();
+            foreach (Habit hb in User.habitList)
             {
-                [DateTime.Now.AddDays(-3)] = new List<EventModel>(GenerateEvents(10, "Cool")),
-            };
+                dateList.Add(hb.habitStartDate);
+                dateList.Add(hb.habitEndDate);
+            }
+            DateTime smallestDate = dateList.Min(p => p);
+            DateTime biggestDate = dateList.Max(p => p);
+            int length = (int)(biggestDate - smallestDate).TotalDays + 1;
 
-            // with add method
-            Events.Add(DateTime.Now.AddDays(-1), new List<EventModel>(GenerateEvents(5, "Cool")));
-
-            // with indexer
-            Events[DateTime.Now] = new List<EventModel>(GenerateEvents(2, "Boring"));
-            // indexer - update later
-            Events[DateTime.Now] = new ObservableCollection<EventModel>(GenerateEvents(10, "Cool"));
-
-            // add later
-            Events.Add(DateTime.Now.AddDays(3), new List<EventModel>(GenerateEvents(5, "Cool")));
-
-            // indexer later
-            Events[DateTime.Now.AddDays(10)] = new List<EventModel>(GenerateEvents(10, "Boring"));
-
-            // add later
-            Events.Add(DateTime.Now.AddDays(15), new List<EventModel>(GenerateEvents(10, "Cool")));
-
-            // get observable collection later
-            var todayEvents = Events[DateTime.Now] as ObservableCollection<EventModel>;
-
-            // insert/add items to observable collection
-            todayEvents.Insert(0, new EventModel { Name = "Cool event insert", Description = "This is Cool event's description!" });
-            todayEvents.Add(new EventModel { Name = "Cool event add", Description = "This is Cool event's description!" });
+            for (int i = 0; i < length; i++)
+            {
+                Events.Add(smallestDate.AddDays(i), GenerateHabitListbyDate(smallestDate.AddDays(i)));
+            }
         }
-
-        private IEnumerable<EventModel> GenerateEvents(int count, string name)
+        private List<CheckIn> GenerateHabitListbyDate(DateTime date)
         {
-            return Enumerable.Range(1, count).Select(x => new EventModel
+            List<CheckIn> habits = new List<CheckIn>();
+            foreach (Habit habit in User.habitList)
             {
-                Name = $"{name} event{x}",
-                Description = $"This is {name} event{x}'s description!"
-            });
+                if (date >= habit.habitStartDate && date <= habit.habitEndDate)
+                {
+                    foreach (CheckIn ci in habit.checkinList)
+                    {
+                        if (ci.checkinDate == date)
+                        {
+                            habits.Add(ci);
+                            break;
+                        }
+                    }
+                }
+            }
+            return habits;
         }
 
-        public EventCollection Events { get; }
+        public EventCollection Events { get; set; }
 
         private int _day = DateTime.Today.Day;
 
@@ -137,9 +136,39 @@ namespace HabitTracking.ViewModels
 
         private async Task ExecuteEventSelectedCommand(object item)
         {
-            if (item is EventModel eventModel)
+            
+            if (item is CheckIn eventModel)
             {
-                await App.Current.MainPage.DisplayAlert(eventModel.Name, eventModel.Description, "Ok");
+                await App.Current.MainPage.DisplayAlert(eventModel.habitName.ToString(), SelectedDate.ToString(), "Ok");
+                HttpClient http = new HttpClient();
+                eventModel.checkinDate = (DateTime)SelectedDate;
+                string jsonlh = JsonConvert.SerializeObject(eventModel);
+                StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
+                HttpResponseMessage kq;
+                if (eventModel.isChecked == false)
+                {
+                    kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/Checkin", httcontent);
+                    var kqtv = await kq.Content.ReadAsStringAsync();
+                    if (int.Parse(kqtv.ToString()) > 0)
+                    {
+                        await App.Current.MainPage.DisplayAlert(null, "checked", "ok");
+                        eventModel.isChecked = true;
+                    }
+                    else
+                        await App.Current.MainPage.DisplayAlert(null, "check fail", "ok");
+                }
+                else
+                {
+                    kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/DeleteCheckin", httcontent);
+                    var kqtv = await kq.Content.ReadAsStringAsync();
+                    if (int.Parse(kqtv.ToString()) > 0)
+                    {
+                        await App.Current.MainPage.DisplayAlert(null, "Unchecked", "ok");
+                        eventModel.isChecked = false;
+                    }
+                    else
+                        await App.Current.MainPage.DisplayAlert(null, "uncheck fail", "ok");
+                }
             }
         }
     }
