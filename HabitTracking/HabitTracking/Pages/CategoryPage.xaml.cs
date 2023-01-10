@@ -73,6 +73,7 @@ namespace HabitTracking.Pages
         private void CVCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             overlay.IsVisible = true;
+            overlay1.IsVisible = true;
             popupEditCategory.IsVisible = true;
 
             _categorySelected = e.CurrentSelection[0] as Category;

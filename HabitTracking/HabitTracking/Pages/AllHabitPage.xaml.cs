@@ -19,6 +19,7 @@ namespace HabitTracking.Pages
         public AllHabitPage()
         {
             InitializeComponent();
+            InitHabit();
         }
         public async void InitHabit()
         {
@@ -47,16 +48,31 @@ namespace HabitTracking.Pages
             Image stackLayout = (Image)sender;
             Habit habit = stackLayout.BindingContext as Habit;
 
-            await Navigation.PushAsync(new Pages.StatisticsPage(habit));
+            Navigation.PushAsync(new Pages.HabitPage(habit));
 
         }
         public async void OnTapDelete(object sender, EventArgs e)
         {
-            Image stackLayout = (Image)sender;
-            Habit habit = stackLayout.BindingContext as Habit;
+            bool answer = await DisplayAlert("Warning", "Do you really want to delete this habit?", "Yes", "No");
+            if (answer)
+            {
+                Image stackLayout = (Image)sender;
+                Habit habit = stackLayout.BindingContext as Habit;
 
-            await Navigation.PushAsync(new Pages.StatisticsPage(habit));
-
+                HttpClient http = new HttpClient();
+                string jsonlh = JsonConvert.SerializeObject(habit);
+                StringContent httpcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
+                HttpResponseMessage kq;
+                kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/DeleteHabit", httpcontent);
+                var kqtv = await kq.Content.ReadAsStringAsync();
+                if (int.Parse(kqtv.ToString()) > 0)
+                {
+                    await DisplayAlert("Habit deleted", "Habit is successfully deleted", "OK");
+                    InitHabit();
+                }
+                else
+                    await DisplayAlert("Error", "Can't delete this habit.", "OK");
+            }
         }
     }
 }

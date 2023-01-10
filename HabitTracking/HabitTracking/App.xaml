@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
              x:Class="HabitTracking.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -12,7 +13,13 @@
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
-            <!--home page-->
+            <Style x:Key="textHeader" TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="#800040"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <!--home page--> 
             <Style x:Key="buttonPlus" TargetType="Button">
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="TextColor" Value="White"/>
@@ -29,6 +36,11 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="TextColor" Value="#a6a5a0"/>
+            </Style>
+            <Style x:Key="signupInput" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="#fdfbf6"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="FontAttributes" Value="Italic"/>
             </Style>
             <!--category page-->
             <Style x:Key="button" TargetType="Button">

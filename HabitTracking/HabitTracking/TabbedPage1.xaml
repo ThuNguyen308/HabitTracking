@@ -14,7 +14,7 @@
             NavigationPage.HasNavigationBar="False"
             >
             <local:HomePage></local:HomePage>
-            <local:StatisticsPage></local:StatisticsPage>
+            <local:AllHabitPage></local:AllHabitPage>
             <local:CategoryPage></local:CategoryPage>
             <local:SettingPage></local:SettingPage>
 </TabbedPage>
