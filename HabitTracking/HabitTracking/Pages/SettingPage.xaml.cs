@@ -47,5 +47,9 @@ namespace HabitTracking.Pages
         {
             Navigation.PushAsync(new HelpPage());
         }
+        private void OnUserAccountTapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new UserPage());
+        }
     }
 }

@@ -4,6 +4,7 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="HabitTracking.Pages.HomePage"
              Title="Home"
+             BackgroundColor="#FFF8D2"
              IconImageSource="home">
 
     <StackLayout>
@@ -95,7 +96,7 @@
                                             Invoked="SwipeDeleteItem_Invoked"/>
                                         <SwipeItem Text=""
                                            IconImageSource="pen32"
-                                            BackgroundColor="#DBE9B7"
+                                            BackgroundColor="#6BCB77"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeEditItem_Invoked"/>
                                     <SwipeItem Text=""

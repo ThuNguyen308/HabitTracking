@@ -34,6 +34,18 @@
                 <Setter Property="CornerRadius" Value="25"/>
                 <Setter Property="FontSize" Value="30"/>
             </Style>
+            <!--user page-->
+            <Style x:Key="userInfo" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="#FFE898"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="FontAttributes" Value="Italic"/>
+            </Style>
+            <Style x:Key="userLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="Roboto"/>
+                <Setter Property="TextColor" Value="#2E0249"/>
+            </Style>
             <!--carousel page-->
             <Style x:Key="btnCarousel" TargetType="Button">
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -49,7 +61,7 @@
                 <Setter Property="TextColor" Value="#a6a5a0"/>
             </Style>
             <Style x:Key="signupInput" TargetType="Label">
-                <Setter Property="BackgroundColor" Value="#fdfbf6"/>
+                <Setter Property="BackgroundColor" Value="#FFF8E1"/>
                 <Setter Property="HeightRequest" Value="40"/>
                 <Setter Property="FontAttributes" Value="Italic"/>
             </Style>

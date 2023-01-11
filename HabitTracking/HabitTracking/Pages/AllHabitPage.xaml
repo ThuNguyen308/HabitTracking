@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              Title="Habits"
+             BackgroundColor="#FFF8D2"
              x:Class="HabitTracking.Pages.AllHabitPage"
              IconImageSource = "habit">
     <ContentPage.Content>

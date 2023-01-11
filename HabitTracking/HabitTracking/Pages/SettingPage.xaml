@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HabitTracking.Pages.SettingPage"
+             BackgroundColor="#FFF8D2"
              Title="Setting"
              IconImageSource="settings">
     
@@ -83,8 +84,11 @@
                     </Grid>
                 </Frame>
 
-                <!--share-->
+                <!--user account-->
                 <Frame  BackgroundColor="White" BorderColor="#F0F0F0" Padding="5" Margin="0,0,0,5" HasShadow="False">
+                    <Frame.GestureRecognizers >
+                        <TapGestureRecognizer Tapped="OnUserAccountTapped"/>
+                    </Frame.GestureRecognizers>
                     <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -95,7 +99,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Image Grid.Row="0" Grid.Column="0" Source="share.png"   HorizontalOptions="Center" VerticalOptions="Center"/>
-                        <Label Grid.Row="0" Grid.Column="1"  Text="Share" Style="{StaticResource text}"/>
+                        <Label Grid.Row="0" Grid.Column="1"  Text="User account" Style="{StaticResource text}"/>
                         <StackLayout  Grid.Row="0" Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
                             <Image Source="rightArrow.png" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"/>
                         </StackLayout>
