@@ -27,6 +27,14 @@ namespace HabitTracking.Pages
                 txtEmail.Text = "anonymous@gmail.com";
             }
         }
+        protected override void OnAppearing()
+        {
+            IconImageSource = "setting_full";
+        }
+        protected override void OnDisappearing()
+        {
+            IconImageSource = "setting";
+        }
         private void OnLogOutTapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SignInPage());

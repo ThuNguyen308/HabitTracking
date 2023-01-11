@@ -33,6 +33,15 @@ namespace HabitTracking.Pages
             InitCategory();
             InitNewCategory();
         }
+        protected override void OnAppearing()
+        {
+            IconImageSource = "category_full";
+            InitCategory();
+        }
+        protected override void OnDisappearing()
+        {
+            IconImageSource = "category";
+        }
         public void InitNewCategory()
         {
             defaultCategory.setIconImage();
@@ -42,10 +51,6 @@ namespace HabitTracking.Pages
             txtCategoyName.Text = defaultCategory.categoryName;
             oldCategory = defaultCategory;
             return ;
-        }
-        protected override void OnAppearing()
-        {
-            InitCategory();
         }
         private async void InitCategory()
         {

@@ -24,6 +24,11 @@ namespace HabitTracking.Pages
         protected override void OnAppearing()
         {
             InitHabit();
+            IconImageSource = "home_full";
+        }
+        protected override void OnDisappearing()
+        {
+            IconImageSource = "home";
         }
         private async void InitHabit()
         {

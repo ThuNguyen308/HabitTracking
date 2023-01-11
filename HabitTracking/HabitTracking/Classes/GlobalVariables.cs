@@ -8,6 +8,7 @@ namespace HabitTracking.Classes
     {
         public static string url { get; set; } = "http://192.168.1.11/webapiqltq/";
         //http://192.168.1.11/webapiqltq/ (Thu)
+        //http://192.168.1.6/qlhabitapi (Tuyen)
         //http://webapiqltq.somee.com/
     }
 }

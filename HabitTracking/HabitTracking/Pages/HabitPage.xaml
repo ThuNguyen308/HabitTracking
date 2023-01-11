@@ -60,9 +60,10 @@
             
             <StackLayout Orientation="Horizontal">
                 <Frame BorderColor="Transparent" Padding="15,15,5,15">
-                    <Image Source="nameIcon.png" WidthRequest="20" HeightRequest="20" Aspect="AspectFit"></Image>
+                    <Image Source="nameIcon.png" xct:IconTintColorEffect.TintColor="#e6005c" WidthRequest="20" HeightRequest="20" Aspect="AspectFit"></Image>
                 </Frame>
                 <Label Text="Description" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"></Label>
+                <Label x:Name="descriptionLbl" FontSize="Medium" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"></Label>
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Tap_OpenDescription"></TapGestureRecognizer>
                 </StackLayout.GestureRecognizers>

@@ -35,6 +35,7 @@ namespace HabitTracking.Pages
         private void InitEditedHabit()
         {
             nameLbl.Text = _habit.habitName;
+            descriptionLbl.Text = _habit.habitDescription;
             categoryNameLbl.Text = _habit.categoryName;
             categoryImg.Source = _habit.iconImage;
             startDate.Date = _habit.habitStartDate;
@@ -70,6 +71,7 @@ namespace HabitTracking.Pages
         {
             var result = await Navigation.ShowPopupAsync(new NamePopup("Description", _habit.habitDescription));
             _habit.habitDescription = result.ToString();
+            descriptionLbl.Text= _habit.habitDescription;
         }
         private async void btnSave_Clicked(object sender, EventArgs e)
         {

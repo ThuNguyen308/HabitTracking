@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="HabitTracking.Pages.CategoryPage"
-             Title="Category"
-             IconImageSource="category">
+             Title="Category">
     <ContentPage.Content>
         <RelativeLayout>
             <StackLayout Margin="10,10,10,0" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
