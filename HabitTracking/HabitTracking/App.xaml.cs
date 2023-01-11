@@ -6,6 +6,8 @@ using Xamarin.Forms.Xaml;
 using HabitTracking.Classes;
 using System.Collections.Generic;
 
+[assembly: ExportFont("Roboto-Regular.ttf", Alias = "Roboto")]
+[assembly: ExportFont("Roboto-Bold.ttf", Alias = "RobotoBold")]
 namespace HabitTracking
 {
     public partial class App : Application

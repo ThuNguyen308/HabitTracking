@@ -12,12 +12,15 @@
             <Style x:Key="text" TargetType="Label">
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="Roboto"/>
+                <Setter Property="TextColor" Value="#2E0249"/>
             </Style>
             <Style x:Key="textHeader" TargetType="Label">
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="TextColor" Value="#800040"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="RobotoBold"/>
             </Style>
             <!--home page--> 
             <Style x:Key="buttonPlus" TargetType="Button">
@@ -31,7 +34,7 @@
                 <Setter Property="CornerRadius" Value="25"/>
                 <Setter Property="FontSize" Value="30"/>
             </Style>
-            <!--category page-->
+            <!--signin page-->
             <Style x:Key="signInHeader" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="20"/>
@@ -52,6 +55,7 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="RobotoBold"/>
             </Style>
             <Style x:Key="entry" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center"/>

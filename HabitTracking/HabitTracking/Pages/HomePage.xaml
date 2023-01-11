@@ -25,7 +25,7 @@
         
         
         
-        <Label Text="TODAY" Style="{StaticResource textHeader}" Margin="20,20"/>
+        <Label Text="TODAY TASKS 🚀" Style="{StaticResource textHeader}" Margin="20,20"/>
             <!--date-->
         <!--<Frame HasShadow="True" CornerRadius="10" Margin="20,0,20,10" Padding="0" HeightRequest="120" VerticalOptions="Start">
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
@@ -87,17 +87,18 @@
                             <SwipeView Grid.Row="1" HeightRequest="70" WidthRequest="10">
                                 <SwipeView.RightItems>
                                     <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
-                                        <SwipeItem Text="Delete"
+                                        <SwipeItem Text=""
                                            IconImageSource="delete32"
                                             BackgroundColor="#EA8A8A"
+                                               xct:IconTintColorEffect.TintColor="Red"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeDeleteItem_Invoked"/>
-                                        <SwipeItem Text="Edit"
+                                        <SwipeItem Text=""
                                            IconImageSource="pen32"
                                             BackgroundColor="#DBE9B7"
                                             CommandParameter="{Binding .}"
                                             Invoked="SwipeEditItem_Invoked"/>
-                                    <SwipeItem Text="Statistics"
+                                    <SwipeItem Text=""
                                            IconImageSource="barChart"
                                             BackgroundColor="#8EA5EB"
                                             CommandParameter="{Binding .}"
