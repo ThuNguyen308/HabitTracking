@@ -15,7 +15,8 @@ namespace HabitTracking
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new Pages.SignInPage());
+            //MainPage = new NavigationPage(new Pages.SignInPage());
+            MainPage = new NavigationPage(new CarouViewPage());
         }
         protected override void OnStart()
         {

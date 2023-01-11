@@ -34,6 +34,14 @@
                 <Setter Property="CornerRadius" Value="25"/>
                 <Setter Property="FontSize" Value="30"/>
             </Style>
+            <!--carousel page-->
+            <Style x:Key="btnCarousel" TargetType="Button">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="DeepPink"/>
+                <Setter Property="Margin" Value="30,0"/>
+                <Setter Property="CornerRadius" Value="10"/>
+            </Style>
             <!--signin page-->
             <Style x:Key="signInHeader" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold"/>
