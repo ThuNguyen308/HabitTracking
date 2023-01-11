@@ -21,7 +21,7 @@ namespace HabitTracking.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StatisticsPage : ContentPage
     {
-        List<HabitHistory> checkinList = new List<HabitHistory>();
+        List<CheckIn> checkinList = new List<CheckIn>();
         public StatisticsPage()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace HabitTracking.Pages
             HttpClient http = new HttpClient();
             var kq = await http.GetStringAsync
                 (GlobalVariables.url + "api/Habit/GetCheckinList?habitId=" + habit.habitId);
-            checkinList = JsonConvert.DeserializeObject<List<HabitHistory>>(kq);
+            checkinList = JsonConvert.DeserializeObject<List<CheckIn>>(kq);
 
             //**** score
             if(checkinList.Count != 0)
@@ -72,7 +72,7 @@ namespace HabitTracking.Pages
 
             //*** streak
             List<DateTime> dates = new List<DateTime>();
-            foreach(HabitHistory hh in checkinList)
+            foreach(CheckIn hh in checkinList)
             {
                 dates.Add(hh.checkinDate);
             }
