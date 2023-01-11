@@ -2,6 +2,7 @@
 <DataTemplate
     x:Class="SampleApp.Controls.CalendarHeader"
     xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <Grid
@@ -21,25 +22,17 @@
 
         <Frame
             Grid.Column="0"
-            Padding="0"
-            BackgroundColor="White"
-            BorderColor="Orange"
-            CornerRadius="18"
+            Padding="6"
+            BackgroundColor="Transparent"
+            BorderColor="DeepPink"
+            CornerRadius="20"
             HasShadow="False"
-            HeightRequest="36"
+            HeightRequest="28"
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="Center"
-            WidthRequest="36">
-            <Label
-                FontAttributes="Bold"
-                FontSize="25"
-                HorizontalOptions="CenterAndExpand"
-                HorizontalTextAlignment="Center"
-                InputTransparent="True"
-                Text="&#xf060;"
-                TextColor="{Binding ArrowsColor}"
-                VerticalOptions="CenterAndExpand"
-                VerticalTextAlignment="Center" />
+            WidthRequest="28">
+            <Image Source="previous" Aspect="AspectFit"
+                   xct:IconTintColorEffect.TintColor="DeepPink"></Image>
 
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding PrevLayoutUnitCommand}" />
@@ -64,25 +57,17 @@
 
         <Frame
             Grid.Column="2"
-            Padding="0"
-            BackgroundColor="White"
-            BorderColor="Orange"
-            CornerRadius="18"
+            Padding="6"
+            BackgroundColor="Transparent"
+            BorderColor="DeepPink"
+            CornerRadius="20"
             HasShadow="False"
-            HeightRequest="36"
+            HeightRequest="28"
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="CenterAndExpand"
-            WidthRequest="36">
-            <Label
-                FontAttributes="Bold"
-                FontSize="25"
-                HorizontalOptions="CenterAndExpand"
-                HorizontalTextAlignment="Center"
-                InputTransparent="True"
-                Text="&#xf061;"
-                TextColor="{Binding ArrowsColor}"
-                VerticalOptions="CenterAndExpand"
-                VerticalTextAlignment="Center" />
+            WidthRequest="28">
+            <Image Source="next" Aspect="AspectFit"
+                   xct:IconTintColorEffect.TintColor="Red"></Image>
 
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding NextLayoutUnitCommand}" />
