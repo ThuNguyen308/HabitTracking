@@ -14,7 +14,7 @@ namespace HabitTracking.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.1.0.5")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.0.0.73")]
 	public partial class Resource
 	{
 		
@@ -27223,82 +27223,82 @@ namespace HabitTracking.Droid
 			public const int colorIcon = 2131165289;
 			
 			// aapt resource value: 0x7F07006A
-			public const int delete = 2131165290;
+			public const int comboChart = 2131165290;
 			
 			// aapt resource value: 0x7F07006B
-			public const int delete32 = 2131165291;
+			public const int delete = 2131165291;
 			
 			// aapt resource value: 0x7F07006C
-			public const int deleteIcon = 2131165292;
+			public const int delete32 = 2131165292;
 			
 			// aapt resource value: 0x7F07006D
-			public const int design_fab_background = 2131165293;
+			public const int deleteIcon = 2131165293;
 			
 			// aapt resource value: 0x7F07006E
-			public const int design_ic_visibility = 2131165294;
+			public const int design_fab_background = 2131165294;
 			
 			// aapt resource value: 0x7F07006F
-			public const int design_ic_visibility_off = 2131165295;
+			public const int design_ic_visibility = 2131165295;
 			
 			// aapt resource value: 0x7F070070
-			public const int design_password_eye = 2131165296;
+			public const int design_ic_visibility_off = 2131165296;
 			
 			// aapt resource value: 0x7F070071
-			public const int design_snackbar_background = 2131165297;
+			public const int design_password_eye = 2131165297;
 			
 			// aapt resource value: 0x7F070072
-			public const int edit = 2131165298;
+			public const int design_snackbar_background = 2131165298;
 			
 			// aapt resource value: 0x7F070073
-			public const int endTime = 2131165299;
+			public const int edit = 2131165299;
 			
 			// aapt resource value: 0x7F070074
-			public const int habit = 2131165300;
+			public const int home = 2131165300;
 			
 			// aapt resource value: 0x7F070075
-			public const int habit_full = 2131165301;
+			public const int home32 = 2131165301;
 			
 			// aapt resource value: 0x7F070076
-			public const int home = 2131165302;
+			public const int home_full = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int home32 = 2131165303;
+			public const int ic_arrow_down_24dp = 2131165303;
 			
 			// aapt resource value: 0x7F070078
-			public const int home_full = 2131165304;
+			public const int ic_clock_black_24dp = 2131165304;
 			
 			// aapt resource value: 0x7F070079
-			public const int ic_arrow_down_24dp = 2131165305;
+			public const int ic_keyboard_black_24dp = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int ic_clock_black_24dp = 2131165306;
+			public const int ic_mtrl_checked_circle = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int ic_keyboard_black_24dp = 2131165307;
+			public const int ic_mtrl_chip_checked_black = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int ic_mtrl_checked_circle = 2131165308;
+			public const int ic_mtrl_chip_checked_circle = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int ic_mtrl_chip_checked_black = 2131165309;
+			public const int ic_mtrl_chip_close_circle = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int ic_mtrl_chip_checked_circle = 2131165310;
+			public const int imageIcon = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int ic_mtrl_chip_close_circle = 2131165311;
+			public const int info = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int imageIcon = 2131165312;
+			public const int Logo = 2131165312;
 			
 			// aapt resource value: 0x7F070081
-			public const int info = 2131165313;
+			public const int logout = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int Logo = 2131165314;
+			public const int material_cursor_drawable = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int logout = 2131165315;
+			public const int material_ic_calendar_black_24dp = 2131165315;
 			
 			// aapt resource value: 0x7F070084
 			public const int material_cursor_drawable = 2131165316;
@@ -27418,52 +27418,46 @@ namespace HabitTracking.Droid
 			public const int progressIcon = 2131165354;
 			
 			// aapt resource value: 0x7F0700AB
-			public const int question = 2131165355;
+			public const int rightArrow = 2131165355;
 			
 			// aapt resource value: 0x7F0700AC
-			public const int restaurant = 2131165356;
+			public const int scoreIcon = 2131165356;
 			
 			// aapt resource value: 0x7F0700AD
-			public const int rightArrow = 2131165357;
-			
-			// aapt resource value: 0x7F0700AE
-			public const int scoreIcon = 2131165358;
+			public const int setting = 2131165357;
 			
 			// aapt resource value: 0x7F0700AF
-			public const int setting = 2131165359;
+			public const int settings = 2131165359;
 			
-			// aapt resource value: 0x7F0700B1
-			public const int settings = 2131165361;
+			// aapt resource value: 0x7F0700AE
+			public const int setting_full = 2131165358;
 			
 			// aapt resource value: 0x7F0700B0
-			public const int setting_full = 2131165360;
+			public const int share = 2131165360;
+			
+			// aapt resource value: 0x7F0700B1
+			public const int startTime = 2131165361;
 			
 			// aapt resource value: 0x7F0700B2
-			public const int share = 2131165362;
+			public const int statistics = 2131165362;
 			
 			// aapt resource value: 0x7F0700B3
-			public const int startTime = 2131165363;
+			public const int streakIcon = 2131165363;
 			
 			// aapt resource value: 0x7F0700B4
-			public const int statistics = 2131165364;
+			public const int stretching = 2131165364;
 			
 			// aapt resource value: 0x7F0700B5
-			public const int streakIcon = 2131165365;
+			public const int test_custom_background = 2131165365;
 			
 			// aapt resource value: 0x7F0700B6
-			public const int stretching = 2131165366;
+			public const int tooltip_frame_dark = 2131165366;
 			
 			// aapt resource value: 0x7F0700B7
-			public const int test_custom_background = 2131165367;
+			public const int tooltip_frame_light = 2131165367;
 			
 			// aapt resource value: 0x7F0700B8
-			public const int tooltip_frame_dark = 2131165368;
-			
-			// aapt resource value: 0x7F0700B9
-			public const int tooltip_frame_light = 2131165369;
-			
-			// aapt resource value: 0x7F0700BA
-			public const int User = 2131165370;
+			public const int User = 2131165368;
 			
 			static Drawable()
 			{
