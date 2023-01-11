@@ -24,7 +24,7 @@ namespace HabitTracking.Pages
         private async void  loginBtn_Clicked(object sender, EventArgs e)
         {
             HttpClient http = new HttpClient();
-            var kq = await http.GetStringAsync("http://webapiqltq.somee.com/api/User/Login?username=" + txtUsername.Text + "&password=" + txtPassword.Text);
+            var kq = await http.GetStringAsync(GlobalVariables.url + "api/User/Login?username=" + txtUsername.Text + "&password=" + txtPassword.Text);
 			var user = JsonConvert.DeserializeObject<User>(kq);
             if(user.userName != "" && user.userName != null)
             {

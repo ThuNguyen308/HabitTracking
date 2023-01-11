@@ -72,8 +72,8 @@
             </Frame>-->
 
             <!--habit tasks-->
-            <RefreshView x:Name="RVHabits" >
-                <CollectionView x:Name="listHabits" SelectionMode="Single" SelectionChanged="listHabits_SelectionChanged">
+            <RefreshView x:Name="myRefeshView" Refreshing="myRefeshView_Refreshing" IsEnabled="True" RefreshColor="DeepPink" >
+                <CollectionView x:Name="listTodayHabit" SelectionMode="Single">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout
                             Orientation="Vertical" Span="1"
@@ -132,7 +132,7 @@
                                         </AbsoluteLayout>
                                         <Label Grid.Column="1"  Text="{Binding habitName}" Style="{StaticResource text}"/>
                                         <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                                            <CheckBox ></CheckBox>
+                                            <CheckBox IsChecked="{Binding isChecked}" ></CheckBox>
                                         </StackLayout>
                                     </Grid>
                                 </Frame>

@@ -1,5 +1,6 @@
 ﻿using HabitTracking.Classes;
 using Newtonsoft.Json;
+using SampleApp.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +21,17 @@ namespace HabitTracking.Pages
             InitializeComponent();
             InitHabit();
         }
+        protected override void OnAppearing()
+        {
+            InitHabit();
+        }
         private async void InitHabit()
         {
             HttpClient http = new HttpClient();
 
             //Category List
             var kq = await http.GetStringAsync
-                ("http://webapiqltq.somee.com/api/Category/GetCategoryList?userId=" + User.user.userId);
+                (GlobalVariables.url+ "api/Category/GetCategoryList?userId=" + User.user.userId);
 
             Category.categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);
             foreach (Category c in Category.categoryList)
@@ -37,19 +42,21 @@ namespace HabitTracking.Pages
 
             //Habit List
             var kq1 = await http.GetStringAsync
-                ("http://webapiqltq.somee.com/api/Habit/GetHabitList?userId=" + User.user.userId);
+                (GlobalVariables.url + "api/Habit/GetHabitList?userId=" + User.user.userId);
             User.habitList = JsonConvert.DeserializeObject<List<Habit>>(kq1);
             foreach (Habit hb in User.habitList)
             {
                 hb.setIconImage_ColorCode();
             }
-            listHabits.ItemsSource = User.habitList;
 
+            List<CheckIn> checkinList = new List<CheckIn>();
+
+            
             //Tao ds checkinList cua tung thoi quen theo tung ngay
             foreach (Habit habit in User.habitList)
             {
                 HttpClient httpClient = new HttpClient();
-                var checkinLst = await httpClient.GetStringAsync("http://webapiqltq.somee.com/api/Habit/GetCheckinList?habitId=" + habit.habitId);
+                var checkinLst = await httpClient.GetStringAsync(GlobalVariables.url + "api/Habit/GetCheckinList?habitId=" + habit.habitId);
                 List<CheckIn> checkinListConverted = JsonConvert.DeserializeObject<List<CheckIn>>(checkinLst);
 
                 //tao ds checkin cua thoi quen theo chuoi ngay lien tiep, tinh luon da checkin ngay do chua
@@ -62,15 +69,21 @@ namespace HabitTracking.Pages
                         if (ciDay.checkinDate == c.checkinDate)
                         {
                             ciDay.isChecked = true;
+                            break;
                         }
+                        
+                    }
+                    if (ciDay.checkinDate.ToString("dd-MM-yyyy") == DateTime.Now.ToString("dd-MM-yyyy"))
+                    {
+                        checkinList.Add(ciDay);
                     }
                     habit.checkinList.Add(ciDay);
                 }
-
             }
+            listTodayHabit.ItemsSource = checkinList;
+            //Lay ds habit cua ngay hom nay
 
         }
-
 
         /*private void SetColor(Category category)
         {
@@ -89,25 +102,25 @@ namespace HabitTracking.Pages
 
         }
 
-        private void listHabits_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Habit habitSelected = e.CurrentSelection[0] as Habit;
-
-        }
-
         private async void SwipeDeleteItem_Invoked(object sender, EventArgs e)
         {
             bool answer = await DisplayAlert("Warning", "Do you really want to delete this habit?", "Yes", "No");
             if (answer)
             {
                 SwipeItem swipeItem = (SwipeItem)sender;
-                Habit product = swipeItem.CommandParameter as Habit;
-
+                CheckIn checkin = swipeItem.CommandParameter as CheckIn;
+                Habit habit = new Habit();
+                foreach (Habit hb in User.habitList)
+                    if (hb.habitId == checkin.habitId)
+                    {
+                        habit = hb;
+                        break;
+                    }
                 HttpClient http = new HttpClient();
-                string jsonlh = JsonConvert.SerializeObject(product);
+                string jsonlh = JsonConvert.SerializeObject(habit);
                 StringContent httpcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
                 HttpResponseMessage kq;
-                kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/DeleteHabit", httpcontent);
+                kq = await http.PostAsync(GlobalVariables.url + "api/Habit/DeleteHabit", httpcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
                 {
@@ -118,19 +131,31 @@ namespace HabitTracking.Pages
                     await DisplayAlert("Error", "Can't delete this habit.", "OK");
             }
         }
-        private async void SwipeEditItem_Invoked(object sender, EventArgs e)
+        private void SwipeEditItem_Invoked(object sender, EventArgs e)
         {
             SwipeItem swipeItem = (SwipeItem)sender;
-            Habit habit = swipeItem.CommandParameter as Habit;
-
+            CheckIn checkin = swipeItem.CommandParameter as CheckIn;
+            Habit habit = new Habit();
+            foreach (Habit hb in User.habitList)
+                if (hb.habitId == checkin.habitId)
+                {
+                    habit = hb;
+                    break;
+                }
             Navigation.PushAsync(new Pages.HabitPage(habit));
         }
 
-        private async void SwipeStatisticsItem_Invoked(object sender, EventArgs e)
+        private void SwipeStatisticsItem_Invoked(object sender, EventArgs e)
         {
             SwipeItem swipeItem = (SwipeItem)sender;
-            Habit habit = swipeItem.CommandParameter as Habit;
-
+            CheckIn checkin = swipeItem.CommandParameter as CheckIn;
+            Habit habit = new Habit();
+            foreach(Habit hb in User.habitList)
+                if(hb.habitId == checkin.habitId)
+                {
+                    habit = hb;
+                    break;
+                }
             Navigation.PushAsync(new Pages.StatisticsPage(habit));
         }
         private void btn_calendar_Clicked(object sender, EventArgs e)
@@ -144,14 +169,55 @@ namespace HabitTracking.Pages
 
         private void SearchBarHabit_TextChanged(object sender, TextChangedEventArgs e)
         {
-            listHabits.ItemsSource = User.habitList.Where(habit => habit.habitName.ToLower().Contains(e.NewTextValue));
+            listTodayHabit.ItemsSource = User.habitList.Where(habit => habit.habitName.ToLower().Contains(e.NewTextValue));
         }
 
-        private void isChecked_Tapped(object sender, EventArgs e)
+        private async void isChecked_Tapped(object sender, EventArgs e)
         {
             StackLayout stackLayout = (StackLayout)sender;
-            Habit habit = stackLayout.BindingContext as Habit;
-            DisplayAlert("Title", habit.habitName.ToString(), "Ok");
+            CheckIn habitCheckin = stackLayout.BindingContext as CheckIn;
+            
+            HttpClient http = new HttpClient();
+            string jsonlh = JsonConvert.SerializeObject(habitCheckin);
+            StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
+            HttpResponseMessage kq;
+            if (habitCheckin.isChecked == false)
+            {
+                kq = await http.PostAsync(GlobalVariables.url + "api/Habit/Checkin", httcontent);
+                var kqtv = await kq.Content.ReadAsStringAsync();
+                if (int.Parse(kqtv.ToString()) > 0)
+                {
+                    await App.Current.MainPage.DisplayAlert("Success", "Checked", "ok");
+                    habitCheckin.isChecked = true;
+                    InitHabit();
+                }
+                else
+                    await App.Current.MainPage.DisplayAlert("Fail", "check fail", "ok");
+            }
+            else
+            {
+                kq = await http.PostAsync(GlobalVariables.url + "api/Habit/DeleteCheckin", httcontent);
+                var kqtv = await kq.Content.ReadAsStringAsync();
+                if (int.Parse(kqtv.ToString()) > 0)
+                {
+                    await App.Current.MainPage.DisplayAlert("Success", "Unchecked", "ok");
+                    habitCheckin.isChecked = false;
+                    InitHabit();
+                }
+                else
+                    await App.Current.MainPage.DisplayAlert("Fail", "Uncheck fail", "ok");
+            }
         }
+
+        private void myRefeshView_Refreshing(object sender, EventArgs e)
+        {
+            Task.Delay(3000);
+            myRefeshView.IsRefreshing = false;
+        }
+
+        /*private async void listTodayHabit_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CheckIn habitCheckin = e.CurrentSelection[0] as CheckIn;
+        }*/
     }
 }

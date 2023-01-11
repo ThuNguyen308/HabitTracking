@@ -37,7 +37,7 @@ namespace HabitTracking.Pages
             string jsonlh = JsonConvert.SerializeObject(user);
             StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
             HttpResponseMessage kq = await http.PostAsync
-                ("http://webapiqltq.somee.com/api/User/Signup", httcontent);
+                (GlobalVariables.url + "api/User/Signup", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
             user = JsonConvert.DeserializeObject<User>(kqtv);
             if (user.userId > 0)

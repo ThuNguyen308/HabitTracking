@@ -6,8 +6,8 @@ namespace HabitTracking.Classes
 {
     public class GlobalVariables
     {
-        public static User user { get; set; }
-        public static List<Color> lstColor { get; set; }
-        public static List<Icon> lstIcon { get; set; }
+        public static string url { get; set; } = "http://192.168.1.11/webapiqltq/";
+
+        //http://webapiqltq.somee.com/
     }
 }

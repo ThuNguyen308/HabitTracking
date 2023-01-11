@@ -40,13 +40,13 @@ namespace HabitTracking.HabitPages
             string jsonlh = JsonConvert.SerializeObject(_newhabit);
             StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
             HttpResponseMessage kq;
-            kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/CreateHabit", httcontent);
+            kq = await http.PostAsync(GlobalVariables.url + "api/Habit/CreateHabit", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
             if (int.Parse(kqtv.ToString()) > 0)
                 await DisplayAlert("Success", "Add new habit successfully", "ok");
             else
                 await DisplayAlert("Error", "Can't add new habit.", "ok");
-            Navigation.PushAsync(new TabbedPage1());
+            await Navigation.PushAsync(new TabbedPage1());
         }
 
         private void btnBack_Clicked(object sender, EventArgs e)

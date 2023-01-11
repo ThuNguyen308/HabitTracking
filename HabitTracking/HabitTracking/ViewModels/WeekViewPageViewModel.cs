@@ -139,7 +139,6 @@ namespace HabitTracking.ViewModels
             
             if (item is CheckIn eventModel)
             {
-                await App.Current.MainPage.DisplayAlert(eventModel.habitName.ToString(), SelectedDate.ToString(), "Ok");
                 HttpClient http = new HttpClient();
                 eventModel.checkinDate = (DateTime)SelectedDate;
                 string jsonlh = JsonConvert.SerializeObject(eventModel);
@@ -147,7 +146,7 @@ namespace HabitTracking.ViewModels
                 HttpResponseMessage kq;
                 if (eventModel.isChecked == false)
                 {
-                    kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/Checkin", httcontent);
+                    kq = await http.PostAsync(GlobalVariables.url + "api/Habit/Checkin", httcontent);
                     var kqtv = await kq.Content.ReadAsStringAsync();
                     if (int.Parse(kqtv.ToString()) > 0)
                     {
@@ -159,7 +158,7 @@ namespace HabitTracking.ViewModels
                 }
                 else
                 {
-                    kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/DeleteCheckin", httcontent);
+                    kq = await http.PostAsync(GlobalVariables.url + "api/Habit/DeleteCheckin", httcontent);
                     var kqtv = await kq.Content.ReadAsStringAsync();
                     if (int.Parse(kqtv.ToString()) > 0)
                     {

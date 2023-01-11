@@ -15,6 +15,5 @@ namespace HabitTracking.Classes
         public int categoryId { get; set; }
         public string colorCode { get; set; }
         public string iconImage { get; set; }
-        public List<CheckIn> checkinList { get; set; } = new List<CheckIn>();
     }
 }

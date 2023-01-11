@@ -79,7 +79,7 @@ namespace HabitTracking.Pages
             string jsonlh = JsonConvert.SerializeObject(_habit);
             StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
             HttpResponseMessage kq;
-            kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/UpdateHabit", httcontent);
+            kq = await http.PostAsync(GlobalVariables.url + "api/Habit/UpdateHabit", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
             if (int.Parse(kqtv.ToString()) > 0)
                 await DisplayAlert(null, "Habit was updated", "ok");

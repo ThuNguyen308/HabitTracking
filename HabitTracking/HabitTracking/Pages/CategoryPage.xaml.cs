@@ -47,7 +47,7 @@ namespace HabitTracking.Pages
         {
             HttpClient http = new HttpClient();
             var kq = await http.GetStringAsync
-                ("http://webapiqltq.somee.com/api/Category/GetCategoryList?userId=" + User.user.userId);
+                (GlobalVariables.url + "api/Category/GetCategoryList?userId=" + User.user.userId);
 
             Category.categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);
             foreach (Category c in Category.categoryList)
@@ -116,7 +116,7 @@ namespace HabitTracking.Pages
                 string jsonlh = JsonConvert.SerializeObject(_categorySelected);
                 StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
                 HttpResponseMessage kq;
-                kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
+                kq = await http.PostAsync(GlobalVariables.url + "api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
                     await DisplayAlert("Success!", "Your category has been updated.", "Ok");
@@ -149,7 +149,7 @@ namespace HabitTracking.Pages
                 string jsonlh = JsonConvert.SerializeObject(_categorySelected);
                 StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
                 HttpResponseMessage kq;
-                kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
+                kq = await http.PostAsync(GlobalVariables.url + "api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
                     await DisplayAlert("Success!", "Your category has been updated.", "Ok");
@@ -183,7 +183,7 @@ namespace HabitTracking.Pages
                 string jsonlh = JsonConvert.SerializeObject(_categorySelected);
                 StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
                 HttpResponseMessage kq;
-                kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/UpdateCategory", httcontent);
+                kq = await http.PostAsync(GlobalVariables.url + "api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (_categorySelected.colorId != oldCategory.colorId)
                 {
@@ -202,7 +202,7 @@ namespace HabitTracking.Pages
             string jsonlh = JsonConvert.SerializeObject(newCategory);
             StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
             HttpResponseMessage kq;
-            kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/CreateCategory", httcontent);
+            kq = await http.PostAsync(GlobalVariables.url + "api/Category/CreateCategory", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
             if (int.Parse(kqtv.ToString()) > 0)
                 await DisplayAlert("Success!", "Your category has been updated.", "Ok");
@@ -223,7 +223,7 @@ namespace HabitTracking.Pages
                 string jsonlh = JsonConvert.SerializeObject(_categorySelected);
                 StringContent httpcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
                 HttpResponseMessage kq;
-                kq = await http.PostAsync("http://webapiqltq.somee.com/api/Category/DeleteCategory", httpcontent);
+                kq = await http.PostAsync(GlobalVariables.url + "api/Category/DeleteCategory", httpcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
                 {

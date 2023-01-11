@@ -29,6 +29,7 @@ namespace HabitTracking.Pages
         public StatisticsPage(Habit habit)
         {
             InitializeComponent();
+            Title = habit.habitName;
             InitCheckinList(habit);
         }
         private async void InitCheckinList(Habit habit)
@@ -40,7 +41,7 @@ namespace HabitTracking.Pages
 
             HttpClient http = new HttpClient();
             var kq = await http.GetStringAsync
-                ("http://webapiqltq.somee.com/api/Habit/GetCheckinList?habitId=" + habit.habitId);
+                (GlobalVariables.url + "api/Habit/GetCheckinList?habitId=" + habit.habitId);
             checkinList = JsonConvert.DeserializeObject<List<HabitHistory>>(kq);
 
             //**** score

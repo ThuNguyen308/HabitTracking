@@ -21,13 +21,17 @@ namespace HabitTracking.Pages
             InitializeComponent();
             InitHabit();
         }
+        protected override void OnAppearing()
+        {
+            InitHabit();
+        }
         public async void InitHabit()
         {
             HttpClient http = new HttpClient();
 
             //Habit List
             var kq1 = await http.GetStringAsync
-                ("http://webapiqltq.somee.com/api/Habit/GetHabitList?userId=" + User.user.userId);
+                (GlobalVariables.url + "api/Habit/GetHabitList?userId=" + User.user.userId);
             User.habitList = JsonConvert.DeserializeObject<List<Habit>>(kq1);
             foreach (Habit hb in User.habitList)
             {
@@ -35,15 +39,15 @@ namespace HabitTracking.Pages
             }
             listHabits.ItemsSource = User.habitList;
         }
-        public async void OnTapStatistic(object sender, EventArgs e)
+        public void OnTapStatistic(object sender, EventArgs e)
         {
             Image stackLayout = (Image)sender;
             Habit habit = stackLayout.BindingContext as Habit;
 
 
-            await Navigation.PushAsync(new Pages.StatisticsPage(habit));
+            Navigation.PushAsync(new Pages.StatisticsPage(habit));
         }
-        public async void OnTapEdit(object sender, EventArgs e)
+        public void OnTapEdit(object sender, EventArgs e)
         {
             Image stackLayout = (Image)sender;
             Habit habit = stackLayout.BindingContext as Habit;
@@ -63,7 +67,7 @@ namespace HabitTracking.Pages
                 string jsonlh = JsonConvert.SerializeObject(habit);
                 StringContent httpcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
                 HttpResponseMessage kq;
-                kq = await http.PostAsync("http://webapiqltq.somee.com/api/Habit/DeleteHabit", httpcontent);
+                kq = await http.PostAsync(GlobalVariables.url + "api/Habit/DeleteHabit", httpcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
                 {
