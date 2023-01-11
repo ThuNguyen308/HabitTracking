@@ -1,9 +1,11 @@
 ﻿using HabitTracking.Classes;
+using Plugin.LocalNotification;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Plugin.LocalNotification.AndroidOption;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -50,6 +52,20 @@ namespace HabitTracking.Pages
         private void OnUserAccountTapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new UserPage());
+        }
+        public void OnToggled(object sender, ToggledEventArgs e)
+        {
+            return;
+            //var notification = new NotificationRequest {
+            //    BadgeNumber = 1,
+            //    Description = "It's time to do your task!",
+            //    Title = "Hey!!!!!!",
+            //    NotificationId = 123,
+            //    //NotifiTime = DateTime.Now.AddSeconds(10)
+            //    //Schedule = DateTime.Now.AddSeconds(10),
+            //};
+            //NotificationCenter.Current.Show(notification);
+            //notificationService.Show(notification);
         }
     }
 }
