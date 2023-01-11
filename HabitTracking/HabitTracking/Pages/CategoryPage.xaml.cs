@@ -43,6 +43,10 @@ namespace HabitTracking.Pages
             oldCategory = defaultCategory;
             return ;
         }
+        protected override void OnAppearing()
+        {
+            InitCategory();
+        }
         private async void InitCategory()
         {
             HttpClient http = new HttpClient();
@@ -52,8 +56,13 @@ namespace HabitTracking.Pages
             Category.categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);
             foreach (Category c in Category.categoryList)
             {
+                var count = 0;
                 c.setIconImage();
                 c.setColorCode();
+                foreach (Habit hb in User.habitList)
+                    if (hb.categoryId == c.categoryId)
+                        count++;
+                c.numOfEntries = count <= 1 ? count + " Entry" : count + " Entries";
             }
             CVCategory.ItemsSource = Category.categoryList;
         }
