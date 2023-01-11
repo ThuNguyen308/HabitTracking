@@ -6,8 +6,8 @@ namespace HabitTracking.Classes
 {
     public class GlobalVariables
     {
-        public static string url { get; set; } = "http://192.168.1.6/qlhabitapi/";
-
+        public static string url { get; set; } = "http://192.168.1.11/webapiqltq/";
+        //http://192.168.1.11/webapiqltq/ (Thu)
         //http://webapiqltq.somee.com/
     }
 }

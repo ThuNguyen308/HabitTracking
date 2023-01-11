@@ -41,7 +41,7 @@
                                     </AbsoluteLayout>
                                     <Label Text="{Binding categoryName}" Grid.Row="1"
                                            Style="{StaticResource categoryName}"></Label>
-                                    <Label Text="0 entrys" Grid.Row="2"
+                                    <Label Text="{Binding numOfEntries}" Grid.Row="2"
                                            Style="{StaticResource entry}"></Label>
                                 </StackLayout>
                             </DataTemplate>

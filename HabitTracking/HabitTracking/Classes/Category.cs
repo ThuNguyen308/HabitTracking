@@ -16,7 +16,7 @@ namespace HabitTracking.Classes
         public int userId { get; set; }
         public string colorCode { get; set; }
         public string iconImage { get; set; }
-        
+        public string numOfEntries { get; set; }
         public static List<Category> categoryList { get; set; }
         
         public void setIconImage()
