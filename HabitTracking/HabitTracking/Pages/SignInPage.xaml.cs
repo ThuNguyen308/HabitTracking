@@ -41,5 +41,6 @@ namespace HabitTracking.Pages
         {
             Navigation.PushAsync(new Pages.SignUpPage());
         }
+        
     }
 }

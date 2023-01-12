@@ -19,6 +19,14 @@ namespace HabitTracking.Pages
         public UserPage()
         {
             InitializeComponent();
+            InitInfo();
+        }
+        public async void InitInfo()
+        {
+            HttpClient http = new HttpClient();
+            var kq = await http.GetStringAsync(GlobalVariables.url + "api/User/GetUserInfo?userId=" + User.user.userId);
+            User.user = JsonConvert.DeserializeObject<User>(kq);
+
             txtFirstName.Text = User.user.firstName;
             txtLastName.Text = User.user.lastName;
             txtEmail.Text = User.user.email;

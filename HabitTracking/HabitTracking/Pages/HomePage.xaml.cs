@@ -38,7 +38,7 @@ namespace HabitTracking.Pages
             var kq = await http.GetStringAsync
                 (GlobalVariables.url+ "api/Category/GetCategoryList?userId=" + User.user.userId);
 
-            Category.categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);
+            Category.categoryList = JsonConvert.DeserializeObject<List<Category>>(kq);  
             foreach (Category c in Category.categoryList)
             {
                 c.setIconImage();

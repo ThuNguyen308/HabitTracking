@@ -13,6 +13,8 @@ using Xamarin.Forms.Xaml;
 using Xamarin.CommunityToolkit.Converters;
 using Plugin.LocalNotification.EventArgs;
 using Xamarin.Essentials;
+using Newtonsoft.Json;
+using System.Net.Http;
 
 namespace HabitTracking.Pages
 {
@@ -24,21 +26,23 @@ namespace HabitTracking.Pages
         public SettingPage()
         {
             InitializeComponent();
-            if(User.user.userId > 0)
-            {
-                txtUsername.Text = User.user.userName;
-                txtEmail.Text = User.user.email;
-            }
-            else
-            {
-                txtUsername.Text = "Anonymous";
-                txtEmail.Text = "anonymous@gmail.com";
-            }
+            InitInfo();
             
+            
+        }
+        
+        public async void InitInfo()
+        {
+            HttpClient http = new HttpClient();
+            var kq = await http.GetStringAsync(GlobalVariables.url + "api/User/GetUserInfo?userId=" + User.user.userId);
+            User.user  = JsonConvert.DeserializeObject<User>(kq);
+            txtUsername.Text = User.user.userName;
+            txtEmail.Text = User.user.email;
         }
         protected override void OnAppearing()
         {
             IconImageSource = "setting_full";
+            InitInfo();
         }
         protected override void OnDisappearing()
         {
