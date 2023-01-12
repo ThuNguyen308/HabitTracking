@@ -87,7 +87,7 @@ namespace HabitTracking.Pages
                 await DisplayAlert(null, "Habit was updated", "ok");
             else
                 await DisplayAlert(null, "Update failed", "ok");
-            Navigation.PushAsync(new TabbedPage1());
+            await Navigation.PushAsync(new TabbedPage1());
         }
     }
 }

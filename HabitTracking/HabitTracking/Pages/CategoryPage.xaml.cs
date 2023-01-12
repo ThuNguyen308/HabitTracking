@@ -12,7 +12,6 @@ using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.CommunityToolkit.Effects;
 using System.Net.Http;
 using Newtonsoft.Json;
-using HabitTracking.Classes;
 using Color = HabitTracking.Classes.Color;
 using System.Drawing;
 

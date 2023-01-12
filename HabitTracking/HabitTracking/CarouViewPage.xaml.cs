@@ -15,9 +15,9 @@ namespace HabitTracking
     {
         List<Img> imgs = new List<Img>()
             {
-                new Img(){Title = "h1", Url = "loop", quote = "HabitTracking helps you create and maintain all good habits" },
+                new Img(){Title = "h1", Url = "habits", quote = "HabitTracking helps you create and maintain all good habits" },
                 new Img(){Title = "h1", Url = "puzzle", quote = "It's easier to achieve if your break it down into smaller goals"},
-                new Img(){Title = "h1", Url = "comboChart", quote = "Create streaks of success for your habits and complete all your tasks"}
+                new Img(){Title = "h1", Url = "pieChart", quote = "Create streaks of success for your habits and complete all your tasks"}
             };
 
         public CarouViewPage()

@@ -4,7 +4,7 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="HabitTracking.Pages.HomePage"
              Title="Home"
-             BackgroundColor="#FFF8D2"
+             Style="{StaticResource page}"
              IconImageSource="home">
 
     <StackLayout>

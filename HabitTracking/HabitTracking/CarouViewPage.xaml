@@ -4,20 +4,26 @@
              x:Class="HabitTracking.CarouViewPage">
     <ContentPage.Content>
         <StackLayout>
-            <CarouselView x:Name="Carousel" >
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Padding="50,0" HorizontalOptions="Center">
-                            <StackLayout HeightRequest="350">
+                <CarouselView x:Name="Carousel" >
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="50,0" HorizontalOptions="Center">
+                                <StackLayout HeightRequest="350">
                                 
-                        <Image Source="{Binding Url}" VerticalOptions="CenterAndExpand"></Image>
+                            <Image Source="{Binding Url}" VerticalOptions="CenterAndExpand"></Image>
+                                </StackLayout>
+                                <Label Text="{Binding quote}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" HorizontalTextAlignment="Center" FontFamily="RobotoBold" FontSize="22"></Label>
                             </StackLayout>
-                            <Label Text="{Binding quote}" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" HorizontalTextAlignment="Center" FontFamily="RobotoBold" FontSize="Medium"></Label>
-                        </StackLayout>
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
             </CarouselView>
-            <IndicatorView x:Name="IndicatorView" IndicatorColor="DeepPink" IndicatorSize="10" VerticalOptions="Center"></IndicatorView>
+            <IndicatorView x:Name="IndicatorView" IndicatorsShape="Circle" IndicatorSize="18"
+                   MaximumVisible="6" IsVisible="true"
+                   IndicatorColor="DarkRed"
+                   SelectedIndicatorColor="Pink"
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"/>
+            
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="10,50">
                 <Button Text="Skip" Clicked="btnSkip_Clicked"  Style="{StaticResource btnCarousel}" ></Button>
                 <Button x:Name="DoneBtn" Text="" Clicked="btnNext_Clicked"  Style="{StaticResource btnCarousel}"></Button>

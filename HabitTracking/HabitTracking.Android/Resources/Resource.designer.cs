@@ -14,7 +14,7 @@ namespace HabitTracking.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.1.0.5")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.0.0.73")]
 	public partial class Resource
 	{
 		
@@ -26,6 +26,191 @@ namespace HabitTracking.Droid
 		public static void UpdateIdValues()
 		{
 			global::Microcharts.Droid.Resource.String.library_name = global::HabitTracking.Droid.Resource.String.library_name;
+			global::Plugin.LocalNotification.Resource.Attribute.alpha = global::HabitTracking.Droid.Resource.Attribute.alpha;
+			global::Plugin.LocalNotification.Resource.Attribute.font = global::HabitTracking.Droid.Resource.Attribute.font;
+			global::Plugin.LocalNotification.Resource.Attribute.fontProviderAuthority = global::HabitTracking.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Plugin.LocalNotification.Resource.Attribute.fontProviderCerts = global::HabitTracking.Droid.Resource.Attribute.fontProviderCerts;
+			global::Plugin.LocalNotification.Resource.Attribute.fontProviderFetchStrategy = global::HabitTracking.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Plugin.LocalNotification.Resource.Attribute.fontProviderFetchTimeout = global::HabitTracking.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Plugin.LocalNotification.Resource.Attribute.fontProviderPackage = global::HabitTracking.Droid.Resource.Attribute.fontProviderPackage;
+			global::Plugin.LocalNotification.Resource.Attribute.fontProviderQuery = global::HabitTracking.Droid.Resource.Attribute.fontProviderQuery;
+			global::Plugin.LocalNotification.Resource.Attribute.fontProviderSystemFontFamily = global::HabitTracking.Droid.Resource.Attribute.fontProviderSystemFontFamily;
+			global::Plugin.LocalNotification.Resource.Attribute.fontStyle = global::HabitTracking.Droid.Resource.Attribute.fontStyle;
+			global::Plugin.LocalNotification.Resource.Attribute.fontVariationSettings = global::HabitTracking.Droid.Resource.Attribute.fontVariationSettings;
+			global::Plugin.LocalNotification.Resource.Attribute.fontWeight = global::HabitTracking.Droid.Resource.Attribute.fontWeight;
+			global::Plugin.LocalNotification.Resource.Attribute.nestedScrollViewStyle = global::HabitTracking.Droid.Resource.Attribute.nestedScrollViewStyle;
+			global::Plugin.LocalNotification.Resource.Attribute.queryPatterns = global::HabitTracking.Droid.Resource.Attribute.queryPatterns;
+			global::Plugin.LocalNotification.Resource.Attribute.shortcutMatchRequired = global::HabitTracking.Droid.Resource.Attribute.shortcutMatchRequired;
+			global::Plugin.LocalNotification.Resource.Attribute.ttcIndex = global::HabitTracking.Droid.Resource.Attribute.ttcIndex;
+			global::Plugin.LocalNotification.Resource.Color.androidx_core_ripple_material_light = global::HabitTracking.Droid.Resource.Color.androidx_core_ripple_material_light;
+			global::Plugin.LocalNotification.Resource.Color.androidx_core_secondary_text_default_material_light = global::HabitTracking.Droid.Resource.Color.androidx_core_secondary_text_default_material_light;
+			global::Plugin.LocalNotification.Resource.Color.notification_action_color_filter = global::HabitTracking.Droid.Resource.Color.notification_action_color_filter;
+			global::Plugin.LocalNotification.Resource.Color.notification_icon_bg_color = global::HabitTracking.Droid.Resource.Color.notification_icon_bg_color;
+			global::Plugin.LocalNotification.Resource.Dimension.compat_button_inset_horizontal_material = global::HabitTracking.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Plugin.LocalNotification.Resource.Dimension.compat_button_inset_vertical_material = global::HabitTracking.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Plugin.LocalNotification.Resource.Dimension.compat_button_padding_horizontal_material = global::HabitTracking.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Plugin.LocalNotification.Resource.Dimension.compat_button_padding_vertical_material = global::HabitTracking.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Plugin.LocalNotification.Resource.Dimension.compat_control_corner_material = global::HabitTracking.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Plugin.LocalNotification.Resource.Dimension.compat_notification_large_icon_max_height = global::HabitTracking.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::Plugin.LocalNotification.Resource.Dimension.compat_notification_large_icon_max_width = global::HabitTracking.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_action_icon_size = global::HabitTracking.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_action_text_size = global::HabitTracking.Droid.Resource.Dimension.notification_action_text_size;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_big_circle_margin = global::HabitTracking.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_content_margin_start = global::HabitTracking.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_large_icon_height = global::HabitTracking.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_large_icon_width = global::HabitTracking.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_main_column_padding_top = global::HabitTracking.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_media_narrow_margin = global::HabitTracking.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_right_icon_size = global::HabitTracking.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_right_side_padding_top = global::HabitTracking.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_small_icon_background_padding = global::HabitTracking.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_small_icon_size_as_large = global::HabitTracking.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_subtext_size = global::HabitTracking.Droid.Resource.Dimension.notification_subtext_size;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_top_pad = global::HabitTracking.Droid.Resource.Dimension.notification_top_pad;
+			global::Plugin.LocalNotification.Resource.Dimension.notification_top_pad_large_text = global::HabitTracking.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Plugin.LocalNotification.Resource.Drawable.notification_action_background = global::HabitTracking.Droid.Resource.Drawable.notification_action_background;
+			global::Plugin.LocalNotification.Resource.Drawable.notification_bg = global::HabitTracking.Droid.Resource.Drawable.notification_bg;
+			global::Plugin.LocalNotification.Resource.Drawable.notification_bg_low = global::HabitTracking.Droid.Resource.Drawable.notification_bg_low;
+			global::Plugin.LocalNotification.Resource.Drawable.notification_bg_low_normal = global::HabitTracking.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Plugin.LocalNotification.Resource.Drawable.notification_bg_low_pressed = global::HabitTracking.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Plugin.LocalNotification.Resource.Drawable.notification_bg_normal = global::HabitTracking.Droid.Resource.Drawable.notification_bg_normal;
+			global::Plugin.LocalNotification.Resource.Drawable.notification_bg_normal_pressed = global::HabitTracking.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Plugin.LocalNotification.Resource.Drawable.notification_icon_background = global::HabitTracking.Droid.Resource.Drawable.notification_icon_background;
+			global::Plugin.LocalNotification.Resource.Drawable.notification_template_icon_bg = global::HabitTracking.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Plugin.LocalNotification.Resource.Drawable.notification_template_icon_low_bg = global::HabitTracking.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Plugin.LocalNotification.Resource.Drawable.notification_tile_bg = global::HabitTracking.Droid.Resource.Drawable.notification_tile_bg;
+			global::Plugin.LocalNotification.Resource.Drawable.notify_panel_notification_icon_bg = global::HabitTracking.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_action_clickable_span = global::HabitTracking.Droid.Resource.Id.accessibility_action_clickable_span;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_0 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_0;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_1 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_1;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_10 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_10;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_11 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_11;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_12 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_12;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_13 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_13;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_14 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_14;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_15 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_15;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_16 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_16;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_17 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_17;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_18 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_18;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_19 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_19;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_2 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_2;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_20 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_20;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_21 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_21;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_22 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_22;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_23 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_23;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_24 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_24;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_25 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_25;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_26 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_26;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_27 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_27;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_28 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_28;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_29 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_29;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_3 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_3;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_30 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_30;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_31 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_31;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_4 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_4;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_5 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_5;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_6 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_6;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_7 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_7;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_8 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_8;
+			global::Plugin.LocalNotification.Resource.Id.accessibility_custom_action_9 = global::HabitTracking.Droid.Resource.Id.accessibility_custom_action_9;
+			global::Plugin.LocalNotification.Resource.Id.actions = global::HabitTracking.Droid.Resource.Id.actions;
+			global::Plugin.LocalNotification.Resource.Id.action_container = global::HabitTracking.Droid.Resource.Id.action_container;
+			global::Plugin.LocalNotification.Resource.Id.action_divider = global::HabitTracking.Droid.Resource.Id.action_divider;
+			global::Plugin.LocalNotification.Resource.Id.action_image = global::HabitTracking.Droid.Resource.Id.action_image;
+			global::Plugin.LocalNotification.Resource.Id.action_text = global::HabitTracking.Droid.Resource.Id.action_text;
+			global::Plugin.LocalNotification.Resource.Id.async = global::HabitTracking.Droid.Resource.Id.async;
+			global::Plugin.LocalNotification.Resource.Id.blocking = global::HabitTracking.Droid.Resource.Id.blocking;
+			global::Plugin.LocalNotification.Resource.Id.chronometer = global::HabitTracking.Droid.Resource.Id.chronometer;
+			global::Plugin.LocalNotification.Resource.Id.dialog_button = global::HabitTracking.Droid.Resource.Id.dialog_button;
+			global::Plugin.LocalNotification.Resource.Id.forever = global::HabitTracking.Droid.Resource.Id.forever;
+			global::Plugin.LocalNotification.Resource.Id.icon = global::HabitTracking.Droid.Resource.Id.icon;
+			global::Plugin.LocalNotification.Resource.Id.icon_group = global::HabitTracking.Droid.Resource.Id.icon_group;
+			global::Plugin.LocalNotification.Resource.Id.info = global::HabitTracking.Droid.Resource.Id.info;
+			global::Plugin.LocalNotification.Resource.Id.italic = global::HabitTracking.Droid.Resource.Id.italic;
+			global::Plugin.LocalNotification.Resource.Id.line1 = global::HabitTracking.Droid.Resource.Id.line1;
+			global::Plugin.LocalNotification.Resource.Id.line3 = global::HabitTracking.Droid.Resource.Id.line3;
+			global::Plugin.LocalNotification.Resource.Id.normal = global::HabitTracking.Droid.Resource.Id.normal;
+			global::Plugin.LocalNotification.Resource.Id.notification_background = global::HabitTracking.Droid.Resource.Id.notification_background;
+			global::Plugin.LocalNotification.Resource.Id.notification_main_column = global::HabitTracking.Droid.Resource.Id.notification_main_column;
+			global::Plugin.LocalNotification.Resource.Id.notification_main_column_container = global::HabitTracking.Droid.Resource.Id.notification_main_column_container;
+			global::Plugin.LocalNotification.Resource.Id.right_icon = global::HabitTracking.Droid.Resource.Id.right_icon;
+			global::Plugin.LocalNotification.Resource.Id.right_side = global::HabitTracking.Droid.Resource.Id.right_side;
+			global::Plugin.LocalNotification.Resource.Id.tag_accessibility_actions = global::HabitTracking.Droid.Resource.Id.tag_accessibility_actions;
+			global::Plugin.LocalNotification.Resource.Id.tag_accessibility_clickable_spans = global::HabitTracking.Droid.Resource.Id.tag_accessibility_clickable_spans;
+			global::Plugin.LocalNotification.Resource.Id.tag_accessibility_heading = global::HabitTracking.Droid.Resource.Id.tag_accessibility_heading;
+			global::Plugin.LocalNotification.Resource.Id.tag_accessibility_pane_title = global::HabitTracking.Droid.Resource.Id.tag_accessibility_pane_title;
+			global::Plugin.LocalNotification.Resource.Id.tag_on_apply_window_listener = global::HabitTracking.Droid.Resource.Id.tag_on_apply_window_listener;
+			global::Plugin.LocalNotification.Resource.Id.tag_on_receive_content_listener = global::HabitTracking.Droid.Resource.Id.tag_on_receive_content_listener;
+			global::Plugin.LocalNotification.Resource.Id.tag_on_receive_content_mime_types = global::HabitTracking.Droid.Resource.Id.tag_on_receive_content_mime_types;
+			global::Plugin.LocalNotification.Resource.Id.tag_screen_reader_focusable = global::HabitTracking.Droid.Resource.Id.tag_screen_reader_focusable;
+			global::Plugin.LocalNotification.Resource.Id.tag_state_description = global::HabitTracking.Droid.Resource.Id.tag_state_description;
+			global::Plugin.LocalNotification.Resource.Id.tag_transition_group = global::HabitTracking.Droid.Resource.Id.tag_transition_group;
+			global::Plugin.LocalNotification.Resource.Id.tag_unhandled_key_event_manager = global::HabitTracking.Droid.Resource.Id.tag_unhandled_key_event_manager;
+			global::Plugin.LocalNotification.Resource.Id.tag_unhandled_key_listeners = global::HabitTracking.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::Plugin.LocalNotification.Resource.Id.tag_window_insets_animation_callback = global::HabitTracking.Droid.Resource.Id.tag_window_insets_animation_callback;
+			global::Plugin.LocalNotification.Resource.Id.text = global::HabitTracking.Droid.Resource.Id.text;
+			global::Plugin.LocalNotification.Resource.Id.text2 = global::HabitTracking.Droid.Resource.Id.text2;
+			global::Plugin.LocalNotification.Resource.Id.time = global::HabitTracking.Droid.Resource.Id.time;
+			global::Plugin.LocalNotification.Resource.Id.title = global::HabitTracking.Droid.Resource.Id.title;
+			global::Plugin.LocalNotification.Resource.Id.view_tree_lifecycle_owner = global::HabitTracking.Droid.Resource.Id.view_tree_lifecycle_owner;
+			global::Plugin.LocalNotification.Resource.Integer.status_bar_notification_info_maxnum = global::HabitTracking.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Plugin.LocalNotification.Resource.Layout.custom_dialog = global::HabitTracking.Droid.Resource.Layout.custom_dialog;
+			global::Plugin.LocalNotification.Resource.Layout.notification_action = global::HabitTracking.Droid.Resource.Layout.notification_action;
+			global::Plugin.LocalNotification.Resource.Layout.notification_action_tombstone = global::HabitTracking.Droid.Resource.Layout.notification_action_tombstone;
+			global::Plugin.LocalNotification.Resource.Layout.notification_template_custom_big = global::HabitTracking.Droid.Resource.Layout.notification_template_custom_big;
+			global::Plugin.LocalNotification.Resource.Layout.notification_template_icon_group = global::HabitTracking.Droid.Resource.Layout.notification_template_icon_group;
+			global::Plugin.LocalNotification.Resource.Layout.notification_template_part_chronometer = global::HabitTracking.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Plugin.LocalNotification.Resource.Layout.notification_template_part_time = global::HabitTracking.Droid.Resource.Layout.notification_template_part_time;
+			global::Plugin.LocalNotification.Resource.String.status_bar_notification_info_overflow = global::HabitTracking.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Plugin.LocalNotification.Resource.Style.TextAppearance_Compat_Notification = global::HabitTracking.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Plugin.LocalNotification.Resource.Style.TextAppearance_Compat_Notification_Info = global::HabitTracking.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Plugin.LocalNotification.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::HabitTracking.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Plugin.LocalNotification.Resource.Style.TextAppearance_Compat_Notification_Time = global::HabitTracking.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Plugin.LocalNotification.Resource.Style.TextAppearance_Compat_Notification_Title = global::HabitTracking.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Plugin.LocalNotification.Resource.Style.Widget_Compat_NotificationActionContainer = global::HabitTracking.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Plugin.LocalNotification.Resource.Style.Widget_Compat_NotificationActionText = global::HabitTracking.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Plugin.LocalNotification.Resource.Styleable.Capability = global::HabitTracking.Droid.Resource.Styleable.Capability;
+			global::Plugin.LocalNotification.Resource.Styleable.Capability_queryPatterns = global::HabitTracking.Droid.Resource.Styleable.Capability_queryPatterns;
+			global::Plugin.LocalNotification.Resource.Styleable.Capability_shortcutMatchRequired = global::HabitTracking.Droid.Resource.Styleable.Capability_shortcutMatchRequired;
+			global::Plugin.LocalNotification.Resource.Styleable.ColorStateListItem = global::HabitTracking.Droid.Resource.Styleable.ColorStateListItem;
+			global::Plugin.LocalNotification.Resource.Styleable.ColorStateListItem_alpha = global::HabitTracking.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Plugin.LocalNotification.Resource.Styleable.ColorStateListItem_android_alpha = global::HabitTracking.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Plugin.LocalNotification.Resource.Styleable.ColorStateListItem_android_color = global::HabitTracking.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamily = global::HabitTracking.Droid.Resource.Styleable.FontFamily;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamilyFont = global::HabitTracking.Droid.Resource.Styleable.FontFamilyFont;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamilyFont_android_font = global::HabitTracking.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamilyFont_android_fontStyle = global::HabitTracking.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::HabitTracking.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamilyFont_android_fontWeight = global::HabitTracking.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::HabitTracking.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamilyFont_font = global::HabitTracking.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamilyFont_fontStyle = global::HabitTracking.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::HabitTracking.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamilyFont_fontWeight = global::HabitTracking.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamilyFont_ttcIndex = global::HabitTracking.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamily_fontProviderAuthority = global::HabitTracking.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamily_fontProviderCerts = global::HabitTracking.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::HabitTracking.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::HabitTracking.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamily_fontProviderPackage = global::HabitTracking.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamily_fontProviderQuery = global::HabitTracking.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Plugin.LocalNotification.Resource.Styleable.FontFamily_fontProviderSystemFontFamily = global::HabitTracking.Droid.Resource.Styleable.FontFamily_fontProviderSystemFontFamily;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor = global::HabitTracking.Droid.Resource.Styleable.GradientColor;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColorItem = global::HabitTracking.Droid.Resource.Styleable.GradientColorItem;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColorItem_android_color = global::HabitTracking.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColorItem_android_offset = global::HabitTracking.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor_android_centerColor = global::HabitTracking.Droid.Resource.Styleable.GradientColor_android_centerColor;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor_android_centerX = global::HabitTracking.Droid.Resource.Styleable.GradientColor_android_centerX;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor_android_centerY = global::HabitTracking.Droid.Resource.Styleable.GradientColor_android_centerY;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor_android_endColor = global::HabitTracking.Droid.Resource.Styleable.GradientColor_android_endColor;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor_android_endX = global::HabitTracking.Droid.Resource.Styleable.GradientColor_android_endX;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor_android_endY = global::HabitTracking.Droid.Resource.Styleable.GradientColor_android_endY;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor_android_gradientRadius = global::HabitTracking.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor_android_startColor = global::HabitTracking.Droid.Resource.Styleable.GradientColor_android_startColor;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor_android_startX = global::HabitTracking.Droid.Resource.Styleable.GradientColor_android_startX;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor_android_startY = global::HabitTracking.Droid.Resource.Styleable.GradientColor_android_startY;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor_android_tileMode = global::HabitTracking.Droid.Resource.Styleable.GradientColor_android_tileMode;
+			global::Plugin.LocalNotification.Resource.Styleable.GradientColor_android_type = global::HabitTracking.Droid.Resource.Styleable.GradientColor_android_type;
 			global::SkiaSharp.Views.Forms.Resource.Animation.abc_fade_in = global::HabitTracking.Droid.Resource.Animation.abc_fade_in;
 			global::SkiaSharp.Views.Forms.Resource.Animation.abc_fade_out = global::HabitTracking.Droid.Resource.Animation.abc_fade_out;
 			global::SkiaSharp.Views.Forms.Resource.Animation.abc_grow_fade_in_from_bottom = global::HabitTracking.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -27258,230 +27443,236 @@ namespace HabitTracking.Droid
 			// aapt resource value: 0x7F070075
 			public const int habit = 2131165301;
 			
+			// aapt resource value: 0x7F070077
+			public const int habits = 2131165303;
+			
 			// aapt resource value: 0x7F070076
 			public const int habit_full = 2131165302;
 			
-			// aapt resource value: 0x7F070077
-			public const int home = 2131165303;
-			
 			// aapt resource value: 0x7F070078
-			public const int home32 = 2131165304;
+			public const int home = 2131165304;
 			
 			// aapt resource value: 0x7F070079
-			public const int home_full = 2131165305;
+			public const int home32 = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int ic_arrow_down_24dp = 2131165306;
+			public const int home_full = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int ic_clock_black_24dp = 2131165307;
+			public const int ic_arrow_down_24dp = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int ic_keyboard_black_24dp = 2131165308;
+			public const int ic_clock_black_24dp = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int ic_mtrl_checked_circle = 2131165309;
+			public const int ic_keyboard_black_24dp = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int ic_mtrl_chip_checked_black = 2131165310;
+			public const int ic_mtrl_checked_circle = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int ic_mtrl_chip_checked_circle = 2131165311;
+			public const int ic_mtrl_chip_checked_black = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int ic_mtrl_chip_close_circle = 2131165312;
+			public const int ic_mtrl_chip_checked_circle = 2131165312;
 			
 			// aapt resource value: 0x7F070081
-			public const int imageIcon = 2131165313;
+			public const int ic_mtrl_chip_close_circle = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int info = 2131165314;
+			public const int imageIcon = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int Logo = 2131165315;
+			public const int info = 2131165315;
 			
 			// aapt resource value: 0x7F070084
-			public const int logout = 2131165316;
+			public const int Logo = 2131165316;
 			
 			// aapt resource value: 0x7F070085
-			public const int loop = 2131165317;
+			public const int logout = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int material_cursor_drawable = 2131165318;
+			public const int loop = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int material_ic_calendar_black_24dp = 2131165319;
+			public const int material_cursor_drawable = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int material_ic_clear_black_24dp = 2131165320;
+			public const int material_ic_calendar_black_24dp = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int material_ic_edit_black_24dp = 2131165321;
+			public const int material_ic_clear_black_24dp = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int material_ic_keyboard_arrow_left_black_24dp = 2131165322;
+			public const int material_ic_edit_black_24dp = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int material_ic_keyboard_arrow_next_black_24dp = 2131165323;
+			public const int material_ic_keyboard_arrow_left_black_24dp = 2131165323;
 			
 			// aapt resource value: 0x7F07008C
-			public const int material_ic_keyboard_arrow_previous_black_24dp = 2131165324;
+			public const int material_ic_keyboard_arrow_next_black_24dp = 2131165324;
 			
 			// aapt resource value: 0x7F07008D
-			public const int material_ic_keyboard_arrow_right_black_24dp = 2131165325;
+			public const int material_ic_keyboard_arrow_previous_black_24dp = 2131165325;
 			
 			// aapt resource value: 0x7F07008E
-			public const int material_ic_menu_arrow_down_black_24dp = 2131165326;
+			public const int material_ic_keyboard_arrow_right_black_24dp = 2131165326;
 			
 			// aapt resource value: 0x7F07008F
-			public const int material_ic_menu_arrow_up_black_24dp = 2131165327;
+			public const int material_ic_menu_arrow_down_black_24dp = 2131165327;
 			
 			// aapt resource value: 0x7F070090
-			public const int mtrl_dialog_background = 2131165328;
+			public const int material_ic_menu_arrow_up_black_24dp = 2131165328;
 			
 			// aapt resource value: 0x7F070091
-			public const int mtrl_dropdown_arrow = 2131165329;
+			public const int mtrl_dialog_background = 2131165329;
 			
 			// aapt resource value: 0x7F070092
-			public const int mtrl_ic_arrow_drop_down = 2131165330;
+			public const int mtrl_dropdown_arrow = 2131165330;
 			
 			// aapt resource value: 0x7F070093
-			public const int mtrl_ic_arrow_drop_up = 2131165331;
+			public const int mtrl_ic_arrow_drop_down = 2131165331;
 			
 			// aapt resource value: 0x7F070094
-			public const int mtrl_ic_cancel = 2131165332;
+			public const int mtrl_ic_arrow_drop_up = 2131165332;
 			
 			// aapt resource value: 0x7F070095
-			public const int mtrl_ic_error = 2131165333;
+			public const int mtrl_ic_cancel = 2131165333;
 			
 			// aapt resource value: 0x7F070096
-			public const int mtrl_navigation_bar_item_background = 2131165334;
+			public const int mtrl_ic_error = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int mtrl_popupmenu_background = 2131165335;
+			public const int mtrl_navigation_bar_item_background = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int mtrl_popupmenu_background_dark = 2131165336;
+			public const int mtrl_popupmenu_background = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int mtrl_tabs_default_indicator = 2131165337;
+			public const int mtrl_popupmenu_background_dark = 2131165337;
 			
 			// aapt resource value: 0x7F07009A
-			public const int nameIcon = 2131165338;
+			public const int mtrl_tabs_default_indicator = 2131165338;
 			
 			// aapt resource value: 0x7F07009B
-			public const int navigation_empty_icon = 2131165339;
+			public const int nameIcon = 2131165339;
 			
 			// aapt resource value: 0x7F07009C
-			public const int next = 2131165340;
+			public const int navigation_empty_icon = 2131165340;
 			
 			// aapt resource value: 0x7F07009D
-			public const int notification_action_background = 2131165341;
+			public const int next = 2131165341;
 			
 			// aapt resource value: 0x7F07009E
-			public const int notification_bg = 2131165342;
+			public const int notification_action_background = 2131165342;
 			
 			// aapt resource value: 0x7F07009F
-			public const int notification_bg_low = 2131165343;
+			public const int notification_bg = 2131165343;
 			
 			// aapt resource value: 0x7F0700A0
-			public const int notification_bg_low_normal = 2131165344;
+			public const int notification_bg_low = 2131165344;
 			
 			// aapt resource value: 0x7F0700A1
-			public const int notification_bg_low_pressed = 2131165345;
+			public const int notification_bg_low_normal = 2131165345;
 			
 			// aapt resource value: 0x7F0700A2
-			public const int notification_bg_normal = 2131165346;
+			public const int notification_bg_low_pressed = 2131165346;
 			
 			// aapt resource value: 0x7F0700A3
-			public const int notification_bg_normal_pressed = 2131165347;
+			public const int notification_bg_normal = 2131165347;
 			
 			// aapt resource value: 0x7F0700A4
-			public const int notification_icon_background = 2131165348;
+			public const int notification_bg_normal_pressed = 2131165348;
 			
 			// aapt resource value: 0x7F0700A5
-			public const int notification_template_icon_bg = 2131165349;
+			public const int notification_icon_background = 2131165349;
 			
 			// aapt resource value: 0x7F0700A6
-			public const int notification_template_icon_low_bg = 2131165350;
+			public const int notification_template_icon_bg = 2131165350;
 			
 			// aapt resource value: 0x7F0700A7
-			public const int notification_tile_bg = 2131165351;
+			public const int notification_template_icon_low_bg = 2131165351;
 			
 			// aapt resource value: 0x7F0700A8
-			public const int notify_panel_notification_icon_bg = 2131165352;
+			public const int notification_tile_bg = 2131165352;
 			
 			// aapt resource value: 0x7F0700A9
-			public const int paintbrush = 2131165353;
+			public const int notify_panel_notification_icon_bg = 2131165353;
 			
 			// aapt resource value: 0x7F0700AA
-			public const int pen32 = 2131165354;
+			public const int paintbrush = 2131165354;
 			
 			// aapt resource value: 0x7F0700AB
-			public const int pieChart = 2131165355;
+			public const int pen32 = 2131165355;
 			
 			// aapt resource value: 0x7F0700AC
-			public const int plus = 2131165356;
+			public const int pieChart = 2131165356;
 			
 			// aapt resource value: 0x7F0700AD
-			public const int preference_list_divider_material = 2131165357;
+			public const int plus = 2131165357;
 			
 			// aapt resource value: 0x7F0700AE
-			public const int previous = 2131165358;
+			public const int preference_list_divider_material = 2131165358;
 			
 			// aapt resource value: 0x7F0700AF
-			public const int progressIcon = 2131165359;
+			public const int previous = 2131165359;
 			
 			// aapt resource value: 0x7F0700B0
-			public const int puzzle = 2131165360;
+			public const int progressIcon = 2131165360;
 			
 			// aapt resource value: 0x7F0700B1
-			public const int question = 2131165361;
+			public const int puzzle = 2131165361;
 			
 			// aapt resource value: 0x7F0700B2
-			public const int restaurant = 2131165362;
+			public const int question = 2131165362;
 			
 			// aapt resource value: 0x7F0700B3
-			public const int rightArrow = 2131165363;
+			public const int restaurant = 2131165363;
 			
 			// aapt resource value: 0x7F0700B4
-			public const int scoreIcon = 2131165364;
+			public const int rightArrow = 2131165364;
 			
 			// aapt resource value: 0x7F0700B5
-			public const int setting = 2131165365;
-			
-			// aapt resource value: 0x7F0700B7
-			public const int settings = 2131165367;
+			public const int scoreIcon = 2131165365;
 			
 			// aapt resource value: 0x7F0700B6
-			public const int setting_full = 2131165366;
+			public const int setting = 2131165366;
 			
 			// aapt resource value: 0x7F0700B8
-			public const int share = 2131165368;
+			public const int settings = 2131165368;
+			
+			// aapt resource value: 0x7F0700B7
+			public const int setting_full = 2131165367;
 			
 			// aapt resource value: 0x7F0700B9
-			public const int startTime = 2131165369;
+			public const int share = 2131165369;
 			
 			// aapt resource value: 0x7F0700BA
-			public const int statistics = 2131165370;
+			public const int SoundNotification = 2131165370;
 			
 			// aapt resource value: 0x7F0700BB
-			public const int streakIcon = 2131165371;
+			public const int startTime = 2131165371;
 			
 			// aapt resource value: 0x7F0700BC
-			public const int stretching = 2131165372;
+			public const int statistics = 2131165372;
 			
 			// aapt resource value: 0x7F0700BD
-			public const int test_custom_background = 2131165373;
+			public const int streakIcon = 2131165373;
 			
 			// aapt resource value: 0x7F0700BE
-			public const int tooltip_frame_dark = 2131165374;
+			public const int stretching = 2131165374;
 			
 			// aapt resource value: 0x7F0700BF
-			public const int tooltip_frame_light = 2131165375;
+			public const int test_custom_background = 2131165375;
 			
 			// aapt resource value: 0x7F0700C0
-			public const int User = 2131165376;
+			public const int tooltip_frame_dark = 2131165376;
+			
+			// aapt resource value: 0x7F0700C1
+			public const int tooltip_frame_light = 2131165377;
+			
+			// aapt resource value: 0x7F0700C2
+			public const int User = 2131165378;
 			
 			static Drawable()
 			{
