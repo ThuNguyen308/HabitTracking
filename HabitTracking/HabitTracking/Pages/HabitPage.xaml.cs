@@ -45,6 +45,7 @@ namespace HabitTracking.Pages
             string currentColor = _habit.colorCode;
             colorBV.BackgroundColor = (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor));
             IconTintColorEffect.SetTintColor(categoryImg, (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor)));
+            categoryNameLbl.TextColor = (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor));
         }
         private async void Tap_OpenHabitName(object sender, EventArgs e)
         {
@@ -66,6 +67,7 @@ namespace HabitTracking.Pages
             string currentColor = _habit.colorCode;
             colorBV.BackgroundColor = (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor));
             IconTintColorEffect.SetTintColor(categoryImg, (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor)));
+            categoryNameLbl.TextColor = (Xamarin.Forms.Color)(converter.ConvertFromInvariantString(currentColor));
         }
         private async void Tap_OpenDescription(object sender, EventArgs e)
         {

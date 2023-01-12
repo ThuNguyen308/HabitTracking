@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <RelativeLayout>
             <StackLayout Margin="10,10,10,0" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
-                <Label Text="⭐YOUR HABIT CATEGORY⭐"  HorizontalOptions="Center" Style="{StaticResource textHeader}" Margin="10,10"></Label>
+                <Label Text="⭐YOUR HABIT CATEGORY⭐"  HorizontalOptions="Center" Style="{StaticResource textHeader}" Margin="10,10,10,15"></Label>
 
                 <Grid>
                     <Grid.RowDefinitions>
@@ -43,7 +43,8 @@
                                         </Image>
                                     </AbsoluteLayout>   
                                     <Label Text="{Binding categoryName}" Grid.Row="1"
-                                           Style="{StaticResource categoryName}"></Label>
+                                           Style="{StaticResource categoryName}"
+                                           TextColor="#4d0000"></Label>
                                     <Label Text="{Binding numOfEntries}" Grid.Row="2"
                                            Style="{StaticResource entry}"></Label>
                                 </StackLayout>

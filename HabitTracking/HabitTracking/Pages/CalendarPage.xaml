@@ -39,7 +39,7 @@
 
             <plugin:Calendar.EventTemplate>
                 <DataTemplate>
-                    <StackLayout>
+                    <StackLayout Padding="0,0,0,5">
                         <Frame BackgroundColor="White" BorderColor="#F0F0F0" HasShadow="False" >
                             <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
                                 <Grid.ColumnDefinitions>
