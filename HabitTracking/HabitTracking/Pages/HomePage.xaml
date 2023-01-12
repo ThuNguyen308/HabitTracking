@@ -87,7 +87,7 @@
                         <DataTemplate>
                             <SwipeView Grid.Row="1" HeightRequest="70" WidthRequest="10">
                                 <SwipeView.RightItems>
-                                    <SwipeItems SwipeBehaviorOnInvoked="RemainOpen">
+                                    <SwipeItems SwipeBehaviorOnInvoked="Close">
                                         <SwipeItem Text=""
                                            IconImageSource="delete32"
                                             BackgroundColor="#EA8A8A"
@@ -134,7 +134,7 @@
                                         </AbsoluteLayout>
                                         <Label Grid.Column="1"  Text="{Binding habitName}" Style="{StaticResource text}"/>
                                         <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
-                                            <CheckBox IsChecked="{Binding isChecked}" ></CheckBox>
+                                            <CheckBox IsChecked="{Binding isChecked}" CheckedChanged="CheckBox_CheckedChanged"></CheckBox>
                                         </StackLayout>
                                     </Grid>
                                 </Frame>

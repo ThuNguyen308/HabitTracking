@@ -32,7 +32,6 @@ namespace HabitTracking.ViewModels
         {
             // testing all kinds of adding events
             // when initializing collection
-            Events = new EventCollection();
             List<DateTime> dateList = new List<DateTime>();
             foreach (Habit hb in User.habitList)
             {
@@ -68,7 +67,7 @@ namespace HabitTracking.ViewModels
             return habits;
         }
 
-        public EventCollection Events { get; set; }
+        public EventCollection Events { get; set; } = new EventCollection();
 
         private int _day = DateTime.Today.Day;
 
@@ -141,7 +140,8 @@ namespace HabitTracking.ViewModels
             {
                 HttpClient http = new HttpClient();
                 eventModel.checkinDate = (DateTime)SelectedDate;
-                string jsonlh = JsonConvert.SerializeObject(eventModel);
+                
+               string jsonlh = JsonConvert.SerializeObject(eventModel);
                 StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
                 HttpResponseMessage kq;
                 if (eventModel.isChecked == false)
@@ -152,6 +152,7 @@ namespace HabitTracking.ViewModels
                     {
                         await App.Current.MainPage.DisplayAlert(null, "checked", "ok");
                         eventModel.isChecked = true;
+                        Events[eventModel.checkinDate] = GenerateHabitListbyDate(eventModel.checkinDate);
                     }
                     else
                         await App.Current.MainPage.DisplayAlert(null, "check fail", "ok");
@@ -164,6 +165,7 @@ namespace HabitTracking.ViewModels
                     {
                         await App.Current.MainPage.DisplayAlert(null, "Unchecked", "ok");
                         eventModel.isChecked = false;
+                        Events[eventModel.checkinDate]=GenerateHabitListbyDate(eventModel.checkinDate);
                     }
                     else
                         await App.Current.MainPage.DisplayAlert(null, "uncheck fail", "ok");

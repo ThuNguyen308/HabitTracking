@@ -181,7 +181,25 @@ namespace HabitTracking.Pages
         {
             StackLayout stackLayout = (StackLayout)sender;
             CheckIn habitCheckin = stackLayout.BindingContext as CheckIn;
-            
+
+            CheckinHabit(habitCheckin);
+        }
+        CheckIn ci = new CheckIn();
+        private void myRefeshView_Refreshing(object sender, EventArgs e)
+        {
+            Task.Delay(3000);
+            myRefeshView.IsRefreshing = false;
+        }
+
+        private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            CheckBox grid = (CheckBox)sender;
+            CheckIn habitCheckin = grid.BindingContext as CheckIn;
+
+            //CheckinHabit(habitCheckin);
+        }
+        private async void CheckinHabit(CheckIn habitCheckin)
+        {
             HttpClient http = new HttpClient();
             string jsonlh = JsonConvert.SerializeObject(habitCheckin);
             StringContent httcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
@@ -193,11 +211,10 @@ namespace HabitTracking.Pages
                 if (int.Parse(kqtv.ToString()) > 0)
                 {
                     await App.Current.MainPage.DisplayAlert("Success", "Checked", "ok");
-                    habitCheckin.isChecked = true;
                     InitHabit();
                 }
                 else
-                    await App.Current.MainPage.DisplayAlert("Fail", "check fail", "ok");
+                    await App.Current.MainPage.DisplayAlert("Fail", "Check fail", "ok");
             }
             else
             {
@@ -206,18 +223,11 @@ namespace HabitTracking.Pages
                 if (int.Parse(kqtv.ToString()) > 0)
                 {
                     await App.Current.MainPage.DisplayAlert("Success", "Unchecked", "ok");
-                    habitCheckin.isChecked = false;
                     InitHabit();
                 }
                 else
                     await App.Current.MainPage.DisplayAlert("Fail", "Uncheck fail", "ok");
             }
-        }
-
-        private void myRefeshView_Refreshing(object sender, EventArgs e)
-        {
-            Task.Delay(3000);
-            myRefeshView.IsRefreshing = false;
         }
 
         /*private async void listTodayHabit_SelectionChanged(object sender, SelectionChangedEventArgs e)
