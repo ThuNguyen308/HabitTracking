@@ -168,7 +168,11 @@ namespace HabitTracking.ViewModels
                     else
                         await App.Current.MainPage.DisplayAlert(null, "uncheck fail", "ok");
                 }
+
+                //await App.Current.MainPage.DisplayAlert(null, eventModel.checkinDate.ToString("dd-MM-yyyy") , "ok");
+
             }
+
         }
     }
 

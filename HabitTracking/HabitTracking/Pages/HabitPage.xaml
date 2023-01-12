@@ -67,7 +67,7 @@
                     <TapGestureRecognizer Tapped="Tap_OpenDescription"></TapGestureRecognizer>
                 </StackLayout.GestureRecognizers>
             </StackLayout>
-            <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked" VerticalOptions="EndAndExpand" BackgroundColor="DeepPink" TextColor="White" FontSize="Medium" FontAttributes="Bold" CornerRadius="10"></Button>
+            <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked" VerticalOptions="EndAndExpand" Style="{StaticResource buttonPlus}" Margin="30,50" FontSize="Medium" FontAttributes="Bold" CornerRadius="10"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

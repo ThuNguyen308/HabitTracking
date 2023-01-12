@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              Title="Habits"
-             BackgroundColor="#FFF8D2"
+             Style="{StaticResource page}"
              x:Class="HabitTracking.Pages.AllHabitPage"
              IconImageSource = "habit">
     <ContentPage.Content>
@@ -23,26 +23,45 @@
 
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*" ></ColumnDefinition>
+                                            <ColumnDefinition Width="Auto"  ></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"></RowDefinition>
                                         </Grid.RowDefinitions>
 
-                                        <Image Grid.Column="0" Source="{Binding iconImage}" HeightRequest="50" WidthRequest="35" Margin="4,0"
+                                        <StackLayout Grid.Column="0" Grid.RowSpan="2" VerticalOptions="CenterAndExpand">
+                                            <AbsoluteLayout WidthRequest="60" HeightRequest="60">
+                                                <BoxView BackgroundColor="{Binding colorCode}"
+                                                CornerRadius="5" HorizontalOptions="EndAndExpand"
+                                                WidthRequest="60" HeightRequest="60"
+                                                AbsoluteLayout.LayoutBounds="0.5,0.5"
+                                                AbsoluteLayout.LayoutFlags="PositionProportional"
+                                                Opacity="0.1">
+                                                </BoxView>
+                                                <Image
+                                            Source="{Binding iconImage}"
                                                xct:IconTintColorEffect.TintColor="{Binding colorCode}"
-                                               ></Image>
-                                        <StackLayout Grid.Column="1"  Spacing="0"   Orientation="Vertical">
+                                               WidthRequest="40" HeightRequest="40" Aspect="AspectFit"
+                                               AbsoluteLayout.LayoutBounds="0.5,0.5"
+                                               AbsoluteLayout.LayoutFlags="PositionProportional">
+                                                </Image>
+                                            </AbsoluteLayout>
+                                        </StackLayout>
+
+                                        <!--<Image Grid.Column="0" Grid.RowSpan="2" Source="{Binding iconImage}" HeightRequest="50" WidthRequest="35" Margin="4,0"
+                                               xct:IconTintColorEffect.TintColor="{Binding colorCode}"
+                                               ></Image>-->
+                                        <StackLayout Grid.Column="1" Grid.ColumnSpan="2"  Spacing="0"   Orientation="Vertical" >
                                             <StackLayout  Orientation="Horizontal" Margin="20,10">
-                                                <Label Text="{Binding habitName}"  MinimumWidthRequest="100" FontAttributes="Bold" FontSize="19"  TextColor="#16003B" FontFamily="RobotoBold" ></Label>
-                                                <Label Text="{Binding habitDescription}" VerticalOptions="Center"  Style="{StaticResource text}" FontSize="14" Margin="20,0" FontFamily="Roboto"></Label>
+                                                <Label Text="{Binding habitName}" Style="{StaticResource text}" FontAttributes="Bold" FontFamily="RobotoBold" FontSize="22"></Label>
                                              </StackLayout>
 
-                                            <StackLayout Orientation="Horizontal" >
-
-                                                <Image Source="barChart" Margin="20,0" WidthRequest="25" 
-                                               xct:IconTintColorEffect.TintColor="{Binding colorCode}"
-                                                       >
+                                        </StackLayout>
+                                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding habitDescription}" VerticalOptions="Center"  Style="{StaticResource text}" FontSize="18" Margin="20,0" FontFamily="Roboto"></Label>
+                                        <StackLayout Grid.Column="2" Grid.Row="1" HorizontalOptions="EndAndExpand"  Orientation="Horizontal" >
+                                                <Image Source="barChart" Style="{StaticResource icon}"
+                                               xct:IconTintColorEffect.TintColor="{Binding colorCode}" >
                                                     <Image.GestureRecognizers>
                                                         <TapGestureRecognizer 
                                                         Tapped="OnTapStatistic"  CommandParameter="{Binding .}" 
@@ -50,7 +69,7 @@
                                                     </Image.GestureRecognizers>
                                                 </Image>
 
-                                                <Image Source="pen32" Margin="20,0" WidthRequest="25"
+                                            <Image Source="pen32"  Style="{StaticResource icon}"
                                                xct:IconTintColorEffect.TintColor="{Binding colorCode}">
                                                     <Image.GestureRecognizers>
                                                         <TapGestureRecognizer 
@@ -58,7 +77,7 @@
                                                         NumberOfTapsRequired="1" />
                                                     </Image.GestureRecognizers>
                                                 </Image>
-                                                <Image Source="delete32" Margin="20,5" WidthRequest="25"
+                                            <Image Source="delete32"  Style="{StaticResource icon}"
                                                xct:IconTintColorEffect.TintColor="{Binding colorCode}">
                                                     <Image.GestureRecognizers>
                                                         <TapGestureRecognizer 
@@ -67,7 +86,6 @@
                                                     </Image.GestureRecognizers>
                                                 </Image>
                                             </StackLayout>
-                                        </StackLayout>
                                     </Grid>
                                 </Frame>
                             </ViewCell>
