@@ -150,7 +150,6 @@ namespace HabitTracking.ViewModels
                     var kqtv = await kq.Content.ReadAsStringAsync();
                     if (int.Parse(kqtv.ToString()) > 0)
                     {
-                        await App.Current.MainPage.DisplayAlert(null, "checked", "ok");
                         eventModel.isChecked = true;
                         Events[eventModel.checkinDate] = GenerateHabitListbyDate(eventModel.checkinDate);
                     }
@@ -163,7 +162,6 @@ namespace HabitTracking.ViewModels
                     var kqtv = await kq.Content.ReadAsStringAsync();
                     if (int.Parse(kqtv.ToString()) > 0)
                     {
-                        await App.Current.MainPage.DisplayAlert(null, "Unchecked", "ok");
                         eventModel.isChecked = false;
                         Events[eventModel.checkinDate]=GenerateHabitListbyDate(eventModel.checkinDate);
                     }

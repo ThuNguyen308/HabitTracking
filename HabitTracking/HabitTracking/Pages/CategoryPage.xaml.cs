@@ -131,9 +131,7 @@ namespace HabitTracking.Pages
                 HttpResponseMessage kq;
                 kq = await http.PostAsync(GlobalVariables.url + "api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
-                if (int.Parse(kqtv.ToString()) > 0)
-                    await DisplayAlert("Success!", "Your category has been updated.", "Ok");
-                else
+                if (int.Parse(kqtv.ToString()) <= 0)
                     await DisplayAlert("Error", "Oops, something went wrong.", "Ok");
                 InitCategory();
             }
@@ -164,9 +162,7 @@ namespace HabitTracking.Pages
                 HttpResponseMessage kq;
                 kq = await http.PostAsync(GlobalVariables.url + "api/Category/UpdateCategory", httcontent);
                 var kqtv = await kq.Content.ReadAsStringAsync();
-                if (int.Parse(kqtv.ToString()) > 0)
-                    await DisplayAlert("Success!", "Your category has been updated.", "Ok");
-                else
+                if (int.Parse(kqtv.ToString()) <= 0)
                     await DisplayAlert("Error", "Oops, something went wrong.", "Ok");
                 InitCategory();
             }
@@ -200,9 +196,7 @@ namespace HabitTracking.Pages
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (_categorySelected.colorId != oldCategory.colorId)
                 {
-                    if (int.Parse(kqtv.ToString()) > 0)
-                        await DisplayAlert("Success!", "Your category has been updated.", "Ok");
-                    else
+                    if (int.Parse(kqtv.ToString()) <= 0)
                         await DisplayAlert("Error", "Oops, something went wrong.", "Ok");
                 }
                
@@ -217,9 +211,7 @@ namespace HabitTracking.Pages
             HttpResponseMessage kq;
             kq = await http.PostAsync(GlobalVariables.url + "api/Category/CreateCategory", httcontent);
             var kqtv = await kq.Content.ReadAsStringAsync();
-            if (int.Parse(kqtv.ToString()) > 0)
-                await DisplayAlert("Success!", "Your category has been updated.", "Ok");
-            else
+            if (int.Parse(kqtv.ToString()) <= 0)
                 await DisplayAlert("Error", "Oops, something went wrong.", "Ok");
             InitCategory();
             overlay.IsVisible = false;
@@ -240,7 +232,6 @@ namespace HabitTracking.Pages
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
                 {
-                    await DisplayAlert(null, "Category was deleted", "ok");
                     overlay.IsVisible = false;
                     overlay1.IsVisible = false;
                     popupEditCategory.IsVisible = false;

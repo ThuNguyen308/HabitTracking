@@ -22,6 +22,7 @@ namespace HabitTracking.Pages
 
         private async void BtnSignin_Clicked(object sender, EventArgs e)
         {
+            
             if (txtFirstName.Text == null || txtLastName.Text == null || txtUsername.Text == null || txtEmail.Text == null | txtPassword.Text == null)
             {
                 await DisplayAlert("Error!", "Please enter all infomation .", "Ok");

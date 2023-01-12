@@ -62,7 +62,6 @@ namespace HabitTracking.Pages
         }
         public void OnToggled(object sender, ToggledEventArgs e)
         {
-            DisplayAlert("toggled", null, "ok");
             if (reminder.IsToggled)
             {
                 var notification = new NotificationRequest

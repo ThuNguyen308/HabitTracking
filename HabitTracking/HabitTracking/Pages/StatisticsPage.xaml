@@ -41,15 +41,15 @@
 
                     <StackLayout Padding="0,20,0,20">
                         <AbsoluteLayout>
-                            <Label Text="Start" AbsoluteLayout.LayoutBounds="0,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                            <Label Text="Start" TextColor="#4d0000" AbsoluteLayout.LayoutBounds="0,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
                             <Label x:Name="txtProgress" TextColor="DeepPink" FontSize="Medium" FontAttributes="Bold"
                                AbsoluteLayout.LayoutBounds="0.5,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
-                            <Label Text="End" AbsoluteLayout.LayoutBounds="1,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
+                            <Label Text="End" TextColor="#4d0000" AbsoluteLayout.LayoutBounds="1,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"></Label>
                         </AbsoluteLayout>
                         <ProgressBar x:Name="progressBar" ProgressColor="DeepPink"></ProgressBar>
                         <StackLayout Orientation="Horizontal">
-                            <Label x:Name="startDateLbl" HorizontalOptions="Start"></Label>
-                            <Label x:Name="endDateLbl" HorizontalOptions="EndAndExpand"></Label>
+                            <Label x:Name="startDateLbl" TextColor="#4d0000" HorizontalOptions="Start"></Label>
+                            <Label x:Name="endDateLbl" TextColor="#4d0000" HorizontalOptions="EndAndExpand"></Label>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout >
@@ -75,13 +75,13 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <StackLayout Grid.Column="0" VerticalOptions="CenterAndExpand">
-                                <Label Text="Current" HorizontalTextAlignment="Center"></Label>
+                                <Label Text="Current" TextColor="#4d0000" HorizontalTextAlignment="Center"></Label>
                                 <Label x:Name="currentStreakLbl" TextColor="DeepPink" Style="{StaticResource header1}" HorizontalTextAlignment="Center"></Label>
                             </StackLayout>
                             <BoxView HeightRequest="90" Grid.Column="1" WidthRequest="1" BackgroundColor="#f9ecf2"></BoxView>
 
                             <StackLayout Grid.Column="2" VerticalOptions="CenterAndExpand">
-                                <Label Text="Best" HorizontalTextAlignment="Center"></Label>
+                                <Label Text="Best" TextColor="#4d0000" HorizontalTextAlignment="Center"></Label>
                                 <Label x:Name="bestStreakLbl" TextColor="DeepPink" Style="{StaticResource header1}" HorizontalTextAlignment="Center"></Label>
                             </StackLayout>
                         </Grid>

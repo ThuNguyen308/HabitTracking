@@ -210,7 +210,6 @@ namespace HabitTracking.Pages
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
                 {
-                    await App.Current.MainPage.DisplayAlert("Success", "Checked", "ok");
                     InitHabit();
                 }
                 else
@@ -222,7 +221,6 @@ namespace HabitTracking.Pages
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
                 {
-                    await App.Current.MainPage.DisplayAlert("Success", "Unchecked", "ok");
                     InitHabit();
                 }
                 else
