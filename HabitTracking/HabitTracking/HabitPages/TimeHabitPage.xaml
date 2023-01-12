@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             x:Class="HabitTracking.HabitPages.TimeHabitPage">
+             x:Class="HabitTracking.HabitPages.TimeHabitPage"
+             Style="{StaticResource page}">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="When do you want to do it?"

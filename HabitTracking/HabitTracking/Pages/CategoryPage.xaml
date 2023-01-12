@@ -43,8 +43,8 @@
                                         </Image>
                                     </AbsoluteLayout>   
                                     <Label Text="{Binding categoryName}" Grid.Row="1"
-                                           Style="{StaticResource categoryName}"
-                                           TextColor="#4d0000"></Label>
+                                           Style="{StaticResource categoryName}" FontSize="18" HorizontalTextAlignment="Center">
+                                    </Label>
                                     <Label Text="{Binding numOfEntries}" Grid.Row="2"
                                            Style="{StaticResource entry}"></Label>
                                 </StackLayout>
@@ -76,7 +76,7 @@
                 <StackLayout Padding="5,0,0,0">
                     <StackLayout Orientation="Horizontal" Padding="10">
                         <BoxView x:Name="colorBV" HeightRequest="10" WidthRequest="5" CornerRadius="5"/>
-                        <Label x:Name="txtCategoyName" Text="New Category" FontSize="Medium" Padding="5" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
+                        <Label x:Name="txtCategoyName" Text="New Category" Style="{StaticResource categoryName}" FontSize="20" Padding="5" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
                         <AbsoluteLayout>
                             <BoxView x:Name="colorBV1"
                                      CornerRadius="5"
@@ -95,8 +95,8 @@
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Tap_OpenNameCategory"/>
                         </StackLayout.GestureRecognizers>
-                        <Image Source="nameIcon.png" HorizontalOptions="Start"></Image>
-                        <Label x:Name="categoryName" Text="Category Name"></Label>
+                        <Image Source="nameIcon.png" xct:IconTintColorEffect.TintColor="#3a1313" HorizontalOptions="Start"></Image>
+                        <Label x:Name="categoryName" Text="Category Name" Style="{StaticResource text}"></Label>
                     </StackLayout>
                     <BoxView HeightRequest="1" Color="#f9ecf2" />
 
@@ -104,8 +104,8 @@
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Tap_OpenIconCategory"/>
                         </StackLayout.GestureRecognizers>
-                        <Image Source="imageIcon.png" HorizontalOptions="Start"></Image>
-                        <Label x:Name="categoryIcon" Text="Category Icon" Padding="5,0,0,0"></Label>
+                        <Image Source="imageIcon.png" xct:IconTintColorEffect.TintColor="#3a1313" HorizontalOptions="Start"></Image>
+                        <Label x:Name="categoryIcon" Text="Category Icon" Style="{StaticResource text}" Padding="5,0,0,0"></Label>
                     </StackLayout>
                     <BoxView HeightRequest="1" Color="#f9ecf2" />
 
@@ -113,8 +113,8 @@
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Tap_OpenColorCategory"/>
                         </StackLayout.GestureRecognizers>
-                        <Image Source="colorIcon.png" HorizontalOptions="Start"></Image>
-                        <Label x:Name="categoryColor" Text="Category Color"></Label>
+                        <Image Source="colorIcon.png" xct:IconTintColorEffect.TintColor="#3a1313" HorizontalOptions="Start"></Image>
+                        <Label x:Name="categoryColor" Text="Category Color" Style="{StaticResource text}"></Label>
                     </StackLayout>
                     <BoxView HeightRequest="1" Color="#f9ecf2" />
                     <StackLayout Orientation="Horizontal" Padding="15">
@@ -136,7 +136,7 @@
                 <StackLayout Padding="5,0,0,0">
                     <StackLayout Orientation="Horizontal" Padding="10">
                         <BoxView x:Name="ecolorBV" HeightRequest="10" WidthRequest="5" CornerRadius="5"/>
-                        <Label x:Name="eNameCategoryLbl" Text="New Category" FontSize="Medium" Padding="5" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
+                        <Label x:Name="eNameCategoryLbl" Text="New Category" Style="{StaticResource categoryName}" FontSize="20" Padding="5" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
                         <AbsoluteLayout>
                             <BoxView x:Name="ecolorBV1"
                                      CornerRadius="5"
@@ -156,8 +156,8 @@
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Tap_OpenNameCategory"/>
                         </StackLayout.GestureRecognizers>
-                        <Image Source="nameIcon.png" HorizontalOptions="Start"></Image>
-                        <Label x:Name="ecategoryName" Text="Category Name"></Label>
+                        <Image Source="nameIcon.png" xct:IconTintColorEffect.TintColor="#3a1313" HorizontalOptions="Start"></Image>
+                        <Label x:Name="ecategoryName" Text="Category Name" Style="{StaticResource text}"></Label>
                     </StackLayout>
                     <BoxView HeightRequest="1" Color="#f9ecf2" />
 
@@ -165,8 +165,8 @@
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Tap_OpenIconCategory"/>
                         </StackLayout.GestureRecognizers>
-                        <Image Source="imageIcon.png" HorizontalOptions="Start"></Image>
-                        <Label x:Name="ecategoryIcon" Text="Category Icon" Padding="5,0,0,0"></Label>
+                        <Image Source="imageIcon.png" xct:IconTintColorEffect.TintColor="#3a1313" HorizontalOptions="Start"></Image>
+                        <Label x:Name="ecategoryIcon" Text="Category Icon" Padding="5,0,0,0" Style="{StaticResource text}"></Label>
                     </StackLayout>
                     <BoxView HeightRequest="1" Color="#f9ecf2" />
 
@@ -174,8 +174,8 @@
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Tap_OpenColorCategory"/>
                         </StackLayout.GestureRecognizers>
-                        <Image Source="colorIcon.png" HorizontalOptions="Start"></Image>
-                        <Label x:Name="ecategoryColor" Text="Category Color"></Label>
+                        <Image Source="colorIcon.png" xct:IconTintColorEffect.TintColor="#3a1313" HorizontalOptions="Start"></Image>
+                        <Label x:Name="ecategoryColor" Text="Category Color" Style="{StaticResource text}"></Label>
                     </StackLayout>
                     <BoxView HeightRequest="1" Color="#f9ecf2" />
 
@@ -183,8 +183,8 @@
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Tap_DeteteCategory"/>
                         </StackLayout.GestureRecognizers>
-                        <Image Source="deleteIcon.png" HorizontalOptions="Start"></Image>
-                        <Label Text="Delete Category"></Label>
+                        <Image Source="deleteIcon.png" xct:IconTintColorEffect.TintColor="#3a1313" HorizontalOptions="Start"></Image>
+                        <Label Text="Delete Category" Style="{StaticResource text}"></Label>
                     </StackLayout>
                 </StackLayout>
                 

@@ -10,15 +10,15 @@
                 <Setter Property="BarTextColor" Value="DeepPink" />
             </Style>
             <Style x:Key="text" TargetType="Label">
-                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontSize" Value="18"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="FontFamily" Value="Roboto"/>
-                <Setter Property="TextColor" Value="#2E0249"/>
+                <Setter Property="TextColor" Value="#3a1313"/>
             </Style>
             <Style x:Key="textHeader" TargetType="Label">
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="TextColor" Value="#800040"/>
+                <Setter Property="TextColor" Value="#3a1313"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontFamily" Value="RobotoBold"/>
             </Style>
@@ -48,7 +48,7 @@
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="FontFamily" Value="Roboto"/>
-                <Setter Property="TextColor" Value="#2E0249"/>
+                <Setter Property="TextColor" Value="#3a1313"/>
             </Style>
             <!--carousel page-->
             <Style x:Key="btnCarousel" TargetType="Button">
@@ -84,6 +84,7 @@
             <Style x:Key="categoryName" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextColor" Value="#3a1313"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="FontFamily" Value="RobotoBold"/>
             </Style>
@@ -91,13 +92,14 @@
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="TextColor" Value="DarkRed"/>
                 <Setter Property="FontSize" Value="13"/>
+                <Setter Property="FontFamily" Value="Roboto"/>
             </Style>
            
             <!--page help, about  -->
             <Style x:Key="header" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="Large"/>
-                <Setter Property="TextColor" Value="#393E46"/>
+                <Setter Property="TextColor" Value="#3a1313"/>
             </Style>
             <Style x:Key="header1" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -106,9 +108,21 @@
             <Style x:Key="content" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium"/>
             </Style>
-            
-            
-            
+
+            <!--statistics page-->
+            <Style x:Key="static_textHeader" TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="Roboto"/>
+                <Setter Property="TextColor" Value="#3a1313"/>
+            </Style>
+            <Style x:Key="static_text" TargetType="Label">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="Roboto"/>
+                <Setter Property="TextColor" Value="#3a1313"/>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

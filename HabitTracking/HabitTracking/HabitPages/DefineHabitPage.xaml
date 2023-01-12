@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HabitTracking.HabitPages.DefineHabitPage">
+             x:Class="HabitTracking.HabitPages.DefineHabitPage"
+             Style="{StaticResource page}">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Spacing="15" Padding="15,0,15,0">
             <Label Text="Define your habit"

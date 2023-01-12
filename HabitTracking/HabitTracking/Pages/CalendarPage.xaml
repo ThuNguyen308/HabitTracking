@@ -7,6 +7,7 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="HabitTracking.Pages.CalendarPage"
              x:Name="weekViewCalendarPage"
+             Style="{StaticResource page}"
              Title="Calendar">
 
     <ContentPage.ToolbarItems>
@@ -41,7 +42,7 @@
                 <DataTemplate>
                     <StackLayout Padding="0,0,0,5">
                         <Frame BackgroundColor="White" BorderColor="#F0F0F0" HasShadow="False" >
-                            <Grid HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+                            <Grid HeightRequest="30" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="3*"/>
@@ -64,7 +65,7 @@
 
                                     </Image>
                                 </AbsoluteLayout>
-                                <Label Grid.Column="1"  Text="{Binding habitName}" Style="{StaticResource text}"/>
+                                <Label Grid.Column="1" Text="{Binding habitName}" Style="{StaticResource text}"/>
                                 <StackLayout Grid.Column="2" Orientation="Horizontal" Margin="20,0" HorizontalOptions="End" VerticalOptions="Center">
                                     <CheckBox IsChecked="{Binding isChecked, Mode=TwoWay}"></CheckBox>
                                 </StackLayout>

@@ -76,7 +76,6 @@ namespace HabitTracking.Pages
                 var kqtv = await kq.Content.ReadAsStringAsync();
                 if (int.Parse(kqtv.ToString()) > 0)
                 {
-                    await DisplayAlert("Habit deleted", "Habit is successfully deleted", "OK");
                     InitHabit();
                 }
                 else

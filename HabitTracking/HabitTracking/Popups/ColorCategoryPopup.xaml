@@ -5,7 +5,7 @@
              Size="300,400" 
              x:Class="HabitTracking.Popups.ColorCategoryPopup">
     <StackLayout Padding="10" >
-        <Label Text="Category Color" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Padding="0,10,0,10"></Label>
+        <Label Text="Category Color" TextColor="#3a1313" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" Padding="0,10,0,10"></Label>
         <BoxView HeightRequest="1" Color="#f9ecf2" />
         <Grid>
             <Grid.RowDefinitions>
@@ -35,6 +35,6 @@
             </CollectionView>
         </Grid>
         <BoxView HeightRequest="1" Color="#f9ecf2" />
-        <Button x:Name="btnClose" Text="Close" Clicked="btnClose_Clicked" FontAttributes="Bold" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"></Button>
+        <Button x:Name="btnClose" Text="Close" Clicked="btnClose_Clicked" TextColor="#3a1313" FontAttributes="Bold" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"></Button>
     </StackLayout>
 </xct:Popup>

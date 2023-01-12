@@ -23,56 +23,11 @@
             <Button Clicked="btnCalendaar_Clicked"
                 BackgroundColor="#FF96AD" HeightRequest="50" WidthRequest="50"  ImageSource="calendar"></Button>
         </StackLayout>
-        
-        
-        
-        <Label Text="TODAY TASKS 🚀" Style="{StaticResource textHeader}" Margin="20,20"/>
-            <!--date-->
-        <!--<Frame HasShadow="True" CornerRadius="10" Margin="20,0,20,10" Padding="0" HeightRequest="120" VerticalOptions="Start">
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                        --><!--<Image Source="humidity.png" HeightRequest="25" HorizontalOptions="Center"/>--><!--
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="T.7" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Frame BackgroundColor="Pink" Padding="12,5">
-                                <Label Text="3" TextColor="#7D7D7D" FontSize="16" HorizontalOptions="Center"  />
-                            </Frame>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="CN" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Frame BackgroundColor="Pink" Padding="12,5">
-                                <Label Text="4" TextColor="#7D7D7D" FontSize="16" HorizontalOptions="Center"  />
-                            </Frame>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="T2" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Frame BackgroundColor="Pink" Padding="12,5">
-                                <Label Text="5" TextColor="#7D7D7D" FontSize="16" HorizontalOptions="Center"  />
-                            </Frame>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
-                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
-                            <Label Text="T3" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Frame BackgroundColor="Pink" Padding="12,5">
-                                <Label Text="6" TextColor="#7D7D7D" FontSize="16" HorizontalOptions="Center"  />
-                            </Frame>
-                        </StackLayout>
-                    </StackLayout>
-                </Grid>
-            </Frame>-->
 
-            <!--habit tasks-->
+
+        <!--habit tasks-->
+        <Label Text="TODAY TASKS 🚀" Style="{StaticResource textHeader}" Margin="20,20"/>
+
             <RefreshView x:Name="myRefeshView" Refreshing="myRefeshView_Refreshing" IsEnabled="True" RefreshColor="DeepPink" >
                 <CollectionView x:Name="listTodayHabit" SelectionMode="Single">
                     <CollectionView.ItemsLayout>

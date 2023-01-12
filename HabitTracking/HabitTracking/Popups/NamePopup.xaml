@@ -10,7 +10,7 @@
                 <Entry x:Name="nameEnt"></Entry>
             </Frame>
             <Button x:Name="btnCreate" Text="OK" 
-                    BackgroundColor="Transparent"  FontAttributes="Bold" TextColor="DeepPink"
+                    BackgroundColor="Transparent" FontAttributes="Bold" TextColor="DeepPink"
                     Clicked="btnCreate_Clicked"></Button>
         </StackLayout>
 </xct:Popup>

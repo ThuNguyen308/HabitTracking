@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Style="{StaticResource page}"
-             x:Class="HabitTracking.Pages.UserPage">
+             x:Class="HabitTracking.Pages.UserPage"
+             Title="Edit Account">
     <ContentPage.Content>
         <StackLayout>
             <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
@@ -40,7 +41,7 @@
 
 
                 <!-- Register button-->
-                <Button x:Name="btnUpdateUser" Clicked="btnUpdateUser_Clicked" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="DeepPink" Text="Update Infomation" TextColor="White" CornerRadius="20" FontSize="15" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                <Button x:Name="btnUpdateUser" Clicked="btnUpdateUser_Clicked" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2"  Text="Update Infomation" Style="{StaticResource button}" FontSize="15" HorizontalOptions="FillAndExpand"
                         />
 
                

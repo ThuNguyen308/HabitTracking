@@ -5,8 +5,8 @@
            Size="300,400"
              x:Class="HabitTracking.Popups.IconCategoryPopup">
     <StackLayout Padding="10">
-        <Label Text="Select Category" FontSize="Medium" TextColor="Black" HorizontalOptions="CenterAndExpand" Padding="0,10,0,10"></Label>
-        <BoxView HeightRequest="1" Color="Black" />
+        <Label Text="Select Category" FontSize="Medium" TextColor="#3a1313" HorizontalOptions="CenterAndExpand" Padding="0,10,0,10"></Label>
+        <BoxView HeightRequest="1" Color="#f9ecf2" />
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
@@ -39,7 +39,7 @@
                                 </Image>
                             </AbsoluteLayout>
                             <Label Text="{Binding categoryName}" Grid.Row="1"
-                                           FontAttributes="Bold" TextColor="Black"
+                                           FontAttributes="Bold" TextColor="#3a1313"
                                            FontSize="Small"
                                            HorizontalOptions="Center"></Label>
                         </StackLayout>
@@ -47,7 +47,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </Grid>
-        <BoxView HeightRequest="1" Color=" Black" />
-        <Button x:Name="btnClose" Text="Close" Clicked="btnClose_Clicked" FontAttributes="Bold" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"></Button>
+        <BoxView HeightRequest="1" Color="#f9ecf2" />
+        <Button x:Name="btnClose" Text="Close" TextColor="#3a1313" Clicked="btnClose_Clicked" FontAttributes="Bold" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent"></Button>
     </StackLayout>
 </xct:Popup>
