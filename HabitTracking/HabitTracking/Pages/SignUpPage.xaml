@@ -11,20 +11,16 @@
 
                 <!-- Title-->
                 <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="25" Margin="0,20,0,0" FontAttributes="Bold" HorizontalTextAlignment="Center" Text="Create an account"/>
-                <!-- Rounded Profile imagen-->
+                <!-- Rounded Profile image-->
                 <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderColor="White" 
                    VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="150" HeightRequest="150" CornerRadius="75" HasShadow="False" Padding="0" IsClippedToBounds="True">
                     <Image Source="User.png" Aspect="AspectFill" BackgroundColor="DeepPink"/>
                 </Frame>
-                <!--<Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Pink" HeightRequest="34" WidthRequest="34" CornerRadius="22"  TranslationX="65" ImageSource="camera" HorizontalOptions="Center" VerticalOptions="End"/>-->
-
 
                 <!-- Basic information-->
-
                 <!--first name, last name-->
                 <Entry x:Name="txtFirstName" Grid.Row="3" Grid.Column="0"  Placeholder="First name" Style="{StaticResource signupInput}"/>
                 <Entry x:Name="txtLastName" Grid.Row="3" Grid.Column="1" Placeholder="Last name" Style="{StaticResource signupInput}"/>
-
 
                 <!--username-->
                 <Entry x:Name="txtUsername" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="Username" Style="{StaticResource signupInput}"/>
@@ -35,11 +31,10 @@
                 <Entry x:Name="txtPassword" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" IsPassword="True"  Placeholder="Password" Style="{StaticResource signupInput}"/>
                 <Entry x:Name="txtPassword2" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" IsPassword="True" Placeholder="Confirm password" Style="{StaticResource signupInput}"/>
 
-
                 <!-- Register button-->
-                <Button x:Name="BtnSignin" Clicked="BtnSignin_Clicked" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="DeepPink" Text="Register" TextColor="White" CornerRadius="20" FontSize="15" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                <Button x:Name="BtnSignin" Clicked="BtnSignin_Clicked" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="DeepPink" Text="Register" TextColor="White" 
+                        CornerRadius="20" FontSize="15" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
                         />
-            
                 <Label Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" FontAttributes="Bold" HorizontalTextAlignment="Center" >
                     <Label.FormattedText>
                         <FormattedString>

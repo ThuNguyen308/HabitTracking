@@ -10,7 +10,7 @@
               RowSpacing="15" ColumnDefinitions="*,*" ColumnSpacing="30" VerticalOptions="CenterAndExpand" Padding="30,0">
 
                 <!-- Title-->
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  Style="{StaticResource textHeader}" FontSize="30" HorizontalTextAlignment="Center" Text="Your Account"/>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource textHeader}" FontSize="30" HorizontalTextAlignment="Center" Text="Your Account"/>
                 <!-- Rounded Profile imagen-->
                 <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderColor="White" 
                    VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" CornerRadius="50" HasShadow="False" Padding="0" IsClippedToBounds="True">

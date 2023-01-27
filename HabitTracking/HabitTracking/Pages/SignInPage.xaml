@@ -14,7 +14,6 @@
             </StackLayout>
             <!-- Main title-->
                 <Label Grid.Row="1" Text=""/>
-
                 <!-- Fields-->
              <Label Grid.Row="2" Text="Username" Style="{StaticResource signInHeader}"/>
              <Entry x:Name="txtUsername" Grid.Row="3" Placeholder="Enter your username" HeightRequest="50" FontSize="20" Style="{StaticResource signupInput}" Margin="0,0,0,10" />
@@ -23,8 +22,8 @@
 
                 <!-- Forget password label-->
                 <Label Grid.Row="6" Text="Forgot your password?" FontAttributes="Bold" FontSize="15" HorizontalOptions="End" />
-                <Button Grid.Row="7" Clicked="loginBtn_Clicked" BackgroundColor="DeepPink" Text="Log in" TextColor="White" CornerRadius="20" FontSize="15" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,5"/>
-
+                <Button Grid.Row="7" Clicked="loginBtn_Clicked" BackgroundColor="DeepPink" Text="Log in" TextColor="White" CornerRadius="20" FontSize="15" 
+                        FontAttributes="Bold" HorizontalOptions="FillAndExpand" Margin="0,5"/>
                 <Label Grid.Row="8" FontAttributes="Bold" HorizontalTextAlignment="Center">
                     <Label.FormattedText>
                         <FormattedString>
@@ -37,7 +36,6 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-            <!--        <Button Text="Register" TextColor="DeepPink" />-->
             </Grid>
     </ContentPage.Content>
 </ContentPage>

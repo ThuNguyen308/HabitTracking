@@ -21,12 +21,8 @@ namespace HabitTracking.Pages
             InitializeComponent();
             InitInfo();
         }
-        public async void InitInfo()
+        public void InitInfo()
         {
-            HttpClient http = new HttpClient();
-            var kq = await http.GetStringAsync(GlobalVariables.url + "api/User/GetUserInfo?userId=" + User.user.userId);
-            User.user = JsonConvert.DeserializeObject<User>(kq);
-
             txtFirstName.Text = User.user.firstName;
             txtLastName.Text = User.user.lastName;
             txtEmail.Text = User.user.email;
@@ -40,7 +36,7 @@ namespace HabitTracking.Pages
             User.user.email = txtEmail.Text ;
             User.user.userName = txtUsername.Text ;
             User.user.password = txtPassword.Text ;
-
+            await DisplayAlert(null, txtEmail.Text.ToString() + " " + txtFirstName.Text + " " + txtLastName.Text + " " + txtPassword.Text + " " + txtUsername.Text, "ok");
             HttpClient http = new HttpClient();
             string jsonlh = JsonConvert.SerializeObject(User.user);
             StringContent httpcontent = new StringContent(jsonlh, Encoding.UTF8, "application/json");
